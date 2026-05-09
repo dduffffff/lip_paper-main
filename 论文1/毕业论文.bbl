@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -82,21 +82,5 @@ MAKOVIYCHUK V, WAWRZYNIAK L, GUO Y, et~al.
 \newblock Isaac gym: High performance gpu-based physics simulation for robot
   learning\allowbreak[J].
 \newblock NeurIPS Datasets and Benchmarks, 2021.
-
-\bibitem[Tan et~al.(2018)Tan, Zhang, Coumans, Iscen, Bai, Hafner, Bohez, and
-  Vanhoucke]{tan2018simrl}
-TAN J, ZHANG T, COUMANS E, et~al.
-\newblock Sim-to-real: Learning agile locomotion for quadruped
-  robots\allowbreak[C]//\allowbreak
-Robotics: Science and Systems.
-\newblock 2018.
-
-\bibitem[Xie et~al.(2020)Xie, Clary, Dao, Morais, Hurst, and
-  Panne]{xie2020learning}
-XIE Z, CLARY P, DAO J, et~al.
-\newblock Learning locomotion skills for cassie: Iterative design and
-  sim-to-real\allowbreak[C]//\allowbreak
-Conference on Robot Learning.
-\newblock 2020: 317-329.
 
 \end{thebibliography}
