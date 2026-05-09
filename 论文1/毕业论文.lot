@@ -1,0 +1,23 @@
+\contentsline {table}{\numberline {2.1}{\ignorespaces 常见四足步态的相位偏移与占空比配置}}{9}{table.caption.7}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces PPO 算法伪代码（简化版）}}{12}{table.caption.8}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces 典型四足机器人强化学习奖励项}}{19}{table.caption.13}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces Actor-Critic 网络结构与输入输出说明}}{21}{table.caption.14}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces 自适应奖励调度训练流程伪代码}}{26}{table.caption.16}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces 自适应奖励调度方法的关键超参数与推荐范围}}{30}{table.caption.18}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces 评价指标定义}}{32}{table.caption.19}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces 测试场景分级}}{32}{table.caption.20}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces 全部测试场景平均指标（均值 ± 标准差，$5$ 种子）}}{34}{table.caption.22}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces 消融实验结果（在 L2-L5 平均，$5$ 种子均值 ± 标准差）}}{35}{table.caption.23}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces 近真实环境（NRE）下的指标对比}}{42}{table.caption.32}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces 样本效率与训练耗时对比（达到 $S=0.50$ 所需步数与时间）}}{45}{table.caption.46}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces 子奖励相关系数对比（左：HIMLoco / 右：Ours）}}{45}{table.caption.48}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces 跨机器人迁移结果（综合得分 $S$）}}{46}{table.caption.52}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces 多速度档位指标比较}}{46}{table.caption.56}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces HIMLoco 主训练循环的最小修改集合（伪代码）}}{47}{table.caption.58}%
+\contentsline {table}{\numberline {6.7}{\ignorespaces 典型训练日志摘录（每 200 迭代记录一次，单位：标准化值）}}{56}{table.caption.75}%
+\contentsline {table}{\numberline {6.8}{\ignorespaces 各类地形难度参数（逐级递增）}}{58}{table.caption.76}%
+\contentsline {table}{\numberline {6.9}{\ignorespaces 域随机化参数表}}{59}{table.caption.77}%
+\contentsline {table}{\numberline {6.10}{\ignorespaces 常用术语中英对照与缩略语}}{62}{table.caption.78}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces 主要数学符号与含义}}{66}{table.caption.81}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces 完整训练超参数列表}}{67}{table.caption.82}%
+\contentsline {table}{\numberline {C.1}{\ignorespaces 自适应奖励调度器伪代码（推理与训练共用）}}{68}{table.caption.83}%

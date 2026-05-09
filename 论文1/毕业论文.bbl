@@ -1,0 +1,102 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[Hwangbo et~al.(2019)Hwangbo, Lee, and Hutter]{hwangbo2019}
+HWANGBO J, LEE J, HUTTER M.
+\newblock Per-contact iteration method for solving contact dynamics in legged
+  robots\allowbreak[J].
+\newblock IEEE Robotics and Automation Letters, 2019, 4\allowbreak (2):
+  2048-2055.
+
+\bibitem[Kumar et~al.(2021)Kumar, Fu, Pathak, and Malik]{kumar2021rma}
+KUMAR A, FU Z, PATHAK D, et~al.
+\newblock Rma: Rapid motor adaptation for legged
+  robots\allowbreak[C]//\allowbreak
+Robotics: Science and Systems (RSS).
+\newblock 2021.
+
+\bibitem[Rudin et~al.(2022)Rudin, Hoeller, Reist, and Hutter]{rudin2022}
+RUDIN N, HOELLER D, REIST P, et~al.
+\newblock Learning to walk in minutes using massively parallel deep
+  reinforcement learning\allowbreak[C]//\allowbreak
+Conference on Robot Learning (CoRL).
+\newblock 2022.
+
+\bibitem[Miki et~al.(2022)Miki, Lee, Hwangbo, et~al.]{miki2022}
+MIKI T, LEE J, HWANGBO J, et~al.
+\newblock Learning robust perceptive locomotion for quadrupedal robots in the
+  wild\allowbreak[J].
+\newblock Science Robotics, 2022, 7\allowbreak (62): eabk2822.
+
+\bibitem[Lee et~al.(2020)Lee, Hwangbo, Wellhausen, et~al.]{lee2020}
+LEE J, HWANGBO J, WELLHAUSEN L, et~al.
+\newblock Learning quadrupedal locomotion over challenging
+  terrain\allowbreak[J].
+\newblock Science Robotics, 2020, 5\allowbreak (47): eabc5986.
+
+\bibitem[Agrawal et~al.(2022)Agrawal, Kumar, Malik, et~al.]{agrawal2022}
+AGRAWAL A, KUMAR A, MALIK J, et~al.
+\newblock Vision-aided quadrupedal locomotion in the wild\allowbreak[A].
+\newblock 2022.
+
+\bibitem[Margolis et~al.(2023)Margolis, Yang, and Agrawal]{margolis2023}
+MARGOLIS G, YANG G, AGRAWAL P.
+\newblock Walk these ways: Tuning robot control for generalization with
+  reinforcement learning\allowbreak[C]//\allowbreak
+Conference on Robot Learning (CoRL).
+\newblock 2023.
+
+\bibitem[Long et~al.(2024)Long, Wang, Li, et~al.]{long2024him}
+LONG J, WANG Z, LI Q, et~al.
+\newblock Hybrid internal model: Learning agile legged locomotion with
+  simulated robot response\allowbreak[Z].
+\newblock 2024.
+
+\bibitem[Peng et~al.(2020)Peng, Coumans, Zhang, et~al.]{peng2020}
+PENG X~B, COUMANS E, ZHANG T, et~al.
+\newblock Learning agile robotic locomotion skills by imitating
+  animals\allowbreak[C]//\allowbreak
+Robotics: Science and Systems (RSS).
+\newblock 2020.
+
+\bibitem[Fu et~al.(2021)Fu, Kumar, Nachum, Tucker, and Levine]{fu2021}
+FU Z, KUMAR A, NACHUM O, et~al.
+\newblock Minimizing energy consumption leads to the emergence of gaits in
+  legged robots\allowbreak[C]//\allowbreak
+Conference on Robot Learning (CoRL).
+\newblock 2021.
+
+\bibitem[Makoviychuk et~al.(2021)Makoviychuk, Wawrzyniak, Guo,
+  et~al.]{makoviychuk2021}
+MAKOVIYCHUK V, WAWRZYNIAK L, GUO Y, et~al.
+\newblock Isaac gym: High performance gpu-based physics simulation for robot
+  learning\allowbreak[J].
+\newblock NeurIPS Datasets and Benchmarks, 2021.
+
+\bibitem[Tan et~al.(2018)Tan, Zhang, Coumans, Iscen, Bai, Hafner, Bohez, and
+  Vanhoucke]{tan2018simrl}
+TAN J, ZHANG T, COUMANS E, et~al.
+\newblock Sim-to-real: Learning agile locomotion for quadruped
+  robots\allowbreak[C]//\allowbreak
+Robotics: Science and Systems.
+\newblock 2018.
+
+\bibitem[Xie et~al.(2020)Xie, Clary, Dao, Morais, Hurst, and
+  Panne]{xie2020learning}
+XIE Z, CLARY P, DAO J, et~al.
+\newblock Learning locomotion skills for cassie: Iterative design and
+  sim-to-real\allowbreak[C]//\allowbreak
+Conference on Robot Learning.
+\newblock 2020: 317-329.
+
+\end{thebibliography}

@@ -1,0 +1,128 @@
+% !TeX program = xelatex
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\hypersetup{hidelinks}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{Nimbus Roman}}
+\IfFontExistsTF{SimSun}{\setCJKmainfont{SimSun}}{\setCJKmainfont{Noto Serif CJK SC}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\linespread{1.25}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\title{武汉科技大学毕业论文开题报告\\}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{11.1cm}|}
+\hline
+论文题目 & 基于PPO算法的本体感知自适应奖励调度四足机器人跨地形运动控制 \\
+\hline
+学生姓名 & 杜云帆 \\
+\hline
+专业 & 机器人工程 \\
+\hline
+学生学号 & 202204416388 \\
+\hline
+指导教师 & 陈志环 \\
+\hline
+\end{longtable}
+
+\section*{一、开题报告}
+
+\subsection*{1. 选题目的和意义}
+四足机器人在复杂地形中的机动性显著优于轮式与履带式平台，在灾害搜救、野外巡检、特种作业等场景中具有重要应用价值。面向真实部署，控制策略不仅需要在平坦地面具备较高的速度与能量效率，还应在崎岖与扰动条件下保持稳定与鲁棒。因此，如何在“效率”与“稳定性”之间实现地形相关的动态平衡，是当前足式机器人学习控制的关键科学问题。
+
+现有混合内模（Hybrid Internal Model, HIM）学习框架通常采用全局固定权重的多目标奖励函数，即在不同地形条件下使用一致的优化优先级。该机制虽具备实现简洁与训练稳定等优势，但存在明显性能折中：在平坦地形中策略偏保守，速度与能效提升受限；在重度崎岖地形中速度项持续驱动高风险动作，跌倒率上升；同时固定权重难以依据实时工况完成策略偏好的在线切换，限制了跨地形综合性能上限。
+
+针对上述问题，本文拟提出一种基于本体感觉的自适应奖励权重调度方法。在不改变核心网络结构与两阶段训练流程的前提下，通过实时解析机体本体感觉信息估计地形难度，并对奖励子项权重进行动态重分配。预期在可通行地形提升速度与能效，在高风险地形增强稳定与抗扰能力，从而实现跨地形运动性能的协同优化。
+
+从工程应用角度看，该研究具备明显现实意义。首先，基于本体感觉的调度机制不依赖额外昂贵传感器，能够降低系统硬件复杂度并提升部署可行性；其次，动态奖励重加权能够在不同任务场景中保持策略行为的一致性与可解释性，减少人工反复调参成本；再次，该方法可作为现有学习控制系统的可插拔模块，便于在已有控制框架中快速验证与迁移。对于本科毕业设计而言，该课题能够综合训练问题建模、算法实现、实验设计与结果分析能力，具有较高的研究与实践价值。
+
+\subsection*{2. 国内外现状与发展趋势}
+国外在四足机器人强化学习控制方面起步较早，研究重点包括：基于大规模并行仿真的高效策略学习、域随机化与系统辨识驱动的 Sim2Real 迁移、融合地形感知信息的复杂地形自适应控制等。近年来，研究趋势由“单场景稳定行走”向“多场景统一策略”过渡，并进一步向“可在线调参与安全约束”的智能控制范式演进。
+
+国内高校与科研机构近年来在足式机器人软硬件一体化方面进展迅速，逐步形成了“仿真训练—策略部署—实机验证”的闭环研究路径。相关工作集中于步态与能耗优化、学习控制与模型控制融合、工程场景下实时性与鲁棒性提升等方向。
+
+总体来看，未来发展方向主要体现在：一是训练范式更高效、更稳定（课程学习、离线/在线结合）；二是感知—决策—控制进一步一体化；三是 Sim2Real 泛化能力持续增强；四是面向任务约束的安全性与可解释性将成为核心指标。
+
+在国外研究中，关于复杂地形运动控制的代表性思路主要包括两类：一类是“增强感知输入”，即引入视觉或高度图信息提升地形可观测性；另一类是“增强策略适应能力”，即通过隐变量估计、在线系统辨识或策略调度机制提升对未知扰动的容忍度。前者在信息充分时性能上限较高，但对感知质量和算力平台要求较高；后者在传感受限场景更具实用价值，但对策略稳定性与调度机制设计提出更高要求。
+
+在国内研究方面，近年来工作重点逐步由“仿真可跑通”向“实机可稳定运行”转移。针对足式机器人在复杂地形中的落地问题，研究者普遍关注三项能力：其一是跨地形泛化能力，即同一策略能否在不同坡度、摩擦系数和障碍形态下维持性能；其二是鲁棒性，即在外部推扰和执行器噪声条件下是否仍可保持稳定行走；其三是实时性，即策略推理与控制回路能否满足硬实时约束。上述关注点与本文课题目标高度一致。
+
+结合已有研究可见，当前不足主要体现在：固定权重奖励的目标优先级缺少在线调整能力；地形难度判定机制与奖励设计之间缺乏紧耦合；实验报告中对“性能收益来源”的解释常不够充分。基于此，本文拟在保持训练主流程不变的前提下，引入本体感觉驱动的难度估计与奖励调度耦合机制，通过对比与消融实验回答“为何有效、在何处有效、对哪些指标有效”三个关键问题。
+
+\subsection*{3. 研究内容}
+\begin{enumerate}
+  \item 复现并分析混合内模（HIM）学习框架，建立固定权重奖励在不同地形下的性能基准；
+  \item 设计基于本体感觉的地形难度估计指标，构建自适应奖励权重调度器；
+  \item 在不修改核心网络结构和两阶段训练流程的前提下完成调度模块集成；
+  \item 在平坦、起伏、重度崎岖等地形及外部扰动条件下开展测试，评估速度、能耗、稳定性与跌倒率；
+  \item 通过对比实验与消融实验验证自适应调度在效率—稳定性平衡上的有效性。
+\end{enumerate}
+
+为保证研究过程可实施、结果可复现，本文将进一步细化为以下执行步骤：首先完成基线策略在统一仿真环境中的训练与验证，记录不同地形下速度误差、能耗与跌倒率等基础指标；随后构建地形难度估计模块，候选特征包括机体姿态波动、关节力矩变化、触地稳定性和控制输入平滑性；在此基础上设计奖励权重映射函数，确保各子项权重非负且总和恒定，并设置变化率约束以避免调度震荡；最后开展多随机种子重复实验，统计均值与方差，对性能提升进行稳定性验证。
+
+本文拟重点解决三项技术难点：其一，如何在仅依赖本体感觉的条件下实现对地形难度的有效刻画；其二，如何在在线调度奖励权重时避免策略发生高频抖振；其三，如何解释不同指标提升之间的耦合关系。针对上述难点，本文将分别采用特征归一化与窗口平滑、权重变化率约束与指数平滑、以及分组消融与相关性分析等方法进行处理。
+
+实验评价方面，除基础指标外，本文还将增加“单位距离能耗”“恢复成功率”“策略平滑性”三类指标，以更全面评估方法收益。对比组设置包括：固定权重基线、自适应调度完整模型、去除难度估计模块、去除平滑约束模块等。通过多组对照，分析性能提升来源，并检验方法在不同地形等级上的一致性表现。
+
+此外，本文将建立统一的数据记录与可视化规范。训练阶段记录回报曲线、损失曲线、权重变化轨迹以及关键状态统计量；测试阶段记录各地形下的任务成功率、平均速度、单位能耗和跌倒次数。所有指标均采用统一脚本自动汇总，避免人工统计偏差。对于关键实验结果，拟采用箱线图、误差条图与分布直方图进行展示，以提高结果表达的完整性和可信度。
+
+为增强研究的工程可迁移性，本文还将关注算法复杂度与实时开销。具体包括：调度模块参数规模、单步推理时间、控制频率保持情况以及异常状态下的退化行为。若出现在线调度带来的额外时延，将通过简化特征维度、减少时间窗长度和优化张量计算路径等方式控制开销，确保方法在实际控制回路中的可用性。
+
+在结果分析层面，本文将从“总体收益”和“分场景收益”两个维度展开：总体收益用于说明方法在全地形集合上的平均改进幅度；分场景收益用于识别方法在平坦地形、中等难度地形和高难度地形中的差异化表现。通过该分析框架，可以明确自适应奖励调度在不同风险等级下的作用边界，为后续算法改进提供依据。
+
+预期最终形成三类阶段性成果：第一，完成可复现的固定权重与自适应权重训练评测流程；第二，形成包含对比实验与消融实验在内的完整结果集；第三，完成对关键结论的可解释性分析，明确“何种本体感觉特征对权重调度最敏感、何种地形条件下收益最显著”。上述成果将直接支撑毕业论文主体章节撰写与答辩展示。
+
+\subsection*{4. 进度安排}
+\begin{enumerate}
+  \item 第1周：完成文献检索与问题定义，明确技术路线，完成开题报告定稿；
+  \item 第2周：完成混合内模（HIM）学习框架复现与实验环境搭建，形成固定权重基准结果；
+  \item 第3周：完成地形难度估计模块方案设计、特征选取与映射函数初版实现；
+  \item 第4周：完成自适应奖励调度器联调与稳定性测试，形成可重复训练脚本；
+  \item 第5周：开展多地形对比与消融实验，完成实验统计与结果分析；
+  \item 第6周：完成论文主体撰写（方法、实验、结果分析）并完善图表与参考文献；
+  \item 第7周：完成论文定稿、查重修改与答辩材料准备。
+\end{enumerate}
+
+上述进度安排采用“先基线、后改进、再验证、最后写作”的闭环方式。若训练收敛速度低于预期，将优先保证核心对比实验（固定权重与自适应权重）完成，再逐步补充扩展消融实验，以确保毕业设计节点按时推进。
+
+为保证进度可执行，本文还将设置周度检查点：每周固定汇报当前训练状态、主要问题与下周计划；当出现训练不稳定或指标异常时，优先排查奖励项尺度、学习率配置、随机种子差异和地形采样分布，并在同周完成修正验证。通过“问题发现—修正—复测”的短闭环机制，提高研发效率并降低后期集中返工风险。
+
+\subsection*{5. 参考文献}
+\begin{enumerate}
+  \item Hwangbo J, Lee J, Hutter M. Per-Contact Iteration Method for Solving Contact Dynamics in Legged Robots[J]. IEEE Robotics and Automation Letters, 2019.
+  \item Kumar A, Fu Z, Pathak D, Malik J. RMA: Rapid Motor Adaptation for Legged Robots[J]. RSS, 2021.
+  \item Rudin N, Hoeller D, Reist P, Hutter M. Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning[J]. CoRL, 2022.
+  \item Margolis G, Yang G, Agrawal P. Walk These Ways: Tuning Robot Control for Generalization with Reinforcement Learning[J]. CoRL, 2023.
+  \item Miki T, Lee J, Hwangbo J, et al. Learning Robust Perceptive Locomotion for Quadrupedal Robots in the Wild[J]. Science Robotics, 2022.
+  \item Yang R, et al. Learning Vision-Locomotion Models for Agile Navigation in Complex Terrains[J]. 2023.
+  \item Long J, Wang Z, Li Q, et al. Hybrid Internal Model: Learning Agile Legged Locomotion with Simulated Robot Response[Z]. 2024.
+  \item Schulman J, Wolski F, Dhariwal P, Radford A, Klimov O. Proximal Policy Optimization Algorithms[Z]. arXiv:1707.06347, 2017.
+  \item Peng X B, Coumans E, Zhang T, et al. Learning Agile Robotic Locomotion Skills by Imitating Animals[J]. RSS, 2020.
+  \item Makoviychuk V, et al. Isaac Gym: High Performance GPU-Based Physics Simulation for Robot Learning[Z]. NeurIPS Datasets and Benchmarks, 2021.
+  \item Lee J, Hwangbo J, Wellhausen L, et al. Learning Quadrupedal Locomotion over Challenging Terrain[J]. Science Robotics, 2020.
+  \item Agrawal A, Kumar A, Malik J, et al. Vision-Aided Quadrupedal Locomotion in the Wild[J]. 2022.
+  \item Ji J, et al. DribbleBot: Dynamic Legged Manipulation in the Wild[J]. 2023.
+  \item Caluwaerts K, et al. Barkour: Benchmarking Agile Locomotion for Quadruped Robots[J]. 2023.
+  \item Sutton R S, Barto A G. Reinforcement Learning: An Introduction[M]. MIT Press, 2018.
+  \item Todorov E, Erez T, Tassa Y. MuJoCo: A Physics Engine for Model-Based Control[C]. IROS, 2012.
+  \item Wu X, et al. Learning-Based Locomotion Control for Low-Cost Quadruped Platforms[J]. 2023.
+  \item Yang R, et al. Generalized Parkour Learning for Legged Robots[J]. 2023.
+\end{enumerate}
+
+\end{document}

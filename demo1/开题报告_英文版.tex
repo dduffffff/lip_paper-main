@@ -1,0 +1,107 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{../himloco/iclr2024_conference,times}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\title{Undergraduate Thesis Proposal}
+\author{Yunfan Du\\School of Artificial Intelligence and Automation\\Supervisor: Zhihuan Chen}
+\date{}
+
+\iclrfinalcopy
+
+\begin{document}
+\maketitle
+
+\section*{I. Basic Information}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{3.8cm}|>{\raggedright\arraybackslash}p{10.5cm}|}
+\hline
+Student Name & Yunfan Du \\
+\hline
+Student ID & 202204416388 \\
+\hline
+Affiliation & School of Artificial Intelligence and Automation, Robotics Engineering \\
+\hline
+Title & Cross-Terrain Quadruped Locomotion via Proprioceptive Adaptive Reward Scheduling \\
+\hline
+Supervisor & Zhihuan Chen \\
+\hline
+Attachment & None \\
+\hline
+\end{longtable}
+
+\section*{II. Research Motivation and Significance}
+Quadruped robots provide superior mobility over wheeled and tracked platforms in unstructured environments, which makes them highly valuable for search and rescue, field inspection, and special operations. A central challenge is how to achieve an optimal trade-off between locomotion efficiency and stability across terrains with different difficulty levels.
+
+Existing Hybrid Internal Model (HIM) learning frameworks usually rely on globally fixed weights in multi-objective reward functions. Although this design is simple and stable in training, it causes clear performance compromises: conservative behavior and reduced speed/energy efficiency on flat terrain, and risky actions with increased fall rate on highly rugged terrain due to persistent velocity incentives. More importantly, fixed priorities cannot adapt online to terrain changes, limiting the achievable cross-terrain performance.
+
+To address this limitation, this proposal introduces a proprioception-driven adaptive reward-weight scheduler. Without modifying the core policy architecture or the two-stage training paradigm, the method estimates terrain difficulty online from proprioceptive signals and dynamically reallocates reward-term weights. The expected outcome is improved efficiency on traversable terrain and enhanced robustness on high-risk terrain, leading to better overall locomotion performance.
+
+\section*{III. Related Work and Trends}
+\subsection*{1. International Research}
+Representative directions include:
+\begin{itemize}
+  \item learning-based gait generation, velocity tracking, and disturbance rejection;
+  \item domain randomization and system identification for better sim-to-real transfer;
+  \item integration of perception and control for terrain-adaptive locomotion;
+  \item curriculum learning and adaptive objective design for stronger generalization.
+\end{itemize}
+
+\subsection*{2. Domestic Research}
+Recent domestic studies have advanced rapidly in legged robot hardware, motion planning, and reinforcement-learning-based control. Current focuses include gait/energy optimization, hybrid control with model-based priors, and engineering-oriented robustness and real-time deployment.
+
+\subsection*{3. Development Trends}
+Future trends include:
+\begin{enumerate}
+  \item more efficient and stable training paradigms;
+  \item tighter integration of perception, decision-making, and control;
+  \item improved sim-to-real reliability with lower deployment cost;
+  \item safety-aware and interpretable locomotion policies.
+\end{enumerate}
+
+\section*{IV. Research Content and Methodology}
+\subsection*{1. Research Content}
+\begin{enumerate}
+  \item Reproduce and analyze the HIM learning framework to establish fixed-weight performance baselines.
+  \item Design terrain-difficulty indicators from proprioceptive observations.
+  \item Implement and integrate an adaptive reward scheduler without changing core network architecture and training pipeline.
+  \item Evaluate speed, energy cost, stability, and fall rate under multiple terrains and disturbances.
+  \item Conduct comparative and ablation studies to validate dynamic efficiency-stability balancing.
+\end{enumerate}
+
+\subsection*{2. Methodology}
+\begin{itemize}
+  \item Literature review;
+  \item simulation-based experimentation;
+  \item quantitative comparative analysis;
+  \item ablation analysis of scheduler design and key hyperparameters.
+\end{itemize}
+
+\section*{V. Timeline}
+\begin{longtable}{|p{3.6cm}|p{10.7cm}|}
+\hline
+Period & Plan \\
+\hline
+Week 1 & Literature review, problem definition, and proposal drafting. \\
+\hline
+Week 2 & Baseline reproduction and simulation environment setup. \\
+\hline
+Weeks 3--4 & Design, implementation, and integration of terrain estimator and adaptive scheduler. \\
+\hline
+Week 5 & Comparative and ablation experiments on multiple terrains. \\
+\hline
+Week 6 & Thesis writing for method, experiments, and analysis. \\
+\hline
+Week 7 & Final revision, similarity check, and defense preparation. \\
+\hline
+\end{longtable}
+
+\section*{VI. Expected Outcomes}
+\begin{enumerate}
+  \item A proprioception-driven adaptive reward-weight scheduling method integrated with the HIM framework.
+  \item Complete comparative and ablation results between fixed-weight and adaptive-weight settings.
+\end{enumerate}
+
+\end{document}

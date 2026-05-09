@@ -1,0 +1,33 @@
+\section{Introduction}
+
+In recent years, learning-based locomotion control methods for quadruped robots have achieved remarkable results~\citep{hwangbo2019learning, peng2020learning, yang2020multi, xie2021dynamics, Imai2021VisionGuidedQL, yu2021visual, yang2022learning, margolis2022rapid, rudin2022learning, agrawal2022vision, yang2023neural, margolis2023walk, yang2023neural}, demonstrating agility beyond traditional control methods in the wild~\citep{lee2020learning, miki2022elevation} or on low-cost hardware platforms~\citep{kumar2021rma, wu2023learning}. Powered by numerous and diverse simulated data, these algorithms allow the quadruped robots to work in real environments directly, and perform not only simple movements but complex skills such as manipulation~\citep{fu2022deep, ji2023dribblebot, cheng2023legmanip} and parkour~\citep{yang2023generalized, zhuang2023robot, caluwaerts2023barkour}.
+
+To achieve substantial agility, it is necessary to provide the quadruped robots with accurate and complete external states~\citep{hartley2018legged}. 
+However, most onboard sensors provide partial and noisy observations about proprioception and surroundings, impeding the development of robust robot systems.
+As a remedy, a two-stage training strategy is usually adopted by recent learning-based methods.
+Firstly, an oracle policy is trained with access to external states such as terrain frictions and elevation maps in the simulator where domain randomization is applied to enhance generalizability across various terrain conditions.
+Subsequently, the knowledge in this policy is transferred to another policy through mimicking where external states are disabled~\citep{miki2022learning} or inferred from other information~\citep{kumar2021rma}.
+Although methods derived from this strategy yield promising results, their performance is constrained in two ways:
+(1) Despite the benefits of domain randomization for simulation-to-real (sim2real) transfer, the introduced noises restrict further optimization of the model, particularly when they directly learn to regress absolute environmental parameters.
+(2) This two-phase training paradigm complicates the training process and inevitably induces information loss in the mimicking learning phase, no matter whether it is achieved by imitation learning~\citep{miki2022learning} or adaptation methods~\citep{kumar2021rma}.
+Moreover, certain solutions require additional exteroceptive sensors, such as cameras~\citep{agarwal2023legged} or lidar~\cite{rudin2022learning}, whose configurations vary across different robot platforms. Therefore, it is challenging to train and deploy a policy on universal platforms.
+
+In this work, we propose a method where the policy network does not require access to any external states during the entire training process. 
+To be more specific, our method, termed Hybrid Internal Model (HIM), considers all external states such as elevation maps and ground friction as system disturbances.
+Inspired by the classical Internal Model Control (IMC)~\citep{rivera1986internal} that simulates system response to estimate disturbances, we attempt to estimate these system disturbances according to the simulated response of the robot.
+Characterized by the velocity and stability, the response is termed as hybrid internal embedding, which is extracted from a sequence of historical observations.
+Considering the response is naturally embedded within the successor state of the robot, the hybrid internal embedding is optimized through contrastive learning, which pulls close the embedding and the future state.
+We use Proximal Policy Optimization (PPO) to train the policy network and feed it with both partial observations and the hybrid internal embedding.
+The embedding is optimized through Hybrid Internal Optimization (HIO) in each PPO iteration, allowing the policy to implicitly infer and distinguish the disturbance from the external environment. 
+As a result, the policy can be deployed in diverse real-world settings.
+Also, contrastive learning makes the policy more robust to noises, and the batch-level information further improves sample efficiency.
+On the other hand, our method is lightweight and universal on all legged-robot platforms, as long as they provide basic proprioceptive information from IMU and joint sensors. 
+
+We train our method in Isaac Gym~\citep{makoviychuk2021isaac} and deploy it on Unitree Aliengo, A1, and Go1 robots. 
+We evaluate and ablate its performance in both simulation and real-world regimes with carefully designed benchmarks and metrics.
+Experiments show that HIM can use minimal sensors, \emph{i.e.}, joint encoders and IMU, to drive a robot to traverse across any terrain under any disturbances. 
+The policy converges with only 200 million samples and only costs 1 hour on an RTX 4090 GPU for deployment.
+We also observe that our method can perform very well with high-difficulty tasks such as
+long-range stairs and the cases never occurred in the training process such as compositional terrains,
+and deformable slopes, revealing an excellent generalizability in the open world.
+We hope the simple and efficient method can bring new insights to the community.

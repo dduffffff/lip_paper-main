@@ -1,0 +1,282 @@
+\contentsline {section}{\numberline {1}绪论}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}研究背景与意义}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}国内外研究现状}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}基于解析模型的四足控制方法}{2}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}基于强化学习的四足控制方法}{2}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}国内研究进展}{3}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}研究目标与主要贡献}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}研究问题定义与技术路线}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}本文组织结构}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}本章小结}{5}{subsection.1.6}%
+\contentsline {section}{\numberline {2}相关理论与技术基础}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}四足机器人坐标系与运动学}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}坐标系建立与齐次变换}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}正运动学分析}{6}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}雅可比矩阵计算}{7}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}逆运动学分析}{7}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}动力学方程}{8}{subsubsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.2}典型步态与节律}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}步态相位与占空比}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}trot 步态的物理特性}{9}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}多步态切换与速度自适应}{10}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}马尔可夫决策过程}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}基本定义}{10}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}MDP 在四足机器人控制中的实例化}{10}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}部分可观马尔可夫决策过程}{11}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}策略梯度与 PPO 推导}{11}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}策略梯度定理}{11}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}广义优势估计}{11}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}从 TRPO 到 PPO}{11}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}PPO 完整目标函数}{12}{subsubsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.5}Actor-Critic 网络架构}{12}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}基本结构}{12}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}非对称 Actor-Critic}{13}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}初始化与训练技巧}{13}{subsubsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.6}HIMLoco 框架与内部模型}{14}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}设计动机}{14}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}显式与隐式分量}{14}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}表征质量可视化}{14}{subsubsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.7}四足机器人无模型强化学习环境}{15}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}并行仿真平台}{15}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}观测构造}{15}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}动作与控制器}{16}{subsubsection.2.7.3}%
+\contentsline {subsubsection}{\numberline {2.7.4}终止条件}{16}{subsubsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.8}策略模型与本体感知输入}{17}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}完整策略形式}{17}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}本体感知信号特性}{17}{subsubsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.9}Sim2Real 迁移技术}{17}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Sim2Real 鸿沟来源}{17}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}域随机化}{17}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}在线自适应与非对称 Actor-Critic}{18}{subsubsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.10}多目标奖励与固定权重的局限}{18}{subsection.2.10}%
+\contentsline {subsubsection}{\numberline {2.10.1}典型奖励项构成}{18}{subsubsection.2.10.1}%
+\contentsline {subsubsection}{\numberline {2.10.2}固定权重的天然缺陷}{19}{subsubsection.2.10.2}%
+\contentsline {subsubsection}{\numberline {2.10.3}多目标优化视角下的解释}{19}{subsubsection.2.10.3}%
+\contentsline {subsection}{\numberline {2.11}理论基础补充：从机构约束到策略更新}{19}{subsection.2.11}%
+\contentsline {subsubsection}{\numberline {2.11.1}正逆运动学与动作空间的关系}{20}{subsubsection.2.11.1}%
+\contentsline {subsubsection}{\numberline {2.11.2}trot 步态与接触时序约束}{20}{subsubsection.2.11.2}%
+\contentsline {subsubsection}{\numberline {2.11.3}从 MDP 到 POMDP 的建模转换}{20}{subsubsection.2.11.3}%
+\contentsline {subsubsection}{\numberline {2.11.4}PPO 截断目标的分段理解}{21}{subsubsection.2.11.4}%
+\contentsline {subsubsection}{\numberline {2.11.5}Actor-Critic 网络的输入输出维度}{21}{subsubsection.2.11.5}%
+\contentsline {subsection}{\numberline {2.12}本章小结}{21}{subsection.2.12}%
+\contentsline {section}{\numberline {3}基于本体感知的自适应奖励调度方法}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}方法总体框架}{22}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}动机回顾}{22}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}方法管线}{22}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}设计原则}{22}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}地形难度估计}{22}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}难度特征定义}{22}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}特征归一化}{23}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}难度分数合成与平滑}{23}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}奖励权重动态映射}{23}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}约束型映射函数}{23}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}平滑与变化率裁剪}{24}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}权重轨迹示例}{24}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}训练与推理过程}{25}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}训练流程}{25}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}推理流程}{26}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}速度-地形双课程融合方法}{26}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}双课程动机}{26}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}双课程升降级规则}{26}{subsubsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.6}平坦地形下的运动控制任务}{27}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}任务定义}{27}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}平坦地形奖励函数}{28}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}平坦地形作为基线判据}{28}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.4}平坦地形任务的阶段化训练}{28}{subsubsection.3.6.4}%
+\contentsline {subsubsection}{\numberline {3.6.5}平坦地形与复杂地形的奖励差异}{28}{subsubsection.3.6.5}%
+\contentsline {subsection}{\numberline {3.7}复杂度与稳定性分析}{29}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}计算复杂度}{29}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}稳定性分析}{29}{subsubsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.3}异常保护与回退机制}{29}{subsubsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.8}参数设置与工程实现细节}{30}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}参数推荐范围}{30}{subsubsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.2}工程实现注意事项}{30}{subsubsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.9}本章小结}{30}{subsection.3.9}%
+\contentsline {section}{\numberline {4}实验设计与评测方案}{30}{section.4}%
+\contentsline {subsection}{\numberline {4.1}仿真平台与训练配置}{31}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}仿真平台}{31}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}硬件与软件版本}{31}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}优化器与训练超参数}{31}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}对比组设置}{31}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}基线方法}{31}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}消融组}{31}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}评价指标}{32}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}主指标}{32}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}综合指标}{32}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}测试场景}{32}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}实验流程与统计方法}{33}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}评测协议}{33}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}显著性检验}{33}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}复现说明}{33}{subsubsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.6}本章小结}{33}{subsection.4.6}%
+\contentsline {section}{\numberline {5}结果与分析}{33}{section.5}%
+\contentsline {subsection}{\numberline {5.1}总体性能对比}{34}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}综合得分与雷达图}{34}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}主指标平均}{34}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}分场景结果剖析}{34}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}L1：平坦地形}{34}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}L2：随机粗糙地形}{34}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}L3：连续斜坡}{35}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}L4：台阶地形}{35}{subsubsection.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.5}L5：混合扰动地形}{35}{subsubsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.3}消融实验}{35}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}各组件贡献分解}{35}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}平滑系数与裁剪率敏感性}{35}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}训练动力学}{36}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}训练曲线对比}{36}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}难度分数与权重在线行为}{37}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}表征空间可视化}{38}{subsubsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.5}失败案例与可解释性}{38}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}典型失败模式}{38}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}改进方向}{38}{subsubsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.6}综合讨论}{39}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}方法优势}{39}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}方法局限}{39}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.3}工程意义}{39}{subsubsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.7}本章小结}{39}{subsection.5.7}%
+\contentsline {section}{\numberline {6}结论与展望}{39}{section.6}%
+\contentsline {subsection}{\numberline {6.1}工作总结}{39}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}方法局限}{40}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}未来工作}{40}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}多模态难度估计}{40}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}元学习与自动调度参数}{40}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}真实硬件部署}{40}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}扩展到双足/人形机器人}{40}{subsubsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.4}应用场景与落地建议}{40}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}风险评估与伦理边界}{40}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Sim2Real 迁移与硬件部署讨论}{41}{subsection.6.6}%
+\contentsline {subsubsection}{\numberline {6.6.1}Sim2Real 迁移的关键挑战}{41}{subsubsection.6.6.1}%
+\contentsline {paragraph}{动力学失配}{41}{paragraph*.27}%
+\contentsline {paragraph}{传感噪声与延迟}{41}{paragraph*.28}%
+\contentsline {paragraph}{执行器带宽}{41}{paragraph*.29}%
+\contentsline {subsubsection}{\numberline {6.6.2}近真实环境构造}{41}{subsubsection.6.6.2}%
+\contentsline {paragraph}{物理域随机化}{41}{paragraph*.30}%
+\contentsline {paragraph}{NRE 评测结果}{41}{paragraph*.31}%
+\contentsline {subsubsection}{\numberline {6.6.3}硬件部署架构}{42}{subsubsection.6.6.3}%
+\contentsline {paragraph}{推理框架}{42}{paragraph*.33}%
+\contentsline {paragraph}{安全监控模块}{42}{paragraph*.34}%
+\contentsline {paragraph}{部署流水线}{42}{paragraph*.35}%
+\contentsline {subsubsection}{\numberline {6.6.4}真实部署预期与风险}{42}{subsubsection.6.6.4}%
+\contentsline {paragraph}{预期性能}{42}{paragraph*.36}%
+\contentsline {paragraph}{典型风险及缓解}{42}{paragraph*.37}%
+\contentsline {subsubsection}{\numberline {6.6.5}本章小结}{42}{subsubsection.6.6.5}%
+\contentsline {subsection}{\numberline {6.7}扩展讨论与方法学反思}{43}{subsection.6.7}%
+\contentsline {subsubsection}{\numberline {6.7.1}与现有奖励工程方法的关系}{43}{subsubsection.6.7.1}%
+\contentsline {paragraph}{与课程学习的关系}{43}{paragraph*.38}%
+\contentsline {paragraph}{与多目标 RL 的关系}{43}{paragraph*.39}%
+\contentsline {paragraph}{与元学习的关系}{43}{paragraph*.40}%
+\contentsline {subsubsection}{\numberline {6.7.2}方法学反思}{43}{subsubsection.6.7.2}%
+\contentsline {paragraph}{是否需要"自适应"奖励}{43}{paragraph*.41}%
+\contentsline {paragraph}{为何不直接调奖励而调权重}{43}{paragraph*.42}%
+\contentsline {paragraph}{与外部感知的对比}{43}{paragraph*.43}%
+\contentsline {subsubsection}{\numberline {6.7.3}对四足机器人 RL 研究的启示}{43}{subsubsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.4}对相邻领域的潜在迁移}{43}{subsubsection.6.7.4}%
+\contentsline {subsubsection}{\numberline {6.7.5}与人类运动控制的类比}{44}{subsubsection.6.7.5}%
+\contentsline {subsubsection}{\numberline {6.7.6}研究方法论总结}{44}{subsubsection.6.7.6}%
+\contentsline {subsubsection}{\numberline {6.7.7}本章小结}{44}{subsubsection.6.7.7}%
+\contentsline {subsection}{\numberline {6.8}补充实验与扩展分析}{44}{subsection.6.8}%
+\contentsline {subsubsection}{\numberline {6.8.1}样本效率与训练成本}{45}{subsubsection.6.8.1}%
+\contentsline {paragraph}{学习曲线对齐}{45}{paragraph*.44}%
+\contentsline {paragraph}{硬件训练时间}{45}{paragraph*.45}%
+\contentsline {subsubsection}{\numberline {6.8.2}奖励组件相关性}{45}{subsubsection.6.8.2}%
+\contentsline {paragraph}{相关性矩阵}{45}{paragraph*.47}%
+\contentsline {paragraph}{解释}{45}{paragraph*.49}%
+\contentsline {subsubsection}{\numberline {6.8.3}跨机器人迁移测试}{45}{subsubsection.6.8.3}%
+\contentsline {paragraph}{测试设置}{45}{paragraph*.50}%
+\contentsline {paragraph}{结果与分析}{46}{paragraph*.51}%
+\contentsline {subsubsection}{\numberline {6.8.4}长程稳定性测试}{46}{subsubsection.6.8.4}%
+\contentsline {paragraph}{设置}{46}{paragraph*.53}%
+\contentsline {paragraph}{结果}{46}{paragraph*.54}%
+\contentsline {subsubsection}{\numberline {6.8.5}多速度档位比较}{46}{subsubsection.6.8.5}%
+\contentsline {paragraph}{速度区间分级}{46}{paragraph*.55}%
+\contentsline {paragraph}{结论}{46}{paragraph*.57}%
+\contentsline {subsection}{\numberline {6.9}方法工程实现细节与伪代码}{46}{subsection.6.9}%
+\contentsline {subsubsection}{\numberline {6.9.1}代码组织}{46}{subsubsection.6.9.1}%
+\contentsline {subsubsection}{\numberline {6.9.2}核心数据结构}{47}{subsubsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.3}训练循环关键修改}{47}{subsubsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.4}日志与可视化工具}{47}{subsubsection.6.9.4}%
+\contentsline {subsubsection}{\numberline {6.9.5}常见调试经验}{48}{subsubsection.6.9.5}%
+\contentsline {paragraph}{权重发散}{48}{paragraph*.59}%
+\contentsline {paragraph}{难度估计噪声}{48}{paragraph*.60}%
+\contentsline {paragraph}{并行环境同步}{48}{paragraph*.61}%
+\contentsline {subsection}{\numberline {6.10}相关文献综述补充}{48}{subsection.6.10}%
+\contentsline {subsubsection}{\numberline {6.10.1}奖励工程在机器人控制中的演进}{48}{subsubsection.6.10.1}%
+\contentsline {subsubsection}{\numberline {6.10.2}课程学习的层次}{48}{subsubsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.3}Sim2Real 中的鲁棒性技术}{48}{subsubsection.6.10.3}%
+\contentsline {subsubsection}{\numberline {6.10.4}多目标 RL 与偏好向量}{48}{subsubsection.6.10.4}%
+\contentsline {subsubsection}{\numberline {6.10.5}近期相关进展简评}{48}{subsubsection.6.10.5}%
+\contentsline {subsubsection}{\numberline {6.10.6}国内研究概况}{49}{subsubsection.6.10.6}%
+\contentsline {subsection}{\numberline {6.11}讨论与未来工作扩展}{49}{subsection.6.11}%
+\contentsline {subsubsection}{\numberline {6.11.1}从奖励调度到任务调度}{49}{subsubsection.6.11.1}%
+\contentsline {subsubsection}{\numberline {6.11.2}与世界模型的结合}{49}{subsubsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.3}多智能体扩展}{49}{subsubsection.6.11.3}%
+\contentsline {subsubsection}{\numberline {6.11.4}与控制理论的桥接}{49}{subsubsection.6.11.4}%
+\contentsline {subsubsection}{\numberline {6.11.5}开源与社区影响}{49}{subsubsection.6.11.5}%
+\contentsline {subsection}{\numberline {6.12}方法理论补充与公式推导}{49}{subsection.6.12}%
+\contentsline {subsubsection}{\numberline {6.12.1}时变奖励 MDP 的形式化}{49}{subsubsection.6.12.1}%
+\contentsline {paragraph}{定义}{49}{paragraph*.62}%
+\contentsline {paragraph}{性质}{50}{paragraph*.63}%
+\contentsline {subsubsection}{\numberline {6.12.2}奖励权重的有界性证明}{50}{subsubsection.6.12.2}%
+\contentsline {paragraph}{命题}{50}{paragraph*.64}%
+\contentsline {paragraph}{证明}{50}{paragraph*.65}%
+\contentsline {subsubsection}{\numberline {6.12.3}奖励扰动对 PPO 收敛的影响}{50}{subsubsection.6.12.3}%
+\contentsline {paragraph}{扰动量级}{50}{paragraph*.66}%
+\contentsline {paragraph}{对优势估计的影响}{50}{paragraph*.67}%
+\contentsline {subsubsection}{\numberline {6.12.4}双课程升降级的收敛性讨论}{50}{subsubsection.6.12.4}%
+\contentsline {paragraph}{引理}{50}{paragraph*.68}%
+\contentsline {paragraph}{推论}{50}{paragraph*.69}%
+\contentsline {subsection}{\numberline {6.13}实验细节扩展与额外可视化}{51}{subsection.6.13}%
+\contentsline {subsubsection}{\numberline {6.13.1}额外质性可视化}{51}{subsubsection.6.13.1}%
+\contentsline {subsubsection}{\numberline {6.13.2}补充运动序列一：障碍接近与姿态调整}{51}{subsubsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.3}补充运动序列二：连续接触切换}{52}{subsubsection.6.13.3}%
+\contentsline {subsubsection}{\numberline {6.13.4}补充控制曲线一：本体状态量时序}{53}{subsubsection.6.13.4}%
+\contentsline {subsubsection}{\numberline {6.13.5}补充控制曲线二：训练过程波动}{54}{subsubsection.6.13.5}%
+\contentsline {subsubsection}{\numberline {6.13.6}方法管线文字化归纳}{55}{subsubsection.6.13.6}%
+\contentsline {subsubsection}{\numberline {6.13.7}训练日志摘录}{56}{subsubsection.6.13.7}%
+\contentsline {subsubsection}{\numberline {6.13.8}消融图汇总}{56}{subsubsection.6.13.8}%
+\contentsline {subsubsection}{\numberline {6.13.9}典型回合事件序列}{56}{subsubsection.6.13.9}%
+\contentsline {subsection}{\numberline {6.14}评测结果的统计学讨论}{56}{subsection.6.14}%
+\contentsline {subsubsection}{\numberline {6.14.1}置信区间报告}{56}{subsubsection.6.14.1}%
+\contentsline {subsubsection}{\numberline {6.14.2}效应量}{56}{subsubsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.3}种子敏感性}{57}{subsubsection.6.14.3}%
+\contentsline {subsubsection}{\numberline {6.14.4}统计假设的合理性}{57}{subsubsection.6.14.4}%
+\contentsline {subsection}{\numberline {6.15}工程实施案例与部署建议}{57}{subsection.6.15}%
+\contentsline {subsubsection}{\numberline {6.15.1}案例一：室内平台爬楼梯}{57}{subsubsection.6.15.1}%
+\contentsline {subsubsection}{\numberline {6.15.2}案例二：户外巡检}{57}{subsubsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.3}案例三：救援探索}{57}{subsubsection.6.15.3}%
+\contentsline {subsubsection}{\numberline {6.15.4}部署清单}{57}{subsubsection.6.15.4}%
+\contentsline {subsubsection}{\numberline {6.15.5}常见误区与防范}{57}{subsubsection.6.15.5}%
+\contentsline {subsubsection}{\numberline {6.15.6}长期维护建议}{58}{subsubsection.6.15.6}%
+\contentsline {subsection}{\numberline {6.16}环境构造与配置文件细节}{58}{subsection.6.16}%
+\contentsline {subsubsection}{\numberline {6.16.1}地形生成器}{58}{subsubsection.6.16.1}%
+\contentsline {subsubsection}{\numberline {6.16.2}命令分布}{58}{subsubsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.3}初始化与终止条件}{58}{subsubsection.6.16.3}%
+\contentsline {subsubsection}{\numberline {6.16.4}域随机化参数}{59}{subsubsection.6.16.4}%
+\contentsline {subsection}{\numberline {6.17}评测脚本接口与日志格式}{59}{subsection.6.17}%
+\contentsline {subsubsection}{\numberline {6.17.1}评测脚本调用}{59}{subsubsection.6.17.1}%
+\contentsline {subsubsection}{\numberline {6.17.2}日志字段}{59}{subsubsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.3}聚合脚本}{60}{subsubsection.6.17.3}%
+\contentsline {subsubsection}{\numberline {6.17.4}可视化工具}{60}{subsubsection.6.17.4}%
+\contentsline {subsection}{\numberline {6.18}开题报告与论文一致性说明}{60}{subsection.6.18}%
+\contentsline {subsection}{\numberline {6.19}研究过程中的失败尝试与经验教训}{60}{subsection.6.19}%
+\contentsline {subsubsection}{\numberline {6.19.1}失败尝试一：直接 reshape 子奖励}{60}{subsubsection.6.19.1}%
+\contentsline {subsubsection}{\numberline {6.19.2}失败尝试二：基于 LSTM 的难度估计}{61}{subsubsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.3}失败尝试三：完全自动化的元学习权重}{61}{subsubsection.6.19.3}%
+\contentsline {subsubsection}{\numberline {6.19.4}失败尝试四：去除内部模型的纯调度方法}{61}{subsubsection.6.19.4}%
+\contentsline {subsubsection}{\numberline {6.19.5}经验教训}{61}{subsubsection.6.19.5}%
+\contentsline {subsection}{\numberline {6.20}术语对照与缩略语}{62}{subsection.6.20}%
+\contentsline {subsection}{\numberline {6.21}研究展望与开放问题}{62}{subsection.6.21}%
+\contentsline {subsubsection}{\numberline {6.21.1}开放问题一：奖励权重的可学习边界}{62}{subsubsection.6.21.1}%
+\contentsline {subsubsection}{\numberline {6.21.2}开放问题二：跨平台调度通用性}{62}{subsubsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.3}开放问题三：长程行为的奖励调度}{62}{subsubsection.6.21.3}%
+\contentsline {subsubsection}{\numberline {6.21.4}开放问题四：多机器人协同调度}{63}{subsubsection.6.21.4}%
+\contentsline {subsubsection}{\numberline {6.21.5}开放问题五：真实硬件的数据-理论闭环}{63}{subsubsection.6.21.5}%
+\contentsline {subsection}{\numberline {6.22}总结性陈述}{63}{subsection.6.22}%
+\contentsline {subsubsection}{\numberline {6.22.1}对论文贡献的最终归纳}{63}{subsubsection.6.22.1}%
+\contentsline {subsubsection}{\numberline {6.22.2}研究范式的反思}{63}{subsubsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.3}对学术与工业的呼吁}{63}{subsubsection.6.22.3}%
+\contentsline {subsubsection}{\numberline {6.22.4}致敬开源社区}{63}{subsubsection.6.22.4}%
+\contentsline {section}{致谢}{65}{section*.80}%
+\contentsline {section}{\numberline {A}符号说明}{66}{appendix.A}%
+\contentsline {section}{\numberline {B}完整训练超参数表}{67}{appendix.B}%
+\contentsline {section}{\numberline {C}调度器伪代码}{68}{appendix.C}%

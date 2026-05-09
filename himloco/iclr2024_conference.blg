@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: iclr2024_conference.aux
+The style file: iclr2024_conference.bst
+Database file #1: iclr2024_conference.bib
+Warning--I didn't find a database entry for "kingma2014auto"
+You've used 47 entries,
+            2773 wiz_defined-function locations,
+            775 strings with 14084 characters,
+and the built_in function-call counts, 25153 in all, are:
+= -- 1903
+> -- 2231
+< -- 5
++ -- 748
+- -- 699
+* -- 2177
+:= -- 4009
+add.period$ -- 142
+call.type$ -- 47
+change.case$ -- 371
+chr.to.int$ -- 45
+cite$ -- 94
+duplicate$ -- 1071
+empty$ -- 1780
+format.name$ -- 750
+if$ -- 5137
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 47
+newline$ -- 243
+num.names$ -- 188
+pop$ -- 865
+preamble$ -- 1
+purify$ -- 324
+quote$ -- 0
+skip$ -- 810
+stack$ -- 0
+substring$ -- 134
+swap$ -- 93
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 517
+warning$ -- 0
+while$ -- 144
+width$ -- 0
+write$ -- 573
+(There was 1 warning)

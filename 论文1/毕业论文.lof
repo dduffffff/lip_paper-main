@@ -1,0 +1,18 @@
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 典型四足机器人跨地形运动序列，展示了本体感知控制器在连续接触切换、姿态恢复与速度保持过程中的动态响应。}}{2}{figure.caption.4}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces 四足机器人本体感知控制实验片段。该类连续姿态图能够直观反映策略在无外部视觉输入时依靠关节状态、IMU 与历史响应完成落足调整的过程。}}{3}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 四足机器人腿部机械结构示意。每条腿由髋关节、膝关节与足端连杆构成，足端位置可由\eqref {eq:fk} 所示正运动学关系计算。}}{9}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 仿真环境中的四足机器人运动序列。图像展示了策略在不同接触相位下的姿态变化，可作为 Actor 输出动作经低层 PD 控制后驱动机体运动的直观示例。}}{13}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 内部嵌入在不同速度与负载条件下的二维可视化示例。不同颜色对应不同工况，聚类分布可用于判断本体历史特征是否携带足够的环境判别信息。}}{15}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 仿真地形中的四足机器人连续运动片段。该类批量场景可用于观察策略在不同接触状态与地形风险下的动作稳定性。}}{16}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 复杂接触条件下的四足机器人运动片段。连续画面体现了策略在支撑相切换、地形高度变化与姿态修正过程中的响应，可用于辅助讨论 Sim2Real 场景中的接触不确定性。}}{18}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 训练过程中关键状态量与奖励相关量的曲线示例。多条时序曲线可用于观察策略收敛、控制波动与难度响应之间的关系。}}{25}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 不同训练配置下的性能曲线示例。曲线随迭代上升并逐渐收敛，可用于辅助说明课程训练对策略性能提升过程的影响。}}{27}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 测试场景示例：仿真连续运动、室外障碍通过与实验平台接触切换，用于展示跨地形评测中常见的姿态变化与接触状态。}}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 平滑系数 $\eta $ 与裁剪率 $\Delta $ 对训练指标的影响示例。图中多条曲线反映了控制信号与性能指标随训练过程的波动情况，可用于辅助说明超参数对稳定性的影响。}}{36}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces 训练奖励与跌倒率相关曲线示例。本文关注的收敛速度、平台期奖励与跌倒率变化均可通过此类训练曲线进行统计分析。}}{37}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces 隐变量二维可视化示例。不同颜色表示不同速度、负载或地形条件，点云分布越清晰，说明内部表征越容易为难度估计与奖励调度提供判别信号。}}{38}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces 台阶与障碍场景下的质性可视化。连续画面展示了四足机器人在接触切换瞬间的姿态恢复过程，便于观察稳定项权重抬升后足底接触序列的变化。}}{51}{figure.caption.70}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces 四足机器人接近局部障碍并进行姿态调整的运动序列。}}{52}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces 四足机器人连续接触切换与姿态恢复示例。}}{53}{figure.caption.72}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces 本体状态量与控制信号的时序曲线示例。}}{54}{figure.caption.73}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces 训练过程中的状态与性能波动曲线示例。}}{55}{figure.caption.74}%

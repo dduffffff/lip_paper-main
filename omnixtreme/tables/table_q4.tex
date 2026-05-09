@@ -1,0 +1,49 @@
+\begin{table}[t]
+\vspace{-1mm}
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.2}
+\caption{\small \textbf{Ablation of post-training mechanisms.}
+Real-world executability of different skills under incremental post-training mechanisms.
+\textbf{None}: base pretrained policy only;
+\textbf{MC}: motor constraints;
+\textbf{ADR}: aggressive domain randomization;
+\textbf{PS}: power-safety regularization (overcurrent / regenerative protection).
+{\color{goodgreen}$\checkmark$}: stable execution;
+{\color{midorange}$\triangle$}: unstable or inconsistent execution;
+{\color{badred}$\times$}: consistent failure;
+{\color{badred}\psicon}: failures primarily associated with power-safety protection,
+such as overcurrent or excessive regenerative braking.}
+\label{tab:q4_ablation}
+
+\begin{tabular}{l|c c c c}
+\hline
+Skill 
+& None 
+& +MC 
+& +MC+ADR 
+& Full (+MC+ADR+PS) \\
+\hline
+Flip         
+& {\color{midorange}$\triangle$} 
+& {\color{goodgreen}$\checkmark$} 
+& {\color{goodgreen}$\checkmark$} 
+& {\color{goodgreen}$\checkmark$} \\
+
+Breakdance   
+& {\color{midorange}$\triangle$} 
+& {\color{midorange}$\triangle$} 
+& {\color{goodgreen}$\checkmark$} 
+& {\color{goodgreen}$\checkmark$} \\
+
+Acrobatics   
+& {\color{badred}$\times$} 
+& {\color{midorange}$\triangle$} 
+& {\psicon} 
+& {\color{goodgreen}$\checkmark$} \\
+\hline
+\end{tabular}
+% \vspace{-2mm}
+\vspace{-16pt}
+\end{table}

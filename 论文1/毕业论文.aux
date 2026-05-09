@@ -1,0 +1,430 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\HyPL@Entry{1<</S/R>>}
+\citation{hwangbo2019,kumar2021rma,rudin2022,miki2022,lee2020}
+\HyPL@Entry{13<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}绪论}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}研究背景与意义}{1}{subsection.1.1}\protected@file@percent }
+\citation{hwangbo2019}
+\citation{lee2020}
+\citation{kumar2021rma}
+\citation{rudin2022}
+\citation{miki2022}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces 典型四足机器人跨地形运动序列，展示了本体感知控制器在连续接触切换、姿态恢复与速度保持过程中的动态响应。}}{2}{figure.caption.4}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:intro_teaser}{{1.1}{2}{典型四足机器人跨地形运动序列，展示了本体感知控制器在连续接触切换、姿态恢复与速度保持过程中的动态响应。}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}国内外研究现状}{2}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}基于解析模型的四足控制方法}{2}{subsubsection.1.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2}基于强化学习的四足控制方法}{2}{subsubsection.1.2.2}\protected@file@percent }
+\citation{agrawal2022,margolis2023}
+\citation{long2024him}
+\citation{peng2020,fu2021}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces 四足机器人本体感知控制实验片段。该类连续姿态图能够直观反映策略在无外部视觉输入时依靠关节状态、IMU 与历史响应完成落足调整的过程。}}{3}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:intro_motion_sequence}{{1.2}{3}{四足机器人本体感知控制实验片段。该类连续姿态图能够直观反映策略在无外部视觉输入时依靠关节状态、IMU 与历史响应完成落足调整的过程。}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.3}国内研究进展}{3}{subsubsection.1.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}研究目标与主要贡献}{4}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}研究问题定义与技术路线}{4}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5}本文组织结构}{5}{subsection.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6}本章小结}{5}{subsection.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}相关理论与技术基础}{5}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}四足机器人坐标系与运动学}{5}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}坐标系建立与齐次变换}{5}{subsubsection.2.1.1}\protected@file@percent }
+\newlabel{eq:leg_chain}{{2.6}{6}{坐标系建立与齐次变换}{equation.2.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}正运动学分析}{6}{subsubsection.2.1.2}\protected@file@percent }
+\newlabel{eq:fk}{{2.7}{6}{正运动学分析}{equation.2.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}雅可比矩阵计算}{7}{subsubsection.2.1.3}\protected@file@percent }
+\newlabel{eq:jacobian}{{2.9}{7}{雅可比矩阵计算}{equation.2.9}{}}
+\newlabel{eq:force_jacobian}{{2.12}{7}{雅可比矩阵计算}{equation.2.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}逆运动学分析}{7}{subsubsection.2.1.4}\protected@file@percent }
+\newlabel{eq:ik_q1}{{2.14}{7}{逆运动学分析}{equation.2.14}{}}
+\newlabel{eq:ik_q3}{{2.17}{8}{逆运动学分析}{equation.2.17}{}}
+\newlabel{eq:ik_q2}{{2.19}{8}{逆运动学分析}{equation.2.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}动力学方程}{8}{subsubsection.2.1.5}\protected@file@percent }
+\newlabel{eq:dyn}{{2.21}{8}{动力学方程}{equation.2.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces 四足机器人腿部机械结构示意。每条腿由髋关节、膝关节与足端连杆构成，足端位置可由\eqref  {eq:fk} 所示正运动学关系计算。}}{9}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:leg_kinematics}{{2.1}{9}{四足机器人腿部机械结构示意。每条腿由髋关节、膝关节与足端连杆构成，足端位置可由\eqref {eq:fk} 所示正运动学关系计算。}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}典型步态与节律}{9}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}步态相位与占空比}{9}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces 常见四足步态的相位偏移与占空比配置}}{9}{table.caption.7}\protected@file@percent }
+\newlabel{tab:gaits}{{2.1}{9}{常见四足步态的相位偏移与占空比配置}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}trot 步态的物理特性}{9}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}多步态切换与速度自适应}{10}{subsubsection.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}马尔可夫决策过程}{10}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}基本定义}{10}{subsubsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}MDP 在四足机器人控制中的实例化}{10}{subsubsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}部分可观马尔可夫决策过程}{11}{subsubsection.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}策略梯度与 PPO 推导}{11}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}策略梯度定理}{11}{subsubsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}广义优势估计}{11}{subsubsection.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}从 TRPO 到 PPO}{11}{subsubsection.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.4}PPO 完整目标函数}{12}{subsubsection.2.4.4}\protected@file@percent }
+\newlabel{eq:ppo_total}{{2.30}{12}{PPO 完整目标函数}{equation.2.30}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces PPO 算法伪代码（简化版）}}{12}{table.caption.8}\protected@file@percent }
+\newlabel{alg:ppo}{{2.2}{12}{PPO 算法伪代码（简化版）}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Actor-Critic 网络架构}{12}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}基本结构}{12}{subsubsection.2.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}非对称 Actor-Critic}{13}{subsubsection.2.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces 仿真环境中的四足机器人运动序列。图像展示了策略在不同接触相位下的姿态变化，可作为 Actor 输出动作经低层 PD 控制后驱动机体运动的直观示例。}}{13}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:actor_critic}{{2.2}{13}{仿真环境中的四足机器人运动序列。图像展示了策略在不同接触相位下的姿态变化，可作为 Actor 输出动作经低层 PD 控制后驱动机体运动的直观示例。}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.3}初始化与训练技巧}{13}{subsubsection.2.5.3}\protected@file@percent }
+\citation{long2024him}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}HIMLoco 框架与内部模型}{14}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.1}设计动机}{14}{subsubsection.2.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.2}显式与隐式分量}{14}{subsubsection.2.6.2}\protected@file@percent }
+\newlabel{eq:contrast}{{2.33}{14}{显式与隐式分量}{equation.2.33}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.3}表征质量可视化}{14}{subsubsection.2.6.3}\protected@file@percent }
+\citation{makoviychuk2021}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces 内部嵌入在不同速度与负载条件下的二维可视化示例。不同颜色对应不同工况，聚类分布可用于判断本体历史特征是否携带足够的环境判别信息。}}{15}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:tsne}{{2.3}{15}{内部嵌入在不同速度与负载条件下的二维可视化示例。不同颜色对应不同工况，聚类分布可用于判断本体历史特征是否携带足够的环境判别信息。}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}四足机器人无模型强化学习环境}{15}{subsection.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.1}并行仿真平台}{15}{subsubsection.2.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.2}观测构造}{15}{subsubsection.2.7.2}\protected@file@percent }
+\newlabel{eq:obs}{{2.34}{15}{观测构造}{equation.2.34}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.3}动作与控制器}{16}{subsubsection.2.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.4}终止条件}{16}{subsubsection.2.7.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces 仿真地形中的四足机器人连续运动片段。该类批量场景可用于观察策略在不同接触状态与地形风险下的动作稳定性。}}{16}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:isaac_setup}{{2.4}{16}{仿真地形中的四足机器人连续运动片段。该类批量场景可用于观察策略在不同接触状态与地形风险下的动作稳定性。}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.8}策略模型与本体感知输入}{17}{subsection.2.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.1}完整策略形式}{17}{subsubsection.2.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.2}本体感知信号特性}{17}{subsubsection.2.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.9}Sim2Real 迁移技术}{17}{subsection.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.1}Sim2Real 鸿沟来源}{17}{subsubsection.2.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.2}域随机化}{17}{subsubsection.2.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.3}在线自适应与非对称 Actor-Critic}{18}{subsubsection.2.9.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces 复杂接触条件下的四足机器人运动片段。连续画面体现了策略在支撑相切换、地形高度变化与姿态修正过程中的响应，可用于辅助讨论 Sim2Real 场景中的接触不确定性。}}{18}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:sim2real}{{2.5}{18}{复杂接触条件下的四足机器人运动片段。连续画面体现了策略在支撑相切换、地形高度变化与姿态修正过程中的响应，可用于辅助讨论 Sim2Real 场景中的接触不确定性。}{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.10}多目标奖励与固定权重的局限}{18}{subsection.2.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.1}典型奖励项构成}{18}{subsubsection.2.10.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces 典型四足机器人强化学习奖励项}}{19}{table.caption.13}\protected@file@percent }
+\newlabel{tab:reward_terms}{{2.3}{19}{典型四足机器人强化学习奖励项}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.2}固定权重的天然缺陷}{19}{subsubsection.2.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.3}多目标优化视角下的解释}{19}{subsubsection.2.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.11}理论基础补充：从机构约束到策略更新}{19}{subsection.2.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.1}正逆运动学与动作空间的关系}{20}{subsubsection.2.11.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.2}trot 步态与接触时序约束}{20}{subsubsection.2.11.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.3}从 MDP 到 POMDP 的建模转换}{20}{subsubsection.2.11.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.4}PPO 截断目标的分段理解}{21}{subsubsection.2.11.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.5}Actor-Critic 网络的输入输出维度}{21}{subsubsection.2.11.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Actor-Critic 网络结构与输入输出说明}}{21}{table.caption.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.12}本章小结}{21}{subsection.2.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}基于本体感知的自适应奖励调度方法}{22}{section.3}\protected@file@percent }
+\newlabel{sec:method}{{3}{22}{基于本体感知的自适应奖励调度方法}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}方法总体框架}{22}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}动机回顾}{22}{subsubsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}方法管线}{22}{subsubsection.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}设计原则}{22}{subsubsection.3.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}地形难度估计}{22}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}难度特征定义}{22}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}特征归一化}{23}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}难度分数合成与平滑}{23}{subsubsection.3.2.3}\protected@file@percent }
+\newlabel{eq:dscore}{{3.5}{23}{难度分数合成与平滑}{equation.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}奖励权重动态映射}{23}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}约束型映射函数}{23}{subsubsection.3.3.1}\protected@file@percent }
+\newlabel{eq:softmax_w}{{3.7}{24}{约束型映射函数}{equation.3.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}平滑与变化率裁剪}{24}{subsubsection.3.3.2}\protected@file@percent }
+\newlabel{eq:clip_w}{{3.10}{24}{平滑与变化率裁剪}{equation.3.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}权重轨迹示例}{24}{subsubsection.3.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 训练过程中关键状态量与奖励相关量的曲线示例。多条时序曲线可用于观察策略收敛、控制波动与难度响应之间的关系。}}{25}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:weight_traj}{{3.1}{25}{训练过程中关键状态量与奖励相关量的曲线示例。多条时序曲线可用于观察策略收敛、控制波动与难度响应之间的关系。}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}训练与推理过程}{25}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}训练流程}{25}{subsubsection.3.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces 自适应奖励调度训练流程伪代码}}{26}{table.caption.16}\protected@file@percent }
+\newlabel{alg:train}{{3.1}{26}{自适应奖励调度训练流程伪代码}{table.caption.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}推理流程}{26}{subsubsection.3.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}速度-地形双课程融合方法}{26}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}双课程动机}{26}{subsubsection.3.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}双课程升降级规则}{26}{subsubsection.3.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces 不同训练配置下的性能曲线示例。曲线随迭代上升并逐渐收敛，可用于辅助说明课程训练对策略性能提升过程的影响。}}{27}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:dual_curr_scaling}{{3.2}{27}{不同训练配置下的性能曲线示例。曲线随迭代上升并逐渐收敛，可用于辅助说明课程训练对策略性能提升过程的影响。}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}平坦地形下的运动控制任务}{27}{subsection.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.1}任务定义}{27}{subsubsection.3.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.2}平坦地形奖励函数}{28}{subsubsection.3.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.3}平坦地形作为基线判据}{28}{subsubsection.3.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.4}平坦地形任务的阶段化训练}{28}{subsubsection.3.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.5}平坦地形与复杂地形的奖励差异}{28}{subsubsection.3.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}复杂度与稳定性分析}{29}{subsection.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.1}计算复杂度}{29}{subsubsection.3.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.2}稳定性分析}{29}{subsubsection.3.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.3}异常保护与回退机制}{29}{subsubsection.3.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}参数设置与工程实现细节}{30}{subsection.3.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.1}参数推荐范围}{30}{subsubsection.3.8.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces 自适应奖励调度方法的关键超参数与推荐范围}}{30}{table.caption.18}\protected@file@percent }
+\newlabel{tab:hyperparams}{{3.2}{30}{自适应奖励调度方法的关键超参数与推荐范围}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.2}工程实现注意事项}{30}{subsubsection.3.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}本章小结}{30}{subsection.3.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}实验设计与评测方案}{30}{section.4}\protected@file@percent }
+\citation{long2024him}
+\citation{kumar2021rma}
+\citation{margolis2023}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}仿真平台与训练配置}{31}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}仿真平台}{31}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}硬件与软件版本}{31}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}优化器与训练超参数}{31}{subsubsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}对比组设置}{31}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}基线方法}{31}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}消融组}{31}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}评价指标}{32}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:metric_setup}{{4.3}{32}{评价指标}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}主指标}{32}{subsubsection.4.3.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces 评价指标定义}}{32}{table.caption.19}\protected@file@percent }
+\newlabel{tab:metrics}{{4.1}{32}{评价指标定义}{table.caption.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}综合指标}{32}{subsubsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}测试场景}{32}{subsection.4.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces 测试场景分级}}{32}{table.caption.20}\protected@file@percent }
+\newlabel{tab:test_scenes}{{4.2}{32}{测试场景分级}{table.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces 测试场景示例：仿真连续运动、室外障碍通过与实验平台接触切换，用于展示跨地形评测中常见的姿态变化与接触状态。}}{33}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:test_scenes}{{4.1}{33}{测试场景示例：仿真连续运动、室外障碍通过与实验平台接触切换，用于展示跨地形评测中常见的姿态变化与接触状态。}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}实验流程与统计方法}{33}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}评测协议}{33}{subsubsection.4.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2}显著性检验}{33}{subsubsection.4.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3}复现说明}{33}{subsubsection.4.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}本章小结}{33}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}结果与分析}{33}{section.5}\protected@file@percent }
+\newlabel{sec:results}{{5}{33}{结果与分析}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}总体性能对比}{34}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}综合得分与雷达图}{34}{subsubsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}主指标平均}{34}{subsubsection.5.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces 全部测试场景平均指标（均值 ± 标准差，$5$ 种子）}}{34}{table.caption.22}\protected@file@percent }
+\newlabel{tab:overall}{{5.1}{34}{全部测试场景平均指标（均值 ± 标准差，$5$ 种子）}{table.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}分场景结果剖析}{34}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}L1：平坦地形}{34}{subsubsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}L2：随机粗糙地形}{34}{subsubsection.5.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}L3：连续斜坡}{35}{subsubsection.5.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4}L4：台阶地形}{35}{subsubsection.5.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.5}L5：混合扰动地形}{35}{subsubsection.5.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}消融实验}{35}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}各组件贡献分解}{35}{subsubsection.5.3.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces 消融实验结果（在 L2-L5 平均，$5$ 种子均值 ± 标准差）}}{35}{table.caption.23}\protected@file@percent }
+\newlabel{tab:ablation}{{5.2}{35}{消融实验结果（在 L2-L5 平均，$5$ 种子均值 ± 标准差）}{table.caption.23}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}平滑系数与裁剪率敏感性}{35}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces 平滑系数 $\eta $ 与裁剪率 $\Delta $ 对训练指标的影响示例。图中多条曲线反映了控制信号与性能指标随训练过程的波动情况，可用于辅助说明超参数对稳定性的影响。}}{36}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:sens}{{5.1}{36}{平滑系数 $\eta $ 与裁剪率 $\Delta $ 对训练指标的影响示例。图中多条曲线反映了控制信号与性能指标随训练过程的波动情况，可用于辅助说明超参数对稳定性的影响。}{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}训练动力学}{36}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1}训练曲线对比}{36}{subsubsection.5.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces 训练奖励与跌倒率相关曲线示例。本文关注的收敛速度、平台期奖励与跌倒率变化均可通过此类训练曲线进行统计分析。}}{37}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:train_curve}{{5.2}{37}{训练奖励与跌倒率相关曲线示例。本文关注的收敛速度、平台期奖励与跌倒率变化均可通过此类训练曲线进行统计分析。}{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2}难度分数与权重在线行为}{37}{subsubsection.5.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.3}表征空间可视化}{38}{subsubsection.5.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces 隐变量二维可视化示例。不同颜色表示不同速度、负载或地形条件，点云分布越清晰，说明内部表征越容易为难度估计与奖励调度提供判别信号。}}{38}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:tsne_compare}{{5.3}{38}{隐变量二维可视化示例。不同颜色表示不同速度、负载或地形条件，点云分布越清晰，说明内部表征越容易为难度估计与奖励调度提供判别信号。}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}失败案例与可解释性}{38}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.1}典型失败模式}{38}{subsubsection.5.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.2}改进方向}{38}{subsubsection.5.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}综合讨论}{39}{subsection.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.1}方法优势}{39}{subsubsection.5.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.2}方法局限}{39}{subsubsection.5.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.3}工程意义}{39}{subsubsection.5.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}本章小结}{39}{subsection.5.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}结论与展望}{39}{section.6}\protected@file@percent }
+\newlabel{sec:future}{{6}{39}{结论与展望}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}工作总结}{39}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}方法局限}{40}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}未来工作}{40}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.1}多模态难度估计}{40}{subsubsection.6.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.2}元学习与自动调度参数}{40}{subsubsection.6.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.3}真实硬件部署}{40}{subsubsection.6.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.4}扩展到双足/人形机器人}{40}{subsubsection.6.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}应用场景与落地建议}{40}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}风险评估与伦理边界}{40}{subsection.6.5}\protected@file@percent }
+\citation{tan2018simrl,xie2020learning}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Sim2Real 迁移与硬件部署讨论}{41}{subsection.6.6}\protected@file@percent }
+\newlabel{sec:sim2real}{{6.6}{41}{Sim2Real 迁移与硬件部署讨论}{subsection.6.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.1}Sim2Real 迁移的关键挑战}{41}{subsubsection.6.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{动力学失配}{41}{paragraph*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{传感噪声与延迟}{41}{paragraph*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{执行器带宽}{41}{paragraph*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.2}近真实环境构造}{41}{subsubsection.6.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{物理域随机化}{41}{paragraph*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{NRE 评测结果}{41}{paragraph*.31}\protected@file@percent }
+\citation{kumar2021rma,margolis2023}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces 近真实环境（NRE）下的指标对比}}{42}{table.caption.32}\protected@file@percent }
+\newlabel{tab:nre}{{6.1}{42}{近真实环境（NRE）下的指标对比}{table.caption.32}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.3}硬件部署架构}{42}{subsubsection.6.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{推理框架}{42}{paragraph*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{安全监控模块}{42}{paragraph*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{部署流水线}{42}{paragraph*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.4}真实部署预期与风险}{42}{subsubsection.6.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{预期性能}{42}{paragraph*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{典型风险及缓解}{42}{paragraph*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.5}本章小结}{42}{subsubsection.6.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}扩展讨论与方法学反思}{43}{subsection.6.7}\protected@file@percent }
+\newlabel{sec:discussion}{{6.7}{43}{扩展讨论与方法学反思}{subsection.6.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.1}与现有奖励工程方法的关系}{43}{subsubsection.6.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{与课程学习的关系}{43}{paragraph*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{与多目标 RL 的关系}{43}{paragraph*.39}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{与元学习的关系}{43}{paragraph*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.2}方法学反思}{43}{subsubsection.6.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{是否需要"自适应"奖励}{43}{paragraph*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{为何不直接调奖励而调权重}{43}{paragraph*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{与外部感知的对比}{43}{paragraph*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.3}对四足机器人 RL 研究的启示}{43}{subsubsection.6.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.4}对相邻领域的潜在迁移}{43}{subsubsection.6.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.5}与人类运动控制的类比}{44}{subsubsection.6.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.6}研究方法论总结}{44}{subsubsection.6.7.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.7}本章小结}{44}{subsubsection.6.7.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.8}补充实验与扩展分析}{44}{subsection.6.8}\protected@file@percent }
+\newlabel{sec:extra_exp}{{6.8}{44}{补充实验与扩展分析}{subsection.6.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.8.1}样本效率与训练成本}{45}{subsubsection.6.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{学习曲线对齐}{45}{paragraph*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{硬件训练时间}{45}{paragraph*.45}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces 样本效率与训练耗时对比（达到 $S=0.50$ 所需步数与时间）}}{45}{table.caption.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.8.2}奖励组件相关性}{45}{subsubsection.6.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{相关性矩阵}{45}{paragraph*.47}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces 子奖励相关系数对比（左：HIMLoco / 右：Ours）}}{45}{table.caption.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{解释}{45}{paragraph*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.8.3}跨机器人迁移测试}{45}{subsubsection.6.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{测试设置}{45}{paragraph*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{结果与分析}{46}{paragraph*.51}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces 跨机器人迁移结果（综合得分 $S$）}}{46}{table.caption.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.8.4}长程稳定性测试}{46}{subsubsection.6.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{设置}{46}{paragraph*.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{结果}{46}{paragraph*.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.8.5}多速度档位比较}{46}{subsubsection.6.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{速度区间分级}{46}{paragraph*.55}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.5}{\ignorespaces 多速度档位指标比较}}{46}{table.caption.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{结论}{46}{paragraph*.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.9}方法工程实现细节与伪代码}{46}{subsection.6.9}\protected@file@percent }
+\newlabel{sec:engineering}{{6.9}{46}{方法工程实现细节与伪代码}{subsection.6.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.9.1}代码组织}{46}{subsubsection.6.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.9.2}核心数据结构}{47}{subsubsection.6.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.9.3}训练循环关键修改}{47}{subsubsection.6.9.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.6}{\ignorespaces HIMLoco 主训练循环的最小修改集合（伪代码）}}{47}{table.caption.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.9.4}日志与可视化工具}{47}{subsubsection.6.9.4}\protected@file@percent }
+\citation{rudin2022}
+\citation{rudin2022}
+\citation{tan2018simrl}
+\citation{kumar2021rma}
+\citation{long2024him}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.9.5}常见调试经验}{48}{subsubsection.6.9.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{权重发散}{48}{paragraph*.59}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{难度估计噪声}{48}{paragraph*.60}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{并行环境同步}{48}{paragraph*.61}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.10}相关文献综述补充}{48}{subsection.6.10}\protected@file@percent }
+\newlabel{sec:more_related}{{6.10}{48}{相关文献综述补充}{subsection.6.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.10.1}奖励工程在机器人控制中的演进}{48}{subsubsection.6.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.10.2}课程学习的层次}{48}{subsubsection.6.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.10.3}Sim2Real 中的鲁棒性技术}{48}{subsubsection.6.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.10.4}多目标 RL 与偏好向量}{48}{subsubsection.6.10.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.10.5}近期相关进展简评}{48}{subsubsection.6.10.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.10.6}国内研究概况}{49}{subsubsection.6.10.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.11}讨论与未来工作扩展}{49}{subsection.6.11}\protected@file@percent }
+\newlabel{sec:future_extra}{{6.11}{49}{讨论与未来工作扩展}{subsection.6.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.11.1}从奖励调度到任务调度}{49}{subsubsection.6.11.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.11.2}与世界模型的结合}{49}{subsubsection.6.11.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.11.3}多智能体扩展}{49}{subsubsection.6.11.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.11.4}与控制理论的桥接}{49}{subsubsection.6.11.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.11.5}开源与社区影响}{49}{subsubsection.6.11.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.12}方法理论补充与公式推导}{49}{subsection.6.12}\protected@file@percent }
+\newlabel{sec:theory}{{6.12}{49}{方法理论补充与公式推导}{subsection.6.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.12.1}时变奖励 MDP 的形式化}{49}{subsubsection.6.12.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{定义}{49}{paragraph*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{性质}{50}{paragraph*.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.12.2}奖励权重的有界性证明}{50}{subsubsection.6.12.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{命题}{50}{paragraph*.64}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{证明}{50}{paragraph*.65}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.12.3}奖励扰动对 PPO 收敛的影响}{50}{subsubsection.6.12.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{扰动量级}{50}{paragraph*.66}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{对优势估计的影响}{50}{paragraph*.67}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.12.4}双课程升降级的收敛性讨论}{50}{subsubsection.6.12.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{引理}{50}{paragraph*.68}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{推论}{50}{paragraph*.69}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.13}实验细节扩展与额外可视化}{51}{subsection.6.13}\protected@file@percent }
+\newlabel{sec:viz}{{6.13}{51}{实验细节扩展与额外可视化}{subsection.6.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.1}额外质性可视化}{51}{subsubsection.6.13.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces 台阶与障碍场景下的质性可视化。连续画面展示了四足机器人在接触切换瞬间的姿态恢复过程，便于观察稳定项权重抬升后足底接触序列的变化。}}{51}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:qual_extra}{{6.1}{51}{台阶与障碍场景下的质性可视化。连续画面展示了四足机器人在接触切换瞬间的姿态恢复过程，便于观察稳定项权重抬升后足底接触序列的变化。}{figure.caption.70}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.2}补充运动序列一：障碍接近与姿态调整}{51}{subsubsection.6.13.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces 四足机器人接近局部障碍并进行姿态调整的运动序列。}}{52}{figure.caption.71}\protected@file@percent }
+\newlabel{fig:extra_motion_obstacle}{{6.2}{52}{四足机器人接近局部障碍并进行姿态调整的运动序列。}{figure.caption.71}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.3}补充运动序列二：连续接触切换}{52}{subsubsection.6.13.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces 四足机器人连续接触切换与姿态恢复示例。}}{53}{figure.caption.72}\protected@file@percent }
+\newlabel{fig:extra_contact_sequence}{{6.3}{53}{四足机器人连续接触切换与姿态恢复示例。}{figure.caption.72}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.4}补充控制曲线一：本体状态量时序}{53}{subsubsection.6.13.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces 本体状态量与控制信号的时序曲线示例。}}{54}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:extra_state_curve}{{6.4}{54}{本体状态量与控制信号的时序曲线示例。}{figure.caption.73}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.5}补充控制曲线二：训练过程波动}{54}{subsubsection.6.13.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces 训练过程中的状态与性能波动曲线示例。}}{55}{figure.caption.74}\protected@file@percent }
+\newlabel{fig:extra_training_curve}{{6.5}{55}{训练过程中的状态与性能波动曲线示例。}{figure.caption.74}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.6}方法管线文字化归纳}{55}{subsubsection.6.13.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.7}训练日志摘录}{56}{subsubsection.6.13.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.7}{\ignorespaces 典型训练日志摘录（每 200 迭代记录一次，单位：标准化值）}}{56}{table.caption.75}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.8}消融图汇总}{56}{subsubsection.6.13.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.13.9}典型回合事件序列}{56}{subsubsection.6.13.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.14}评测结果的统计学讨论}{56}{subsection.6.14}\protected@file@percent }
+\newlabel{sec:stats}{{6.14}{56}{评测结果的统计学讨论}{subsection.6.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.14.1}置信区间报告}{56}{subsubsection.6.14.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.14.2}效应量}{56}{subsubsection.6.14.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.14.3}种子敏感性}{57}{subsubsection.6.14.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.14.4}统计假设的合理性}{57}{subsubsection.6.14.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.15}工程实施案例与部署建议}{57}{subsection.6.15}\protected@file@percent }
+\newlabel{sec:case}{{6.15}{57}{工程实施案例与部署建议}{subsection.6.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.15.1}案例一：室内平台爬楼梯}{57}{subsubsection.6.15.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.15.2}案例二：户外巡检}{57}{subsubsection.6.15.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.15.3}案例三：救援探索}{57}{subsubsection.6.15.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.15.4}部署清单}{57}{subsubsection.6.15.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.15.5}常见误区与防范}{57}{subsubsection.6.15.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.15.6}长期维护建议}{58}{subsubsection.6.15.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.16}环境构造与配置文件细节}{58}{subsection.6.16}\protected@file@percent }
+\newlabel{sec:envcfg}{{6.16}{58}{环境构造与配置文件细节}{subsection.6.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.16.1}地形生成器}{58}{subsubsection.6.16.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.8}{\ignorespaces 各类地形难度参数（逐级递增）}}{58}{table.caption.76}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.16.2}命令分布}{58}{subsubsection.6.16.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.16.3}初始化与终止条件}{58}{subsubsection.6.16.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.16.4}域随机化参数}{59}{subsubsection.6.16.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.9}{\ignorespaces 域随机化参数表}}{59}{table.caption.77}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.17}评测脚本接口与日志格式}{59}{subsection.6.17}\protected@file@percent }
+\newlabel{sec:eval_io}{{6.17}{59}{评测脚本接口与日志格式}{subsection.6.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.17.1}评测脚本调用}{59}{subsubsection.6.17.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.17.2}日志字段}{59}{subsubsection.6.17.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.17.3}聚合脚本}{60}{subsubsection.6.17.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.17.4}可视化工具}{60}{subsubsection.6.17.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.18}开题报告与论文一致性说明}{60}{subsection.6.18}\protected@file@percent }
+\newlabel{sec:thesis_consist}{{6.18}{60}{开题报告与论文一致性说明}{subsection.6.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.19}研究过程中的失败尝试与经验教训}{60}{subsection.6.19}\protected@file@percent }
+\newlabel{sec:lessons}{{6.19}{60}{研究过程中的失败尝试与经验教训}{subsection.6.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.19.1}失败尝试一：直接 reshape 子奖励}{60}{subsubsection.6.19.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.19.2}失败尝试二：基于 LSTM 的难度估计}{61}{subsubsection.6.19.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.19.3}失败尝试三：完全自动化的元学习权重}{61}{subsubsection.6.19.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.19.4}失败尝试四：去除内部模型的纯调度方法}{61}{subsubsection.6.19.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.19.5}经验教训}{61}{subsubsection.6.19.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.20}术语对照与缩略语}{62}{subsection.6.20}\protected@file@percent }
+\newlabel{sec:terms}{{6.20}{62}{术语对照与缩略语}{subsection.6.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.10}{\ignorespaces 常用术语中英对照与缩略语}}{62}{table.caption.78}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.21}研究展望与开放问题}{62}{subsection.6.21}\protected@file@percent }
+\newlabel{sec:open}{{6.21}{62}{研究展望与开放问题}{subsection.6.21}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.21.1}开放问题一：奖励权重的可学习边界}{62}{subsubsection.6.21.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.21.2}开放问题二：跨平台调度通用性}{62}{subsubsection.6.21.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.21.3}开放问题三：长程行为的奖励调度}{62}{subsubsection.6.21.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.21.4}开放问题四：多机器人协同调度}{63}{subsubsection.6.21.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.21.5}开放问题五：真实硬件的数据-理论闭环}{63}{subsubsection.6.21.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.22}总结性陈述}{63}{subsection.6.22}\protected@file@percent }
+\newlabel{sec:final_summary}{{6.22}{63}{总结性陈述}{subsection.6.22}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.22.1}对论文贡献的最终归纳}{63}{subsubsection.6.22.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.22.2}研究范式的反思}{63}{subsubsection.6.22.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.22.3}对学术与工业的呼吁}{63}{subsubsection.6.22.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.22.4}致敬开源社区}{63}{subsubsection.6.22.4}\protected@file@percent }
+\bibstyle{gbt7714-numerical}
+\bibdata{references}
+\bibcite{hwangbo2019}{{1}{2019}{{Hwangbo et~al.}}{{Hwangbo, Lee, and Hutter}}}
+\bibcite{kumar2021rma}{{2}{2021}{{Kumar et~al.}}{{Kumar, Fu, Pathak, and Malik}}}
+\bibcite{rudin2022}{{3}{2022}{{Rudin et~al.}}{{Rudin, Hoeller, Reist, and Hutter}}}
+\bibcite{miki2022}{{4}{2022}{{Miki et~al.}}{{Miki, Lee, Hwangbo, et~al.}}}
+\bibcite{lee2020}{{5}{2020}{{Lee et~al.}}{{Lee, Hwangbo, Wellhausen, et~al.}}}
+\bibcite{agrawal2022}{{6}{2022}{{Agrawal et~al.}}{{Agrawal, Kumar, Malik, et~al.}}}
+\bibcite{margolis2023}{{7}{2023}{{Margolis et~al.}}{{Margolis, Yang, and Agrawal}}}
+\bibcite{long2024him}{{8}{2024}{{Long et~al.}}{{Long, Wang, Li, et~al.}}}
+\bibcite{peng2020}{{9}{2020}{{Peng et~al.}}{{Peng, Coumans, Zhang, et~al.}}}
+\bibcite{fu2021}{{10}{2021}{{Fu et~al.}}{{Fu, Kumar, Nachum, Tucker, and Levine}}}
+\bibcite{makoviychuk2021}{{11}{2021}{{Makoviychuk et~al.}}{{Makoviychuk, Wawrzyniak, Guo, et~al.}}}
+\bibcite{tan2018simrl}{{12}{2018}{{Tan et~al.}}{{Tan, Zhang, Coumans, Iscen, Bai, Hafner, Bohez, and Vanhoucke}}}
+\bibcite{xie2020learning}{{13}{2020}{{Xie et~al.}}{{Xie, Clary, Dao, Morais, Hurst, and Panne}}}
+\@writefile{toc}{\contentsline {section}{致谢}{65}{section*.80}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}符号说明}{66}{appendix.A}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces 主要数学符号与含义}}{66}{table.caption.81}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}完整训练超参数表}{67}{appendix.B}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {B.1}{\ignorespaces 完整训练超参数列表}}{67}{table.caption.82}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}调度器伪代码}{68}{appendix.C}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {C.1}{\ignorespaces 自适应奖励调度器伪代码（推理与训练共用）}}{68}{table.caption.83}\protected@file@percent }
+\gdef \@abspage@last{81}

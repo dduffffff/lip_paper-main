@@ -1,0 +1,36 @@
+\section{Related Work}
+
+Historically, algorithms for legged robots have been largely rooted in traditional control-based methods, largely due to their inherent stability and robustness. Most of these works use model-based control to define controllers~\citep{7443018, xiang2010physics, yin2007simbicon, sreenath2011compliant, hutter2016anymal, bledt2018cheetah}. However, it is difficult for these controllers to adapt to situations with widely varying physical properties, such as ice, rough terrains, or deformable materials. At the same time, with the assistance of various physical simulators~\citep{todorov2012mujoco, panerati2021learning}, especially the Isaac Gym~\citep{makoviychuk2021isaac}, which enables massively parallel simulation, Deep Reinforcement Learning (DRL) for legged locomotion showcased its promising potential. This has motivated the use of learned controllers trained with RL that can adapt to changes in dynamics~\citep{tan2018sim, lee2020learning, kumar2021rma, fu2021minimizing, rudin2022learning} in simulators, which can be deployed on the real-world robots.
+
+While the sim2real framework exhibits attractive properties, there are gaps between simulation and real robots in two aspects. Firstly, most of the real robots cannot access external states such as elevation maps, contact forces, \emph{etc.}. Secondly, the real-world observations are always noisy. To solve this problem, previous methods used mimic learning to compensate for the absence of environmental information. The mimic learning methods can be categorized into two main frameworks: adaptation and teacher-student. The methods using adaptation framework include \cite{kumar2021rma}, \cite{agrawal2022vision}, \cite{margolis2023walk} and the methods using teacher-student framework include \cite{lee2020learning}, \cite{chen2019lbc}, \cite{margolis2022rapid}, \cite{wu2023learning}. While these methods go some way toward solving the sim-to-real problem, there are still huge performance reductions between the reference policy and the deployable policy.
+
+Meanwhile, there is also a different group of methods that incorporate dynamics learning to improve legged locomotion. DayDreamer~\citep{wu2023daydreamer} followed the Model-based Reinforcement learning (MBRL) framework, which uses a learned ``world model" to synthesize infinite interactions; DreamWaQ~\citep{nahrendra2023dreamwaq} uses a leaned representations via VAE~\citep{kingma2014auto} to boost the performance of legged locomotion. What these methods have in common is the use of a regression objective to learn a model or representation, which requires the neural network to fit the targets perfectly. However, due to the uncertainty brought by domain randomization, the network is willing to fit the random noise, eventually resulting in representation collapse.
+
+While our method can fall into this group, a significant difference from the works above is that our method neither follows the computationally expensive MBRL framework nor uses regression objectives, which can lead to representation collapse as auxiliary losses. In contrast, we follow the IMC principle and use prototypical contrastive learning~\citep{caron2020unsupervised, yarats2021reinforcement, deng2022dreamerpro} as the auxiliary loss, which only requires the encoder to distinguish how the current situation differs from other situations based on historical observations. This makes fuller use of the samples, and the sample-driven regularization leads to better robustness~\citep{lecun2022path}.
+
+\begin{table}[t]
+\centering
+\vspace{-1cm}
+\caption{Comparisons between our method and previous methods. Teacher-Student refers to~\citep{miki2022learning}, MONO means~\citep{agarwal2023legged}, AMP means Adversarial Motion Priors~\citep{wu2023learning, escontrela2022adversarial} and RMA means Rapid Motor Adaptation~\citep{kumar2021rma}. Current Env. Parameters indicate the elevation map, friction, restitution, \emph{etc.} in current frame.}
+
+\label{comparison}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{cccccc}
+\toprule[1.5pt]
+Methods &
+  % \begin{tabular}[c]{@{}c@{}}\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Representations\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}External\\ Sensors\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Mimic\\ Targets\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}Reference\\ Dataset\end{tabular} &
+  \begin{tabular}[c]{@{}c@{}}\# Samples \\ (millions)\end{tabular} \\ \midrule[1.5pt]
+ Teacher-Student   & Current Env. Parameters          & LiDAR        & Behavior       & -            & Unknown      \\
+ MONO & Current Env. Parameters           & Depth Camera & Behavior       & -            & Unknown      \\ 
+ AMP  & Current Env. Parameters         & -            & Behavior       & $\checkmark$ & 600    \\ 
+ RMA  & Current Env. Parameters          & -            & Latent      & -            & 1,280   \\ 
+ \textbf{Ours}                     & \textbf{Simulated Robot Response}      & -            & -                      & -            & \textbf{200}    \\ \bottomrule[1.5pt]
+\end{tabular}
+}
+\end{table}
+
+

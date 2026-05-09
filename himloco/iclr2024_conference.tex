@@ -1,0 +1,150 @@
+% csrank
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2024_conference,times}
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+
+\usepackage{xcolor, soul}
+\sethlcolor{blue!20}
+
+\definecolor{LQY_color}{RGB}{168, 121, 50}
+\definecolor{Junfeng_color}{RGB}{200, 50, 50}
+\newcommand{\lqy}[1]{{\color{LQY_color} [LQY: #1]}}
+\newcommand{\jiangmiao}[1]{{\color{blue} (Jiangmiao: {#1})}}
+\newcommand{\junfeng}[1]{{\color{Junfeng_color} (Junfeng: {#1})}}
+\newcommand{\red}[1]{{\color{red}{#1}}}
+\newcommand\blfootnote[1]{\begingroup\renewcommand\thefootnote{}\footnote{#1}\addtocounter{footnote}{-1}\endgroup}
+% \title{The HIM Solution for Legged Locomotion: \\
+% Minimal Sensors, Efficient Learning, and Substantial Agility}
+% \title{
+% Hybrid Internal Model: A Simple and Efficient Learner for Agile Legged Locomotion}
+\title{
+% \begin{minipage}{.08\textwidth}
+% \includegraphics[width=\linewidth]{icon.png} 
+% \end{minipage}%
+\begin{minipage}{1.025\textwidth}
+Hybrid Internal Model: Learning Agile Legged Locomotion with Simulated Robot Response
+\end{minipage}
+}
+
+%------------------------------
+% Learning Paradigm -> Minimal Sensors 
+% Why works | Previous 
+% Main benefits:
+%   - Rapid Learning -> Simple & Efficient
+%   - Better Agility -> Agile 
+%   - Universal Deployment (No Exp Support)
+%       - TODOs a. Bipedal Robot Locomotion (URDF)
+%       -  
+
+
+
+
+%-------------------------------
+
+% Authors must not appear in the submitted version. They should be hidden
+% as long as the \iclrfinalcopy macro remains commented out below.
+% Non-anonymous submissions will be rejected without review.
+\IfFileExists{ifsym.sty}{
+\usepackage[misc]{ifsym}
+}{
+\usepackage{pifont}
+\newcommand{\Letter}{\ding{41}}
+}
+
+\author{
+Junfeng Long$^{1}$\thanks{Equal Contributions. \textrm{\Letter} Corresponding Author. Project page at this \href{https://junfeng-long.github.io/HIMLoco/}{URL}.},
+Zirui Wang$^{1,2*}$,
+Quanyi Li$^1$,
+Jiawei Gao$^{1,3}$,
+Liu Cao$^{1,3}$,
+Jiangmiao Pang$^{1\textrm{\Letter}}$ \\
+$^1$OpenRobotLab, Shanghai AI Laboratory, $^2$Zhejiang University, $^3$Tsinghua University
+}
+% \texttt{\{junfeng, quanyili0057, passingby2cao, pangjiangmiao\}@gmail.com, } \\
+% \texttt{ziseoiwong@zju.edu.cn, gaojw20@mails.tsinghua.edu.cn} \\
+% \And
+% Ji Q. Ren \& Yevgeny LeNet \\
+% Department of Computational Neuroscience \\
+% University of the Witwatersrand \\
+% Joburg, South Africa \\
+% \texttt{\{robot,net\}@wits.ac.za} \\
+% \AND
+% Coauthor \\
+% Affiliation \\
+% Address \\
+% \texttt{email}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+\renewcommand{\paragraph}[1]{\noindent\textbf{#1}~~}
+
+\iclrfinalcopy % Uncomment for camera-ready version, but NOT for submission.
+\begin{document}
+
+
+\maketitle
+% \blfootnote{\textrm{\Letter} Corresponding author.}
+\begin{figure}[h]
+  \centering
+   \vspace*{-1em}
+   \includegraphics[width=0.99\linewidth]{teaser_modify_arxiv.pdf}
+   \vspace*{-0.6cm}
+   \caption{Our locomotion policy can drive robots to walk across any terrain under any disturbances. 
+    Key insight lies in alternatively estimating environmental dynamics with the response of the robot. 
+   }
+   \label{fig:teaser}
+   % \vspace*{-0.6cm}
+\end{figure}
+
+
+\begin{abstract}
+
+\input{sections/0_abstract}
+
+\end{abstract}
+
+\input{sections/1_introduction}
+
+\input{sections/2_related_work}
+
+\input{sections/3_method}
+
+
+
+\input{sections/4_experiments}
+
+
+
+\input{sections/5_conclusion}
+
+\bibliography{iclr2024_conference}
+\bibliographystyle{iclr2024_conference}
+
+\newpage
+\appendix
+\input{sections/appendix}
+% You may include other additional sections here.
+
+\end{document}
