@@ -6,10 +6,12 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{amsmath,amssymb,bm}
+\usepackage{mathtools}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{float}
 \usepackage{caption}
+\usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc,matrix}
@@ -18,43 +20,69 @@
 
 \IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
 \IfFontExistsTF{SimSun}{\setCJKmainfont{SimSun}}{\setCJKmainfont{Noto Serif CJK SC}}
+\IfFontExistsTF{Noto Sans CJK SC}{\newCJKfontfamily\headingfont[BoldFont=Noto Sans CJK SC Bold]{Noto Sans CJK SC}}{\newCJKfontfamily\headingfont{AR PL UMing CN}}
 \IfFontExistsTF{LiSu}{\newCJKfontfamily\wustlishu{LiSu}}{\newCJKfontfamily\wustlishu{AR PL UKai CN}}
+\IfFontExistsTF{KaiTi}{\newCJKfontfamily\coverkaiti{KaiTi}}{\IfFontExistsTF{STKaiti}{\newCJKfontfamily\coverkaiti{STKaiti}}{\newCJKfontfamily\coverkaiti{AR PL UKai CN}}}
 
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0pt}
 \linespread{1.25}
 \zihao{-4}
+\allowdisplaybreaks[2]
+\setlength{\jot}{6pt}
+\setlength{\abovedisplayskip}{10pt plus 2pt minus 4pt}
+\setlength{\belowdisplayskip}{10pt plus 2pt minus 4pt}
+\setlength{\abovedisplayshortskip}{6pt plus 2pt}
+\setlength{\belowdisplayshortskip}{6pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 4pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+\renewcommand{\arraystretch}{1.18}
+\emergencystretch=2em
 \numberwithin{equation}{section}
 \numberwithin{table}{section}
 \numberwithin{figure}{section}
+\renewcommand{\theequation}{\arabic{section}-\arabic{equation}}
+\renewcommand{\thetable}{\arabic{section}-\arabic{table}}
+\renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
+\makeatletter
+\renewcommand{\tagform@}[1]{\maketag@@@{\normalfont(#1)}}
+\makeatother
+
+\renewcommand{\contentsname}{目\hspace{1em}录}
+\renewcommand{\listfigurename}{插\hspace{1em}图}
+\renewcommand{\listtablename}{表\hspace{1em}格}
+
 \ctexset{
   section={
-    format=\bfseries\heiti\zihao{-2},
-    beforeskip=1\baselineskip,
-    afterskip=0.5\baselineskip,
+    format=\centering\bfseries\headingfont\zihao{-2},
+    beforeskip=1.25\baselineskip,
+    afterskip=0.85\baselineskip,
     aftername=\hspace{1em},
     number=\arabic{section}
   },
   subsection={
-    format=\bfseries\heiti\zihao{-3},
-    beforeskip=0.5\baselineskip,
-    afterskip=0.25\baselineskip,
+    format=\bfseries\headingfont\zihao{-3},
+    beforeskip=0.9\baselineskip,
+    afterskip=0.45\baselineskip,
     aftername=\hspace{1em},
     number=\thesection.\arabic{subsection}
   },
   subsubsection={
-    format=\bfseries\heiti\zihao{4},
-    beforeskip=0.25\baselineskip,
+    format=\headingfont\zihao{4},
+    beforeskip=0.5\baselineskip,
     afterskip=0.25\baselineskip,
     aftername=\hspace{1em},
     number=\thesubsection.\arabic{subsubsection}
   }
 }
 
-\captionsetup[table]{font=small,labelfont=normalfont,labelsep=space}
+\captionsetup{font=small,textfont=normalfont,labelfont=bf,labelsep=space}
+\captionsetup[figure]{format=hang,justification=justified,singlelinecheck=false,width=0.9\textwidth,skip=6pt}
+\captionsetup[table]{format=hang,justification=justified,singlelinecheck=false,width=0.88\textwidth,skip=4pt,position=top}
 
 \tikzset{
   flowbox/.style={draw=black, rounded corners=2pt, align=center, fill=gray!8, minimum height=0.9cm, text width=2.7cm, inner sep=4pt},
@@ -63,13 +91,13 @@
   dashline/.style={-{Latex[length=2mm]}, dashed, line width=0.5pt}
 }
 
-\newcommand{\subtopic}[1]{\par\smallskip\noindent\textbf{#1。}\quad}
+\newcommand{\subtopic}[1]{\par\addvspace{0.2\baselineskip}\ignorespaces}
 \newcommand{\runintopic}[1]{\par\smallskip\noindent\textbf{#1。}\quad}
 
-\setlength{\headheight}{20pt}
+\setlength{\headheight}{16pt}
 \fancypagestyle{mainstyle}{
   \fancyhf{}
-  \fancyhead[C]{\wustlishu\zihao{3}武汉科技大学本科毕业论文}
+  \fancyhead[C]{\wustlishu\zihao{-4}武汉科技大学本科毕业论文}
   \fancyfoot[C]{\zihao{-5}\thepage}
   \renewcommand{\headrulewidth}{0pt}
 }
@@ -91,17 +119,18 @@
 
 \thispagestyle{empty}
 \begin{center}
-\vspace*{2.0cm}
+\vspace*{1.6cm}
 {\zihao{2}\textbf{武汉科技大学本科毕业论文}}\\[2.2cm]
-{\kaishu\zihao{1}本体感知自适应奖励四足跨地形控制}\\[0.6cm]
-{\zihao{4}Proprioception-Driven Adaptive Reward Scheduling for Cross-Terrain Quadruped Locomotion}\\[2.2cm]
+{\coverkaiti\zihao{0}本体感知自适应奖励四足跨地形控制}\\[0.8cm]
+{\zihao{-3}Proprioception-Driven Adaptive Reward Scheduling for Cross-Terrain\\[0.2cm]Quadruped Locomotion}\\[2.4cm]
+{\renewcommand{\arraystretch}{1.45}
 \begin{tabular}{rl}
 学院： & 人工智能与自动化学院 \\
 专业： & 机器人工程 \\
 学生姓名： & 杜云帆 \\
 学号： & 202204416388 \\
 指导教师： & 陈志环 \\
-\end{tabular}\\[2.0cm]
+\end{tabular}}\\[2.2cm]
 {\zihao{4}2026年4月}
 \end{center}
 
@@ -109,9 +138,9 @@
 \pagestyle{frontstyle}
 \pagenumbering{Roman}
 \begin{center}
-{\heiti\zihao{-2}摘\hspace{1em}要}
+{\headingfont\bfseries\zihao{-2}摘\hspace{1em}要}
 \end{center}
-\begin{spacing}{1.5}
+\begin{spacing}{1.35}
 四足机器人在灾害救援、野外巡检和非结构化作业场景中具有显著应用潜力，但复杂地形下的高机动控制仍面临效率与稳定性难以兼顾的问题。现有以强化学习为核心的运动控制方法中，混合内模方法能够在仅依赖本体感知信息的条件下实现较强鲁棒性。然而，该类方法通常采用固定权重奖励函数，难以根据地形风险在线调整策略偏好，导致平坦地形速度与能效受限、崎岖地形跌倒风险增加。
 
 针对上述问题，本文在 Hybrid Internal Model for Locomotion（HIMLoco）框架基础上，提出一种本体感知驱动的自适应奖励调度方法。方法首先利用姿态波动、关节力矩变化、足端接触稳定性和动作平滑度等特征构建地形难度指标，然后通过约束型权重映射函数对速度跟踪、能耗抑制、姿态稳定与抗扰恢复等奖励子项进行动态重分配。为保证训练稳定性，本文在调度过程中引入指数平滑和变化率限制机制，避免在线调度造成高频震荡。
@@ -125,7 +154,7 @@
 \begin{center}
 {\bfseries\zihao{-2}Abstract}
 \end{center}
-\begin{spacing}{1.5}
+\begin{spacing}{1.35}
 Quadruped robots are promising for disaster response, field inspection, and unstructured operations. However, agile locomotion over diverse terrains remains challenging due to the trade-off between efficiency and stability. Existing learning-based controllers, including Hybrid Internal Model approaches, achieve strong robustness with proprioceptive sensing only. Yet, most of them rely on fixed-weight reward functions, which cannot adapt policy priorities online as terrain risks change.
 
 This thesis proposes a proprioception-driven adaptive reward scheduling method built upon the HIMLoco framework. We first construct a terrain difficulty indicator using body attitude fluctuation, joint torque variation, foot contact stability, and action smoothness. Then a constrained mapping dynamically reallocates reward weights among velocity tracking, energy regularization, posture stability, and disturbance recovery terms. To ensure training stability, exponential smoothing and rate-limit constraints are introduced to suppress high-frequency oscillation in online scheduling.
@@ -187,32 +216,15 @@ A cross-terrain training and evaluation pipeline is established on Isaac Gym wit
 整体来看，国内外研究在“可跑通”阶段已经取得显著成果，未来研究焦点正从单点性能突破转向跨地形统一策略、可解释行为塑造、长期运行可靠性与多机协同等方向。这些方向均与“奖励函数如何在不同场景下表达不同偏好”这一问题密切相关，本文方法即针对该共性问题给出一种可工程落地的轻量级解。
 
 \subsection{研究目标与主要贡献}
-本文围绕“仅依赖本体感知信息、在跨地形场景下实现速度-稳定性协同优化”这一核心问题展开，研究目标包括四方面：
-\begin{enumerate}
-  \item 在 HIMLoco 框架上建立固定权重基线，明确其在不同风险地形中的性能边界与瓶颈；
-  \item 构建仅依赖本体信号的地形难度估计指标，作为在线风险评估的统一表征；
-  \item 提出受约束的奖励权重在线调度机制，并验证其在大规模并行仿真中的训练稳定性；
-  \item 构建跨地形多指标评测框架，从总体指标与分场景指标两个维度系统分析方法收益来源。
-\end{enumerate}
+本文围绕“仅依赖本体感知信息、在跨地形场景下实现速度-稳定性协同优化”这一核心问题展开。具体而言，本文首先在 HIMLoco 框架上建立固定权重基线，以明确其在不同风险地形中的性能边界与瓶颈；随后构建仅依赖本体信号的地形难度估计指标，将其作为在线风险评估的统一表征；在此基础上进一步提出受约束的奖励权重在线调度机制，并验证其在大规模并行仿真中的训练稳定性；最后建立跨地形多指标评测框架，从总体指标与分场景指标两个维度系统分析方法收益来源。
 
-本文主要贡献概括如下：
-\begin{enumerate}
-  \item 提出一种无需额外外感知硬件、不修改主干策略网络的奖励调度方法，便于以“即插即用”方式集成到现有控制管线；
-  \item 设计了“难度估计-权重映射-平滑约束-异常回退”一体化机制，从理论与工程两个层面控制在线调度引入的训练扰动；
-  \item 给出包含速度跟踪、能效、姿态稳定、跌倒率与恢复成功率的多维评测协议，使方法收益具备可解释性与可复现实验性；
-  \item 结合双课程（速度-地形）训练流程与平坦地形基础任务，验证方法不会以牺牲基础能力为代价换取跨地形稳定性。
-\end{enumerate}
+围绕上述目标，本文的主要贡献体现在四个方面。其一，提出了一种无需额外外感知硬件、也不修改主干策略网络的奖励调度方法，使其能够以“即插即用”的方式集成到现有控制管线中；其二，设计了“难度估计-权重映射-平滑约束-异常回退”一体化机制，从理论与工程两个层面控制在线调度引入的训练扰动；其三，构建了包含速度跟踪、能效、姿态稳定、跌倒率与恢复成功率在内的多维评测协议，使方法收益具备更强的可解释性与可复现实验性；其四，结合双课程（速度-地形）训练流程与平坦地形基础任务，验证了该方法不会以牺牲基础能力为代价换取跨地形稳定性。
 
 
 \subsection{研究问题定义与技术路线}
-为避免问题描述泛化，本文将研究任务形式化为：在仅依赖本体感知信号、命令空间为线/角速度三维向量、地形集合包含平地、坡地、粗糙坡地、台阶与离散障碍五大类的条件下，学习一个统一控制策略，使其在跟踪误差、单位距离能耗、姿态波动方差、跌倒率与外扰恢复成功率上同时取得可部署平衡。该问题的形式化具有三重困难：
-\begin{enumerate}
-  \item \textbf{隐风险不可观}：地形风险并非可直接测量的物理量，必须由本体信号（IMU 角速度、关节力矩、足端接触序列等）间接估计；
-  \item \textbf{时变偏好需在线}：奖励权重应随风险变化在线更新，但更新过快会破坏策略梯度一致性，过慢则丧失自适应价值；
-  \item \textbf{部署低耦合要求}：调度机制必须与既有策略主干低耦合，避免增加额外传感器、专用计算单元或大量参数调试。
-\end{enumerate}
+为避免问题描述泛化，本文将研究任务形式化为：在仅依赖本体感知信号、命令空间为线/角速度三维向量、地形集合包含平地、坡地、粗糙坡地、台阶与离散障碍五大类的条件下，学习一个统一控制策略，使其在跟踪误差、单位距离能耗、姿态波动方差、跌倒率与外扰恢复成功率上同时取得可部署平衡。该问题的难点主要集中在三个层面：其一，地形风险并非可直接测量的物理量，必须由 IMU 角速度、关节力矩和足端接触序列等本体信号间接估计；其二，奖励权重需要随风险变化在线更新，但更新过快会破坏策略梯度一致性，更新过慢又会削弱自适应价值；其三，调度机制必须与既有策略主干保持低耦合，避免增加额外传感器、专用计算单元或大量参数调试。
 
-据此，本文技术路线划分为五个步骤：（1）构建固定权重 HIMLoco 基线并冻结评测协议；（2）设计难度特征集合，把姿态扰动、力矩变化、接触一致性与动作平滑度统一映射到 $[0,1]$ 区间的难度分数；（3）建立约束型权重映射函数，把难度分数投影到多奖励项权重空间；（4）引入指数平滑与变化率裁剪保证调度平稳；（5）以双课程并行训练 + 分场景统计的方式开展对比与消融实验。该路线强调“可解释、可复现实验、可工程接入”三项原则。
+基于上述判断，本文的技术路线按照“先建立基线、再构建难度表征、再引入调度机制、最后完成系统评测”的思路展开。具体来说，研究首先构建固定权重 HIMLoco 基线并冻结评测协议，随后设计难度特征集合，把姿态扰动、力矩变化、接触一致性与动作平滑度统一映射到 $[0,1]$ 区间的难度分数；在此基础上建立约束型权重映射函数，将难度分数投影到多奖励项权重空间，并借助指数平滑与变化率裁剪保证调度平稳；最后通过双课程并行训练与分场景统计开展对比和消融实验。整条路线强调可解释、可复现实验和可工程接入三项原则。
 
 \subsection{本文组织结构}
 全文共分六章。第一章绪论介绍研究背景、问题边界、贡献概述与技术路线。第二章梳理四足机器人强化学习控制所需的理论基础，包括坐标系与运动学、典型步态、马尔可夫决策过程、PPO 推导、Actor-Critic 网络、HIMLoco 框架、并行仿真环境、Sim2Real 迁移与多目标奖励问题。第三章给出本文核心方法，包括总体框架、地形难度估计、奖励权重动态映射、稳定性约束、双课程训练、平坦地形任务、复杂度分析与工程实现细节。第四章描述实验平台、对比组、评价指标、测试场景、统计方法与可复现协议。第五章从总体收益、分场景收益、消融分析、失败案例与综合讨论多个维度展开结果分析。第六章总结全文，说明方法局限，并给出面向真实硬件部署与后续研究的展望。
@@ -426,14 +438,7 @@ Q^{\pi}(s,a)=\mathbb{E}_{\pi}\left[\sum_{t=0}^{\infty}\gamma^t r_t\,\Big|\,s_0=s
 满足 Bellman 期望方程 $V^{\pi}(s)=\mathbb{E}_{a\sim\pi}\bigl[r(s,a)+\gamma\,\mathbb{E}_{s'}V^{\pi}(s')\bigr]$。优势函数 $A^{\pi}(s,a)=Q^{\pi}(s,a)-V^{\pi}(s)$ 衡量在状态 $s$ 选择动作 $a$ 相对策略平均水平的偏好，是策略梯度方法的核心信号。
 
 \subtopic{MDP 在四足机器人控制中的实例化}
-在本文研究的四足机器人控制任务中，MDP 的各要素具体如下：
-\begin{itemize}
-  \item 状态：包含基座姿态、角速度、命令、关节角与角速度、上一动作等本体可测量；
-  \item 动作：12 维关节目标角偏移，经动作缩放与默认关节角叠加后送入 PD 控制器；
-  \item 转移：由刚体动力学方程\eqref{eq:dyn} 与接触求解器隐式决定，仿真器以高频数值积分；
-  \item 奖励：由速度跟踪、能耗、姿态稳定、动作平滑、足端接触等多个子项加权得到；
-  \item 折扣因子：本文取 $\gamma=0.99$，对应有效视野约 100 步。
-\end{itemize}
+在本文研究的四足机器人控制任务中，MDP 的各要素可以直接对应到机器人控制管线。状态由基座姿态、角速度、命令、关节角与角速度以及上一时刻动作等本体可测量构成；动作则是 12 维关节目标角偏移，经动作缩放并与默认关节角叠加后送入 PD 控制器；状态转移由刚体动力学方程\eqref{eq:dyn} 与接触求解器隐式决定，仿真器以高频数值积分推进系统演化；奖励由速度跟踪、能耗、姿态稳定、动作平滑和足端接触等多个子项加权得到；折扣因子本文取 $\gamma=0.99$，对应约 100 步的有效视野。
 
 需要注意的是，由于本体观测无法完整刻画地形、外扰与执行器状态，严格意义上的马尔可夫性并不成立。HIMLoco 通过引入历史观测序列与内部嵌入近似补全隐状态，使有效状态尽可能满足马尔可夫性，从而保证策略梯度估计的合理性。
 
@@ -456,34 +461,90 @@ Q^{\pi}(s,a)=\mathbb{E}_{\pi}\left[\sum_{t=0}^{\infty}\gamma^t r_t\,\Big|\,s_0=s
 \end{equation}
 
 \subtopic{广义优势估计}
-工程实现中常用广义优势估计（Generalized Advantage Estimation，GAE）以折中偏差与方差：
+在 PPO 算法中，优势函数 $A^{\pi_\theta}(s_t,a_t)$ 的估计质量直接决定了策略更新的方向是否可靠。若估计偏差过大，策略会偏离真实改进方向；若估计方差过大，训练曲线又会明显震荡。因此，工程实现中通常采用广义优势估计（Generalized Advantage Estimation，GAE）在偏差与方差之间取得折中。
+
+最基本的价值修正量是一步 TD 误差：
 \begin{equation}
-\hat{A}_t^{\text{GAE}(\gamma,\lambda)}=\sum_{l=0}^{\infty}(\gamma\lambda)^l\,\delta_{t+l},\qquad
-\delta_t=r_t+\gamma V_\phi(s_{t+1})-V_\phi(s_t),
+\delta_t=r_t+\gamma V_\phi(s_{t+1})-V_\phi(s_t).
+\label{eq:td_error}
 \end{equation}
-其中 $\lambda\in[0,1]$。$\lambda=0$ 时退化为单步 TD 误差，方差小但偏差大；$\lambda=1$ 时退化为蒙特卡洛回报，无偏但高方差。本文取 $\lambda=0.95$，并对 $\hat{A}_t$ 在小批量内做均值-方差归一化以稳定优化。
+式\eqref{eq:td_error} 只利用一步转移信息更新价值估计，因此方差较小，但由于严重依赖当前价值函数的近似精度，往往存在较大的估计偏差。
+
+与之相对，若从时刻 $t$ 一直累积到轨迹末端，则可得到蒙特卡洛回报：
+\begin{equation}
+G_t^{\mathrm{MC}}=\sum_{l=0}^{T-t-1}\gamma^l r_{t+l}.
+\label{eq:mc_return}
+\end{equation}
+蒙特卡洛方法不再依赖中间状态的价值估计，因此偏差较小；但它需要等到整条轨迹结束后再统一回传奖励，故而方差通常较大。
+
+为了在两者之间建立过渡，可先定义 $n$ 步回报：
+\begin{equation}
+\hat{R}_t^{(n)}=\sum_{l=0}^{n-1}\gamma^l r_{t+l}+\gamma^n V_\phi(s_{t+n}),\qquad n\ge 1.
+\label{eq:n_step_return}
+\end{equation}
+式\eqref{eq:n_step_return} 表明：当 $n=1$ 时，它退化为一步 TD 目标；当 $n$ 逐渐增大并延伸到轨迹末端时，它又逐步逼近蒙特卡洛回报。进一步对不同步长的回报做指数加权，便得到 $\lambda$-return：
+\begin{equation}
+\hat{R}_t^{\lambda}=(1-\lambda)\sum_{n=1}^{N-1}\lambda^{n-1}\hat{R}_t^{(n)}+\lambda^{N-1}\hat{R}_t^{(N)},
+\label{eq:lambda_return}
+\end{equation}
+其中 $N=T-t$ 为从时刻 $t$ 到回合终止的剩余步数。式\eqref{eq:lambda_return} 的第一项对应短视的一步或少步回报，最后一项则对应整条轨迹的长视回报，因此 $\lambda\in[0,1]$ 实际上提供了一条从 TD 方法到蒙特卡洛方法的连续插值路径。
+
+在此基础上，GAE 将 $\lambda$-return 引入优势函数估计，得到
+\begin{equation}
+\hat{A}_t^{\mathrm{GAE}(\gamma,\lambda)}=\hat{R}_t^{\lambda}-V_\phi(s_t)
+=\sum_{l=0}^{T-t-1}(\gamma\lambda)^l\delta_{t+l}.
+\label{eq:gae_advantage}
+\end{equation}
+由式\eqref{eq:gae_advantage} 可见，GAE 本质上是对未来若干步 TD 误差做衰减累加：当 $\lambda=0$ 时，优势函数退化为一步 TD 误差，方差最小但偏差较大；当 $\lambda=1$ 时，它接近蒙特卡洛形式，偏差减小但方差上升。本文取 $\lambda=0.95$，并对 $\hat{A}_t$ 在每个小批量内执行均值-方差归一化，以稳定后续 PPO 更新。
 
 \subtopic{从 TRPO 到 PPO}
-直接最大化策略梯度目标在更新步长选择上极为敏感，过大的步长会导致策略性能崩塌。TRPO（Trust Region Policy Optimization）引入 KL 散度信任域约束：
+直接最大化策略梯度目标虽然形式简洁，但对更新步长非常敏感。若参数更新幅度过大，新策略往往会迅速偏离旧策略的有效采样分布，进而导致性能崩塌。为了解决这一问题，TRPO（Trust Region Policy Optimization）在策略优化时引入了信任域约束：
 \begin{equation}
-\max_\theta \mathbb{E}_{\pi_{\theta_{\text{old}}}}\Bigl[\tfrac{\pi_\theta(a|s)}{\pi_{\theta_{\text{old}}}(a|s)}\hat{A}\Bigr],\quad
-\text{s.t.}\;\mathbb{E}\bigl[\mathrm{KL}(\pi_{\theta_{\text{old}}}\|\pi_\theta)\bigr]\le\delta.
+\max_\theta\;\mathbb{E}_{\pi_{\theta_{\text{old}}}}\bigl[r_t(\theta)\hat{A}_t\bigr],
+\qquad
+\text{s.t.}\;\mathbb{E}\bigl[\mathrm{KL}(\pi_{\theta_{\text{old}}}\|\pi_\theta)\bigr]\le\delta,
+\label{eq:trpo_obj}
 \end{equation}
-该约束保证新旧策略 KL 散度不超过 $\delta$，等价于在概率空间中限制更新幅度。但 TRPO 的求解需要二阶共轭梯度法与线搜索，实现复杂。
+其中
+\begin{equation}
+r_t(\theta)=\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{\text{old}}}(a_t|s_t)}
+\label{eq:importance_ratio}
+\end{equation}
+为重要性采样比率。式\eqref{eq:trpo_obj} 的含义是：在提升优势动作概率的同时，显式限制新旧策略之间的 KL 散度不超过阈值 $\delta$。这种方法可以有效抑制策略“跳得过远”，但其求解依赖二阶近似、共轭梯度与线搜索，工程实现较为复杂。
 
-PPO（Proximal Policy Optimization）以截断（clip）机制在一阶优化框架下近似实现 TRPO 的信任域效果：
+PPO（Proximal Policy Optimization）保留了“限制策略变化幅度”的思想，但不再直接求解带约束优化问题，而是用截断函数构造一个更易实现的一阶目标：
 \begin{equation}
-L^{\text{CLIP}}(\theta)=\mathbb{E}\Bigl[\min\bigl(r_t(\theta)\hat{A}_t,\;\text{clip}(r_t(\theta),1-\epsilon,1+\epsilon)\hat{A}_t\bigr)\Bigr],
+L^{\mathrm{CLIP}}(\theta)=\mathbb{E}\Bigl[\min\bigl(r_t(\theta)\hat{A}_t,\;\mathrm{clip}(r_t(\theta),1-\epsilon,1+\epsilon)\hat{A}_t\bigr)\Bigr].
+\label{eq:ppo_clip}
 \end{equation}
-其中 $r_t(\theta)=\frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{\text{old}}}(a_t|s_t)}$ 为重要性比率，$\epsilon$ 通常取 $0.1\sim0.2$。当 $\hat{A}_t>0$ 时，$\min$ 限制 $r_t$ 上界为 $1+\epsilon$，避免对“好动作”过度强化；当 $\hat{A}_t<0$ 时，限制下界为 $1-\epsilon$，避免对“差动作”过度惩罚。该机制实现简单，工程友好，已成为当前足式机器人强化学习的事实标准。
+式\eqref{eq:ppo_clip} 中的截断区间 $[1-\epsilon,1+\epsilon]$ 为概率比率设置了一个近端更新范围。其物理含义可以分两种情况理解：当 $\hat{A}_t>0$ 时，说明当前动作优于平均水平，此时 PPO 允许适度增大该动作概率，但超过 $1+\epsilon$ 的部分将不再继续获得额外收益；当 $\hat{A}_t<0$ 时，说明该动作劣于平均水平，此时 PPO 会降低其概率，但下降幅度也会被限制在 $1-\epsilon$ 附近。这样一来，PPO 在保持优化稳定性的同时，避免了 TRPO 复杂的二阶求解过程，因此成为当前强化学习控制中应用最广的策略优化方法之一。
 
 \subtopic{PPO 完整目标函数}
-工程实现的 PPO 目标通常包含三项：截断策略目标 $L^{\text{CLIP}}$、价值回归损失 $L^{V}$ 与熵正则项 $H$：
+在实际实现中，PPO 并不是只优化式\eqref{eq:ppo_clip} 中的策略项，而是同时联合考虑策略改进、价值拟合和探索保持三个目标。首先，价值网络损失写为
 \begin{equation}
-L^{\text{total}}(\theta,\phi)=\mathbb{E}\bigl[L^{\text{CLIP}}(\theta)-c_1\,L^{V}(\phi)+c_2\,H[\pi_\theta(\cdot|s_t)]\bigr],
+L^{V}(\phi)=\mathbb{E}\bigl[(V_\phi(s_t)-\hat{R}_t)^2\bigr],
+\label{eq:ppo_value_loss}
+\end{equation}
+其中
+\begin{equation}
+\hat{R}_t=\hat{A}_t+V_\phi(s_t)
+\label{eq:ppo_return_target}
+\end{equation}
+为对应的回报目标。该项要求 Critic 网络尽可能准确地逼近状态价值，从而为优势函数估计提供更稳定的基线。
+
+其次，为避免策略在训练早期过快塌缩为近似确定性分布，通常还会加入熵正则项：
+\begin{equation}
+L^{H}(\theta)=\mathbb{E}\bigl[H\bigl(\pi_\theta(\cdot|s_t)\bigr)\bigr].
+\label{eq:ppo_entropy}
+\end{equation}
+熵越大，说明策略保留的随机探索越充分；熵越小，则说明策略趋于确定性输出。
+
+综合以上三项，可得 PPO 的完整训练目标：
+\begin{equation}
+L^{\text{total}}(\theta,\phi)=L^{\mathrm{CLIP}}(\theta)-c_1L^{V}(\phi)+c_2L^{H}(\theta).
 \label{eq:ppo_total}
 \end{equation}
-其中 $L^{V}(\phi)=\bigl(V_\phi(s_t)-\hat{R}_t\bigr)^2$，$\hat{R}_t=\hat{A}_t+V_\phi(s_t)$ 为回报目标。熵正则项鼓励策略保留探索性，避免在训练早期过早塌缩到次优确定性策略。本文取 $c_1=1.0$、$c_2=0.01$，并在每轮更新中对小批量进行多轮反向传播（典型 5 轮）以充分利用样本。
+式\eqref{eq:ppo_total} 中，第一项负责推动策略朝优势更高的方向更新，第二项负责提高价值函数近似精度，第三项用于维持必要的探索能力。本文取 $c_1=1.0$、$c_2=0.01$，并在每轮采样后对小批量数据执行多轮反向传播更新（典型为 5 轮），以充分利用并行环境产生的轨迹样本。
 
 整体训练流程可概括为“并行环境采样 → 计算 GAE 与回报 → 多轮小批量 PPO 更新 → 同步新旧策略 → 进入下一采集周期”。这一“同策略 + 短轨迹 + 多轮复用”的设计在并行仿真平台上具备良好的样本效率与稳定性。图~\ref{fig:ppo_flow} 给出 PPO 中数据流、优势估计与参数更新之间的关系，算法~\ref{alg:ppo} 给出对应伪代码。
 
@@ -655,13 +716,7 @@ HIMLoco 把内部嵌入 $\bm{z}_t$ 拆解为两部分：显式速度估计 $\hat
 
 \subsection{Sim2Real 迁移技术}
 \subtopic{Sim2Real 鸿沟来源}
-仿真训练所得策略部署到真实机器人时面临系统辨识误差、传感噪声、执行器迟滞与未建模动力学等问题，统称为 Sim2Real 鸿沟。具体来源可归纳为四类：
-\begin{enumerate}
-  \item \textbf{动力学差异}：质量、惯量、连杆长度、电机增益等参数辨识误差；
-  \item \textbf{接触建模误差}：摩擦模型、地面柔度、足端形状的简化引入的动力学不一致；
-  \item \textbf{传感噪声与延迟}：IMU 漂移、关节编码器量化、通信延迟造成观测污染；
-  \item \textbf{执行器特性}：电机饱和、温升、传动反隙等仿真难以精确刻画的非线性。
-\end{enumerate}
+仿真训练所得策略部署到真实机器人时会面临系统辨识误差、传感噪声、执行器迟滞与未建模动力学等问题，这些问题共同构成 Sim2Real 鸿沟。其来源主要包括四个方面：一是动力学差异，例如质量、惯量、连杆长度和电机增益等参数辨识误差；二是接触建模误差，即摩擦模型、地面柔度和足端形状的简化所带来的动力学不一致；三是传感噪声与延迟，例如 IMU 漂移、关节编码器量化和通信延迟造成的观测污染；四是执行器特性本身带来的偏差，包括电机饱和、温升和传动反隙等仿真中难以精确刻画的非线性因素。
 
 \subtopic{域随机化}
 域随机化（Domain Randomization）是缩小 Sim2Real 鸿沟最直接的方法：训练时在仿真环境中对参数 $\xi$ 按某分布 $p(\xi)$ 随机采样，使策略学到对参数变化鲁棒的控制规律：
@@ -707,12 +762,7 @@ HIMLoco 把内部嵌入 $\bm{z}_t$ 拆解为两部分：显式速度估计 $\hat
 \end{table}
 
 \subtopic{固定权重的天然缺陷}
-固定权重等价于在全局空间内施加单一偏好，难以适应局部风险变化。该问题在以下场景尤为明显：
-\begin{enumerate}
-  \item 平坦场景中稳定项权重过高，导致保守动作和速度上限受限；
-  \item 崎岖场景中速度项权重过高，导致触地冲击增大与跌倒风险上升；
-  \item 扰动场景中缺乏快速重权机制，恢复行为不够积极。
-\end{enumerate}
+固定权重等价于在全局空间内施加单一偏好，难以适应局部风险变化。这一问题在若干典型场景中尤为明显：平坦地形上如果稳定项权重过高，策略就会表现得过于保守，进而限制速度上限；崎岖地形上如果速度项权重仍然占优，则容易放大触地冲击并提高跌倒风险；在外部扰动场景中，如果缺乏快速重权机制，策略的恢复行为往往又不够积极。
 
 \subtopic{多目标优化视角下的解释}
 从优化角度看，多个奖励项加权求和实质上是把多目标优化“标量化”：
@@ -731,14 +781,7 @@ HIMLoco 把内部嵌入 $\bm{z}_t$ 拆解为两部分：显式速度估计 $\hat
 第二章已经指出，固定权重奖励在跨地形任务中存在固有缺陷：相同的权重组合无法同时适配低风险地形上的“效率优先”需求与高风险地形上的“稳定优先”需求。一种自然的改进思路是：让权重 $w_i$ 成为状态相关函数 $w_i(s_t)$，根据当前观测状态动态调整。然而，若直接把权重设计为高维状态的复杂函数，会显著增加策略训练的不稳定性，也不利于工程部署。本文采用一种折中方案：先把高维本体观测压缩到一维“地形难度分数” $\hat{d}_t\in[0,1]$，再以该一维信号驱动多维权重映射，最后通过指数平滑与变化率裁剪保证调度平稳。
 
 \subtopic{方法管线}
-整体方法管线可概括为以下五个控制步流程：
-\begin{enumerate}
-  \item 从本体观测中提取四类难度相关特征：姿态扰动、力矩变化、接触一致性、动作平滑度；
-  \item 计算原始难度分数 $d_t$ 并通过指数平滑得到 $\hat{d}_t$；
-  \item 通过约束型权重映射得到中间权重 $\tilde{w}_{i,t}$；
-  \item 经一阶低通与变化率裁剪得到最终权重 $w_{i,t}$；
-  \item 计算总奖励 $R_t=\sum_i w_{i,t}r_{i,t}$ 并参与 PPO 训练。
-\end{enumerate}
+整体方法管线可以概括为一条连续的信息流。首先，系统从本体观测中提取姿态扰动、力矩变化、接触一致性和动作平滑度四类难度相关特征；随后计算原始难度分数 $d_t$，并通过指数平滑得到稳定的难度估计 $\hat{d}_t$；在此基础上，约束型权重映射函数生成中间权重 $\tilde{w}_{i,t}$，再经过一阶低通与变化率裁剪得到最终权重 $w_{i,t}$；最后利用这些权重合成总奖励 $R_t=\sum_i w_{i,t}r_{i,t}$，并将其送入 PPO 训练流程。
 上述流程可进一步写成紧凑的向量形式。令
 \begin{equation}
 \bm{f}_t=\begin{bmatrix}f_t^{\text{att}}&f_t^{\tau}&f_t^{\text{con}}&f_t^{\text{act}}\end{bmatrix}^\top,
@@ -785,22 +828,11 @@ R_t &= \bm{w}_t^\top\bm{r}_t.
 \end{figure}
 
 \subtopic{设计原则}
-本文方法在设计时遵循三条原则：
-\begin{itemize}
-  \item \textbf{低耦合}：调度器仅修改奖励计算端，不改动策略网络与传感链路，便于即插即用集成；
-  \item \textbf{可解释}：难度特征与权重映射均具有明确物理含义，便于工程师参数调试与故障定位；
-  \item \textbf{平稳性}：指数平滑与变化率裁剪共同保证奖励在线变化幅度有界，避免破坏 PPO 收敛性。
-\end{itemize}
+本文方法在设计时始终遵循三项原则。首先是低耦合，即调度器只修改奖励计算端，而不改动策略网络和传感链路，从而便于即插即用集成；其次是可解释性，即难度特征与权重映射都具有明确的物理含义，方便工程师进行参数调试与故障定位；最后是平稳性，即通过指数平滑与变化率裁剪共同保证奖励在线变化幅度有界，避免破坏 PPO 的收敛过程。
 
 \subsection{地形难度估计}
 \subtopic{难度特征定义}
-地形难度本质上是一个不可直接测量的隐变量，但它必然反映在机器人本体响应上。本文选取四类本体信号作为难度特征：
-\begin{enumerate}
-  \item 姿态扰动 $f_t^{\text{att}}$：基座角速度的滑动方差，刻画姿态稳定性；
-  \item 力矩变化 $f_t^{\tau}$：关节力矩的滑动方差，刻画执行器负载波动；
-  \item 接触一致性 $f_t^{\text{con}}$：足端实际触地序列与理想 trot 节律的偏差；
-  \item 动作平滑度 $f_t^{\text{act}}$：相邻动作差分的滑动方差，刻画策略输出稳定性。
-\end{enumerate}
+地形难度本质上是一个不可直接测量的隐变量，但它必然反映在机器人本体响应上。为此，本文选取四类本体信号作为难度特征，其中姿态扰动 $f_t^{\text{att}}$ 由基座角速度的滑动方差刻画，用以反映姿态稳定性；力矩变化 $f_t^{\tau}$ 由关节力矩的滑动方差描述，用以表征执行器负载波动；接触一致性 $f_t^{\text{con}}$ 反映足端实际触地序列与理想 trot 节律之间的偏差；动作平滑度 $f_t^{\text{act}}$ 则由相邻动作差分的滑动方差给出，用于刻画策略输出的稳定程度。
 表~\ref{tab:difficulty_features} 将四类特征的数学形式、物理含义与调度作用进行归纳。
 
 \begin{table}[H]
@@ -1137,21 +1169,10 @@ $w^{\min}$ & 安全权重下限 & $0.1\sim0.3$ \\
 
 \subsection{对比组设置}
 \subtopic{基线方法}
-\begin{itemize}
-\item \textbf{Vanilla PPO}：HIMLoco 默认实现，固定奖励权重，无内部模型。
-\item \textbf{HIMLoco}\citep{long2024him}：固定奖励权重，引入隐式内部模型与对比损失，是本文最重要的基线。
-\item \textbf{RMA}\citep{kumar2021rma}：教师-学生两阶段训练，学生网络从短窗口本体观测预测特权信息。
-\item \textbf{Domain Randomization}\citep{margolis2023}：固定权重，但物理与命令域随机化更激进。
-\end{itemize}
+对比实验采用四个基线方法。Vanilla PPO 使用 HIMLoco 的默认实现，采用固定奖励权重且不包含内部模型；HIMLoco\citep{long2024him} 同样采用固定奖励权重，但引入隐式内部模型与对比损失，是本文最重要的基线；RMA\citep{kumar2021rma} 采用教师-学生两阶段训练，使学生网络从短窗口本体观测中预测特权信息；Domain Randomization\citep{margolis2023} 则同样保持固定权重，但在物理参数与命令分布上的随机化更为激进。
 
 \subtopic{消融组}
-\begin{itemize}
-\item \textbf{w/o Scheduler}：保留所有改动但关闭调度器，相当于 HIMLoco 复现。
-\item \textbf{w/o Smooth}：取消权重平滑与变化率裁剪，验证平滑项的必要性。
-\item \textbf{w/o Curriculum}：取消速度-地形双课程，仅使用静态命令分布。
-\item \textbf{Linear Mapping}：将 softmax 映射改为线性映射 + 截断，验证非线性映射的收益。
-\item \textbf{Single Feature}：仅使用足底接触特征作为难度信号，验证多源融合的必要性。
-\end{itemize}
+消融实验围绕调度器、平滑机制、课程学习和特征设计展开。具体而言，w/o Scheduler 在保留其他改动的前提下关闭调度器，相当于对 HIMLoco 的复现；w/o Smooth 取消权重平滑与变化率裁剪，用于验证平滑项的必要性；w/o Curriculum 去除速度-地形双课程，只保留静态命令分布；Linear Mapping 将 softmax 映射替换为线性映射加截断，以比较映射形式的差异；Single Feature 则仅保留足底接触特征作为难度信号，用于验证多源融合的必要性。
 
 \subsection{评价指标}\label{sec:metric_setup}
 \subtopic{主指标}
@@ -1326,13 +1347,7 @@ Single Feature & 0.778$\pm$0.019 & 0.288$\pm$0.011 & 0.531$\pm$0.016 \\
 
 \subsection{失败案例与可解释性}
 \subtopic{典型失败模式}
-对未通过回合进行抽样分析，归纳出三类失败模式：
-\begin{enumerate}
-\item \textbf{台阶踩空}：足底接触特征瞬间下降但难度估计未及时响应，造成稳定项权重抬升滞后；占失败回合 $42\%$。
-\item \textbf{斜坡侧滑}：下坡侧风险特征 $f_g$ 与 $f_v$ 同时升高，调度器输出震荡；占 $31\%$。
-\item \textbf{推力扰动后过冲}：扰动消失后调度器仍保持高稳定权重，导致策略过度保守、跟踪误差增大；占 $19\%$。
-\end{enumerate}
-其余 $8\%$ 为仿真数值不稳定造成的非典型失败。
+对未通过回合进行抽样分析后可以发现，失败主要集中在三种模式。其一是台阶踩空，即足底接触特征瞬间下降，但难度估计未能及时响应，导致稳定项权重抬升滞后，这类情况约占失败回合的 $42\%$；其二是斜坡侧滑，即下坡侧风险特征 $f_g$ 与 $f_v$ 同时升高，引起调度器输出震荡，这类情况约占 $31\%$；其三是推力扰动后的过冲，即扰动消失后调度器仍维持较高稳定权重，导致策略过度保守并使跟踪误差增大，这类情况约占 $19\%$。其余 $8\%$ 的失败则主要来自仿真数值不稳定造成的非典型情形。
 
 \subtopic{改进方向}
 失败模式 1 提示需要引入“前瞻”机制——例如基于历史接触序列的短时序预测；失败模式 2 提示在权重输出端加入正则化项以抑制震荡；失败模式 3 提示难度分数下降阶段的恢复速度可独立调节。这些改进方向构成本文工作的自然延伸，将在第~\ref{sec:future}~节展开讨论。
