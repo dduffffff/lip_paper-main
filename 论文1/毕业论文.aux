@@ -18,7 +18,7 @@
 \HyPL@Entry{0<</S/D>>}
 \HyPL@Entry{1<</S/R>>}
 \citation{hwangbo2019,kumar2021rma,rudin2022,miki2022,lee2020}
-\HyPL@Entry{8<</S/D>>}
+\HyPL@Entry{9<</S/D>>}
 \@writefile{toc}{\contentsline {section}{\numberline {1}绪论}{1}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}研究背景与意义}{1}{subsection.1.1}\protected@file@percent }
 \citation{hwangbo2019}
@@ -147,31 +147,100 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.6}本章小结}{34}{subsection.4.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}结果与分析}{34}{section.5}\protected@file@percent }
 \newlabel{sec:results}{{5}{34}{结果与分析}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}总体性能对比}{34}{subsection.5.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5-1}{\ignorespaces 全部测试场景平均指标（均值 ± 标准差，$5$ 种子）\relax }}{35}{table.caption.28}\protected@file@percent }
-\newlabel{tab:overall}{{5-1}{35}{全部测试场景平均指标（均值 ± 标准差，$5$ 种子）\relax }{table.caption.28}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}分场景结果剖析}{35}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}消融实验}{36}{subsection.5.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5-2}{\ignorespaces 消融实验结果（在 L2-L5 平均，$5$ 种子均值 ± 标准差）\relax }}{36}{table.caption.29}\protected@file@percent }
-\newlabel{tab:ablation}{{5-2}{36}{消融实验结果（在 L2-L5 平均，$5$ 种子均值 ± 标准差）\relax }{table.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5-1}{\ignorespaces 平滑系数 $\eta $ 与裁剪率 $\Delta $ 对训练指标的影响示例。图中多条曲线反映了控制信号与性能指标随训练过程的波动情况，可用于辅助说明超参数对稳定性的影响。\relax }}{37}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:sens}{{5-1}{37}{平滑系数 $\eta $ 与裁剪率 $\Delta $ 对训练指标的影响示例。图中多条曲线反映了控制信号与性能指标随训练过程的波动情况，可用于辅助说明超参数对稳定性的影响。\relax }{figure.caption.30}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}训练动力学}{37}{subsection.5.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5-2}{\ignorespaces 训练奖励与跌倒率相关曲线示例。本文关注的收敛速度、平台期奖励与跌倒率变化均可通过此类训练曲线进行统计分析。\relax }}{38}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:train_curve}{{5-2}{38}{训练奖励与跌倒率相关曲线示例。本文关注的收敛速度、平台期奖励与跌倒率变化均可通过此类训练曲线进行统计分析。\relax }{figure.caption.31}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5-3}{\ignorespaces 隐变量二维可视化示例。不同颜色表示不同速度、负载或地形条件，点云分布越清晰，说明内部表征越容易为难度估计与奖励调度提供判别信号。\relax }}{39}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:tsne_compare}{{5-3}{39}{隐变量二维可视化示例。不同颜色表示不同速度、负载或地形条件，点云分布越清晰，说明内部表征越容易为难度估计与奖励调度提供判别信号。\relax }{figure.caption.32}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}失败案例与可解释性}{39}{subsection.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}综合讨论}{39}{subsection.5.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}本章小结}{40}{subsection.5.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}结论与展望}{40}{section.6}\protected@file@percent }
-\newlabel{sec:future}{{6}{40}{结论与展望}{section.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}研究工作总结}{40}{subsection.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}主要结论}{41}{subsection.6.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6-1}{\ignorespaces 本文工作的主要结论归纳\relax }}{42}{table.caption.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}方法局限与适用边界}{42}{subsection.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}工程部署与 Sim2Real 展望}{43}{subsection.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}后续研究方向}{43}{subsection.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}总体性能对比}{35}{subsection.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5-1}{\ignorespaces 全部测试场景平均指标（均值 $\pm $ 标准差，$5$ 种子）\relax }}{35}{table.caption.28}\protected@file@percent }
+\newlabel{tab:overall}{{5-1}{35}{全部测试场景平均指标（均值 $\pm $ 标准差，$5$ 种子）\relax }{table.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}仿真迁移实验}{35}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{仿真环境与实验平台}{35}{subsubsection*.29}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-1}{\ignorespaces PyBullet 迁移仿真环境。左侧为平坦地形测试场景，右侧为随机粗糙地形测试场景，机器人需在本体感知条件下完成速度跟踪与姿态稳定。\relax }}{36}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:zr_pybullet}{{5-1}{36}{PyBullet 迁移仿真环境。左侧为平坦地形测试场景，右侧为随机粗糙地形测试场景，机器人需在本体感知条件下完成速度跟踪与姿态稳定。\relax }{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {subsubsection}{速度性能迁移验证}{36}{subsubsection*.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-2}{\ignorespaces 不同速度指令下的迁移仿真运动截图。策略在 $0.5\sim 3.5$\nobreakspace  {}m/s 范围内均可保持稳定运动，足端触地节律清晰、躯干姿态平稳。\relax }}{36}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:zr_speed_migration}{{5-2}{36}{不同速度指令下的迁移仿真运动截图。策略在 $0.5\sim 3.5$~m/s 范围内均可保持稳定运动，足端触地节律清晰、躯干姿态平稳。\relax }{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {subsubsection}{极限速度与横摆角速度测试}{37}{subsubsection*.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-3}{\ignorespaces 最大纵向速度试验。策略在 $3.5$\nobreakspace  {}m/s 极限速度指令下仍保持稳定，姿态波动随速度增大呈超线性增长。\relax }}{37}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:zr_maxspeed}{{5-3}{37}{最大纵向速度试验。策略在 $3.5$~m/s 极限速度指令下仍保持稳定，姿态波动随速度增大呈超线性增长。\relax }{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-4}{\ignorespaces 最大横摆角速度试验。策略可稳定跟踪 $3.0$\nobreakspace  {}rad/s 转向指令，极限转弯半径下仍保持躯干水平度。\relax }}{37}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:zr_maxyaw}{{5-4}{37}{最大横摆角速度试验。策略可稳定跟踪 $3.0$~rad/s 转向指令，极限转弯半径下仍保持躯干水平度。\relax }{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {subsubsection}{低附着路面验证}{37}{subsubsection*.36}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-5}{\ignorespaces 低附着系数路面工况试验（$\mu =0.2$）。策略通过自适应调节步幅与支撑相占比保持运动稳定性，速度跟踪误差较正常路面增大约 $2$ 倍。\relax }}{37}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:zr_lowfric}{{5-5}{37}{低附着系数路面工况试验（$\mu =0.2$）。策略通过自适应调节步幅与支撑相占比保持运动稳定性，速度跟踪误差较正常路面增大约 $2$ 倍。\relax }{figure.caption.37}{}}
+\@writefile{toc}{\contentsline {subsubsection}{变负载鲁棒性验证}{38}{subsubsection*.38}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-6}{\ignorespaces $5$\nobreakspace  {}kg 负载工况试验。附加 $5$\nobreakspace  {}kg 负载后运动性能几乎无退化，速度跟踪误差与能耗增加均 $<5\%$。\relax }}{38}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:zr_5kg}{{5-6}{38}{$5$~kg 负载工况试验。附加 $5$~kg 负载后运动性能几乎无退化，速度跟踪误差与能耗增加均 $<5\%$。\relax }{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-7}{\ignorespaces $10$\nobreakspace  {}kg 负载工况试验。附加 $10$\nobreakspace  {}kg 负载后关节力矩峰值上升约 $30\%$，但仍能维持稳定运动，未发生跌倒。\relax }}{38}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:zr_10kg}{{5-7}{38}{$10$~kg 负载工况试验。附加 $10$~kg 负载后关节力矩峰值上升约 $30\%$，但仍能维持稳定运动，未发生跌倒。\relax }{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {subsubsection}{崎岖与坑洼越野地形}{38}{subsubsection*.41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-8}{\ignorespaces 崎岖越野地形下的连续运动截图。策略通过自适应落足调整应对高度变化 $0\sim 8$\nobreakspace  {}cm 的随机碎石凸起，躯干保持基本水平。\relax }}{38}{figure.caption.42}\protected@file@percent }
+\newlabel{fig:zr_rough}{{5-8}{38}{崎岖越野地形下的连续运动截图。策略通过自适应落足调整应对高度变化 $0\sim 8$~cm 的随机碎石凸起，躯干保持基本水平。\relax }{figure.caption.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-9}{\ignorespaces 崎岖越野地形工况试验数据。速度跟踪误差在崎岖段显著上升但仍保持有界，姿态波动方差较平坦地形增大 $2\sim 3$ 倍。\relax }}{39}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:zr_rough_data}{{5-9}{39}{崎岖越野地形工况试验数据。速度跟踪误差在崎岖段显著上升但仍保持有界，姿态波动方差较平坦地形增大 $2\sim 3$ 倍。\relax }{figure.caption.43}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-10}{\ignorespaces 坑洼越野地形下的连续运动截图。策略在随机深度 $0\sim 6$\nobreakspace  {}cm 凹陷中自动探索可行落足区域。\relax }}{39}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:zr_pothole}{{5-10}{39}{坑洼越野地形下的连续运动截图。策略在随机深度 $0\sim 6$~cm 凹陷中自动探索可行落足区域。\relax }{figure.caption.44}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-11}{\ignorespaces 坑洼越野地形工况试验数据。触地信号在坑洼区呈不规则切换模式，能量消耗较平坦地形增加约 $40\%$。\relax }}{39}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:zr_pothole_data}{{5-11}{39}{坑洼越野地形工况试验数据。触地信号在坑洼区呈不规则切换模式，能量消耗较平坦地形增加约 $40\%$。\relax }{figure.caption.45}{}}
+\@writefile{toc}{\contentsline {subsubsection}{复合地形：楼梯与坡道组合}{39}{subsubsection*.46}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-12}{\ignorespaces 上楼梯-下坡复合地形关键运动帧。台阶高度 $0.10\sim 0.18$\nobreakspace  {}m，下坡坡度约 $20^\circ $。策略在台阶段与坡道段之间自动完成步态参数切换。\relax }}{40}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:zr_stair_up}{{5-12}{40}{上楼梯-下坡复合地形关键运动帧。台阶高度 $0.10\sim 0.18$~m，下坡坡度约 $20^\circ $。策略在台阶段与坡道段之间自动完成步态参数切换。\relax }{figure.caption.47}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-13}{\ignorespaces 上楼梯-下坡复合地形试验数据。台阶段抬腿高度显著增大，坡道段躯干俯仰角主动调整以防止倾覆。\relax }}{40}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:zr_stair_up_data}{{5-13}{40}{上楼梯-下坡复合地形试验数据。台阶段抬腿高度显著增大，坡道段躯干俯仰角主动调整以防止倾覆。\relax }{figure.caption.48}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-14}{\ignorespaces 上坡-下楼梯复合地形关键运动帧。上坡坡度约 $18^\circ $，下楼梯台阶高度 $0.10\sim 0.15$\nobreakspace  {}m。\relax }}{40}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:zr_stair_down}{{5-14}{40}{上坡-下楼梯复合地形关键运动帧。上坡坡度约 $18^\circ $，下楼梯台阶高度 $0.10\sim 0.15$~m。\relax }{figure.caption.49}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-15}{\ignorespaces 上坡-下楼梯复合地形试验数据。下楼梯段关节力矩波动明显增大，策略通过缩短步幅和降低下落速度保证稳定。\relax }}{40}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:zr_stair_down_data}{{5-15}{40}{上坡-下楼梯复合地形试验数据。下楼梯段关节力矩波动明显增大，策略通过缩短步幅和降低下落速度保证稳定。\relax }{figure.caption.50}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}实机部署验证}{41}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{硬件平台与实验系统}{41}{subsubsection*.51}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-16}{\ignorespaces 本体感受四足机器人实验平台。硬件系统包含 Unitree Go1 机器人、NVIDIA Jetson 计算单元与机载 IMU/编码器传感链路，策略仅依赖本体感受信息运行。\relax }}{41}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:zr_hw}{{5-16}{41}{本体感受四足机器人实验平台。硬件系统包含 Unitree Go1 机器人、NVIDIA Jetson 计算单元与机载 IMU/编码器传感链路，策略仅依赖本体感受信息运行。\relax }{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {subsubsection}{高速运动性能}{41}{subsubsection*.53}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-17}{\ignorespaces $3.5$\nobreakspace  {}m/s 高速奔跑 $1$\nobreakspace  {}s 内的连续关键帧。策略保持清晰的 trot 对角步态，足端触地与离地时刻分明，躯干姿态平稳。\relax }}{41}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:zr_fast_run}{{5-17}{41}{$3.5$~m/s 高速奔跑 $1$~s 内的连续关键帧。策略保持清晰的 trot 对角步态，足端触地与离地时刻分明，躯干姿态平稳。\relax }{figure.caption.54}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-18}{\ignorespaces 最大速度下的运动稳定性数据。前向速度实测值在 $3.3\sim 3.5$\nobreakspace  {}m/s 范围内波动，姿态偏差始终控制在安全阈值以内。\relax }}{42}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:zr_maxspeed_data}{{5-18}{42}{最大速度下的运动稳定性数据。前向速度实测值在 $3.3\sim 3.5$~m/s 范围内波动，姿态偏差始终控制在安全阈值以内。\relax }{figure.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-19}{\ignorespaces 最高横摆角速度下的极限相位切换关键帧。策略在 $3.0$\nobreakspace  {}rad/s 转向指令下仍保持交替对角支撑，相位切换干净利落。\relax }}{42}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:zr_maxyaw_data}{{5-19}{42}{最高横摆角速度下的极限相位切换关键帧。策略在 $3.0$~rad/s 转向指令下仍保持交替对角支撑，相位切换干净利落。\relax }{figure.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-20}{\ignorespaces 最大加速度下的运动稳定性。速度跟踪曲线平稳上升，加速度均值约 $1.5$\nobreakspace  {}m/s$^2$，无明显超调或迟滞。\relax }}{43}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:zr_maxacc_data}{{5-20}{43}{最大加速度下的运动稳定性。速度跟踪曲线平稳上升，加速度均值约 $1.5$~m/s$^2$，无明显超调或迟滞。\relax }{figure.caption.57}{}}
+\@writefile{toc}{\contentsline {subsubsection}{低附着路面验证}{43}{subsubsection*.58}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-21}{\ignorespaces 低附着路面（光滑瓷砖，$\mu \approx 0.25\sim 0.35$）实机运动场景。策略通过增大支撑占空比与降低步幅自适应地调整运动模式。\relax }}{43}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:zr_lowfric_real}{{5-21}{43}{低附着路面（光滑瓷砖，$\mu \approx 0.25\sim 0.35$）实机运动场景。策略通过增大支撑占空比与降低步幅自适应地调整运动模式。\relax }{figure.caption.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-22}{\ignorespaces 低附着路面下的运动稳定性。速度跟踪稳定性略有下降但未发生失控打滑，姿态维持良好。\relax }}{44}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:zr_lowfric_real_data}{{5-22}{44}{低附着路面下的运动稳定性。速度跟踪稳定性略有下降但未发生失控打滑，姿态维持良好。\relax }{figure.caption.60}{}}
+\@writefile{toc}{\contentsline {subsubsection}{负载鲁棒性验证}{44}{subsubsection*.61}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-23}{\ignorespaces $3.5$\nobreakspace  {}kg 负载下的敏捷运动帧图。负载条件下策略仍保持稳定步态，无明显姿态倾斜或速度退化。\relax }}{44}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:zr_load_frames}{{5-23}{44}{$3.5$~kg 负载下的敏捷运动帧图。负载条件下策略仍保持稳定步态，无明显姿态倾斜或速度退化。\relax }{figure.caption.62}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-24}{\ignorespaces $3.5$\nobreakspace  {}kg 负载下的运动稳定性。速度跟踪误差与空载相比无明显退化（$<3\%$），关节力矩峰值增加约 $15\%$。\relax }}{45}{figure.caption.63}\protected@file@percent }
+\newlabel{fig:zr_load_data}{{5-24}{45}{$3.5$~kg 负载下的运动稳定性。速度跟踪误差与空载相比无明显退化（$<3\%$），关节力矩峰值增加约 $15\%$。\relax }{figure.caption.63}{}}
+\@writefile{toc}{\contentsline {subsubsection}{复合地形通过}{45}{subsubsection*.64}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-25}{\ignorespaces 复合地形实机验证。（左）上楼梯（$0.10\sim 0.15$\nobreakspace  {}m）-下坡（约 $18^\circ $）；（右）上坡（约 $18^\circ $）-下楼梯（$0.10\sim 0.15$\nobreakspace  {}m）。\relax }}{45}{figure.caption.65}\protected@file@percent }
+\newlabel{fig:zr_stair_real}{{5-25}{45}{复合地形实机验证。（左）上楼梯（$0.10\sim 0.15$~m）-下坡（约 $18^\circ $）；（右）上坡（约 $18^\circ $）-下楼梯（$0.10\sim 0.15$~m）。\relax }{figure.caption.65}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-26}{\ignorespaces 复合地形实机运行稳定性数据。上楼梯段通过率 $87\%$，下楼梯段通过率 $82\%$，全程综合通过率 $78\%$。\relax }}{46}{figure.caption.66}\protected@file@percent }
+\newlabel{fig:zr_stair_real_data}{{5-26}{46}{复合地形实机运行稳定性数据。上楼梯段通过率 $87\%$，下楼梯段通过率 $82\%$，全程综合通过率 $78\%$。\relax }{figure.caption.66}{}}
+\@writefile{toc}{\contentsline {subsubsection}{室外自然地形测试}{46}{subsubsection*.67}\protected@file@percent }
+\newlabel{fig:zr_outdoor_bush}{{5-27a}{46}{灌木丛脱离\relax }{figure.caption.68}{}}
+\newlabel{sub@fig:zr_outdoor_bush}{{a}{46}{灌木丛脱离\relax }{figure.caption.68}{}}
+\newlabel{fig:zr_outdoor_grass}{{5-27b}{46}{草地平地小跑\relax }{figure.caption.68}{}}
+\newlabel{sub@fig:zr_outdoor_grass}{{b}{46}{草地平地小跑\relax }{figure.caption.68}{}}
+\newlabel{fig:zr_outdoor_slope}{{5-27c}{46}{草地爬坡\relax }{figure.caption.68}{}}
+\newlabel{sub@fig:zr_outdoor_slope}{{c}{46}{草地爬坡\relax }{figure.caption.68}{}}
+\newlabel{fig:zr_outdoor_stone}{{5-27d}{46}{铺装石板路行走\relax }{figure.caption.68}{}}
+\newlabel{sub@fig:zr_outdoor_stone}{{d}{46}{铺装石板路行走\relax }{figure.caption.68}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5-27}{\ignorespaces 室外自然地形实机测试。四种典型室外场景分别验证策略在外力扰动、柔软地面、坡度组合与半结构化路面上的适应能力。\relax }}{46}{figure.caption.68}\protected@file@percent }
+\newlabel{fig:zr_outdoor}{{5-27}{46}{室外自然地形实机测试。四种典型室外场景分别验证策略在外力扰动、柔软地面、坡度组合与半结构化路面上的适应能力。\relax }{figure.caption.68}{}}
+\@writefile{toc}{\contentsline {subsubsection}{多工况综合成功率}{46}{subsubsection*.69}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5-28}{\ignorespaces 多工况下的通过成功率汇总。本体感知策略在绝大多数工况下均达到 $80\%$ 以上通过率，综合平均成功率约 $89.5\%$。\relax }}{47}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:zr_success}{{5-28}{47}{多工况下的通过成功率汇总。本体感知策略在绝大多数工况下均达到 $80\%$ 以上通过率，综合平均成功率约 $89.5\%$。\relax }{figure.caption.70}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}失败案例与可解释性}{47}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}综合讨论}{47}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}本章小结}{48}{subsection.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}结论与展望}{48}{section.6}\protected@file@percent }
+\newlabel{sec:future}{{6}{48}{结论与展望}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}研究工作总结}{48}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}主要结论}{49}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6-1}{\ignorespaces 本文工作的主要结论归纳\relax }}{50}{table.caption.71}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}方法局限与适用边界}{50}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}工程部署与 Sim2Real 展望}{51}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}后续研究方向}{51}{subsection.6.5}\protected@file@percent }
 \bibstyle{gbt7714-numerical}
 \bibdata{references}
 \bibcite{hwangbo2019}{{1}{2019}{{Hwangbo et~al.}}{{Hwangbo, Lee, and Hutter}}}
@@ -185,5 +254,5 @@
 \bibcite{peng2020}{{9}{2020}{{Peng et~al.}}{{Peng, Coumans, Zhang, et~al.}}}
 \bibcite{fu2021}{{10}{2021}{{Fu et~al.}}{{Fu, Kumar, Nachum, Tucker, and Levine}}}
 \bibcite{makoviychuk2021}{{11}{2021}{{Makoviychuk et~al.}}{{Makoviychuk, Wawrzyniak, Guo, et~al.}}}
-\@writefile{toc}{\contentsline {section}{致谢}{46}{section*.35}\protected@file@percent }
-\gdef \@abspage@last{54}
+\@writefile{toc}{\contentsline {section}{致谢}{54}{section*.73}\protected@file@percent }
+\gdef \@abspage@last{63}

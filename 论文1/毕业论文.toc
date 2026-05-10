@@ -35,17 +35,30 @@
 \contentsline {subsection}{\numberline {4.5}实验流程与统计方法}{34}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}本章小结}{34}{subsection.4.6}%
 \contentsline {section}{\numberline {5}结果与分析}{34}{section.5}%
-\contentsline {subsection}{\numberline {5.1}总体性能对比}{34}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}分场景结果剖析}{35}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}消融实验}{36}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}训练动力学}{37}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}失败案例与可解释性}{39}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}综合讨论}{39}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}本章小结}{40}{subsection.5.7}%
-\contentsline {section}{\numberline {6}结论与展望}{40}{section.6}%
-\contentsline {subsection}{\numberline {6.1}研究工作总结}{40}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}主要结论}{41}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}方法局限与适用边界}{42}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}工程部署与 Sim2Real 展望}{43}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}后续研究方向}{43}{subsection.6.5}%
-\contentsline {section}{致谢}{46}{section*.35}%
+\contentsline {subsection}{\numberline {5.1}总体性能对比}{35}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}仿真迁移实验}{35}{subsection.5.2}%
+\contentsline {subsubsection}{仿真环境与实验平台}{35}{subsubsection*.29}%
+\contentsline {subsubsection}{速度性能迁移验证}{36}{subsubsection*.31}%
+\contentsline {subsubsection}{极限速度与横摆角速度测试}{37}{subsubsection*.33}%
+\contentsline {subsubsection}{低附着路面验证}{37}{subsubsection*.36}%
+\contentsline {subsubsection}{变负载鲁棒性验证}{38}{subsubsection*.38}%
+\contentsline {subsubsection}{崎岖与坑洼越野地形}{38}{subsubsection*.41}%
+\contentsline {subsubsection}{复合地形：楼梯与坡道组合}{39}{subsubsection*.46}%
+\contentsline {subsection}{\numberline {5.3}实机部署验证}{41}{subsection.5.3}%
+\contentsline {subsubsection}{硬件平台与实验系统}{41}{subsubsection*.51}%
+\contentsline {subsubsection}{高速运动性能}{41}{subsubsection*.53}%
+\contentsline {subsubsection}{低附着路面验证}{43}{subsubsection*.58}%
+\contentsline {subsubsection}{负载鲁棒性验证}{44}{subsubsection*.61}%
+\contentsline {subsubsection}{复合地形通过}{45}{subsubsection*.64}%
+\contentsline {subsubsection}{室外自然地形测试}{46}{subsubsection*.67}%
+\contentsline {subsubsection}{多工况综合成功率}{46}{subsubsection*.69}%
+\contentsline {subsection}{\numberline {5.4}失败案例与可解释性}{47}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}综合讨论}{47}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}本章小结}{48}{subsection.5.6}%
+\contentsline {section}{\numberline {6}结论与展望}{48}{section.6}%
+\contentsline {subsection}{\numberline {6.1}研究工作总结}{48}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}主要结论}{49}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}方法局限与适用边界}{50}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}工程部署与 Sim2Real 展望}{51}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}后续研究方向}{51}{subsection.6.5}%
+\contentsline {section}{致谢}{54}{section*.73}%

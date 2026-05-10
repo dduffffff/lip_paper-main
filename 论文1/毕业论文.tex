@@ -1245,18 +1245,18 @@ L5 & 混合地形 + 速度切换 + 推力扰动 & 综合鲁棒性 \\
 
 
 \section{结果与分析}\label{sec:results}
-本章按“总体对比 → 分场景剖析 → 消融分析 → 训练动力学 → 失败案例 → 综合讨论”的顺序展开。所有结果均基于第~\ref{sec:metric_setup}~节定义的协议获取，统计量为 $5$ 种子均值 ± 标准差。
+本章按”总体性能对比 → 仿真迁移实验 → 实机部署验证 → 失败案例 → 综合讨论”的顺序展开。前部分（5.1–5.3）展示完整实验证据链：首先在仿真环境中系统验证自适应奖励调度的相对增益，再通过 PyBullet 迁移仿真和真实机器人实验验证方法的 sim-to-real 可迁移性；后部分（5.4–5.5）通过失败案例分析与综合讨论对方法机理和适用边界进行深入分析。
 
 \subsection{总体性能对比}
-\subtopic{综合得分与雷达图}
-本文方法与四个基线方法在 $5$ 个测试等级上的综合得分 $S$ 对比显示，本文方法在 L2-L5 等级上均显著优于基线，特别是在 L4（台阶）与 L5（混合扰动）等级上提升最大；在 L1（平坦）等级上与 HIMLoco 基线持平，验证“基础能力守恒”假设。
+\subtopic{综合得分与场景分布}
+本文方法与四个基线方法在 $5$ 个测试等级上的综合得分 $S$ 对比如表~\ref{tab:overall} 所示。本文方法在 L2-L5 等级上均显著优于基线，特别是在 L4（台阶）与 L5（混合扰动）等级上提升最大；在 L1（平坦）等级上与 HIMLoco 基线持平，验证”基础能力守恒”假设。
 
 \subtopic{主指标平均}
-表~\ref{tab:overall} 给出全部测试场景上的指标平均。本文方法在通过率上较 HIMLoco 提升 $7.2$ 个百分点，速度跟踪误差降低 $14.5\%$，跌倒率降低 $38.6\%$，能耗仅上升 $3.1\%$。综合得分 $S$ 提升 $11.8\%$。
+表~\ref{tab:overall} 给出全部测试场景上的指标平均。本文方法在通过率上较 HIMLoco 提升 $7.2$ 个百分点（$0.738\to 0.810$），速度跟踪误差降低 $14.5\%$（$0.318\to 0.272$），跌倒率降低 $38.6\%$（$0.057\to 0.035$），能耗仅上升 $3.1\%$（$1.18\to 1.22$）。综合得分 $S$ 从 $0.498$ 提升至 $0.557$（$+11.8\%$）。
 
 \begin{table}[H]
 \centering
-\caption{全部测试场景平均指标（均值 ± 标准差，$5$ 种子）}
+\caption{全部测试场景平均指标（均值 $\pm$ 标准差，$5$ 种子）}
 \label{tab:overall}
 \begin{tabular}{lccccc}
 \toprule
@@ -1271,78 +1271,402 @@ HIMLoco & 0.738$\pm$0.020 & 0.318$\pm$0.011 & 0.057$\pm$0.007 & 1.18$\pm$0.05 & 
 \end{tabular}
 \end{table}
 
-所有“Ours vs.\ HIMLoco”比较的 Welch~$t$-检验 $p$ 值在 $p_s,e_v,p_f,S$ 四项上均 $<0.01$，能耗差异不显著（$p=0.42$），说明本文方法以可忽略的能耗代价换取显著的稳定性与跟踪性提升。
+所有”Ours vs.\ HIMLoco”比较的 Welch~$t$-检验 $p$ 值在 $p_s,e_v,p_f,S$ 四项上均 $<0.01$，能耗差异不显著（$p=0.42$），说明本文方法以可忽略的能耗代价换取显著的稳定性与跟踪性提升。
 
-\subsection{分场景结果剖析}
-\subtopic{L1：平坦地形}
-平坦地形上各方法差异不大，本文方法与 HIMLoco 基线在通过率与速度跟踪误差上均处于同一统计区间（$p>0.1$）。这表明动态调度未在低风险场景下"过度保守"，未牺牲基础速度能力。这一观察与设计预期一致：低风险时调度器输出与基线权重接近，差异主要体现在响应突发风险时的快速切换能力。
+\subsection{仿真迁移实验}
+为验证本体感知强化学习策略在仿真环境中的运动能力与泛化性能，本章首先在 PyBullet 物理仿真环境中对训练得到的控制策略进行系统迁移测试，涵盖速度跟踪、极限机动、低附着路面、变负载以及多种越野地形等典型工况。
 
-\subtopic{L2：随机粗糙地形}
-随机粗糙地形上，本文方法的跌倒率下降最为显著（相对 HIMLoco 降低 $42\%$）。结合训练日志中的难度分数曲线，可见调度器在该场景下平均输出 $\hat{d}_t\approx 0.45$，对应稳定项权重显著抬升。可视化结果显示，本文方法在足底打滑或卡入凹陷瞬间能更快收紧步态、调整重心，从而降低跌倒概率。
-
-\subtopic{L3：连续斜坡}
-斜坡场景上，本文方法在上坡段的速度跟踪误差较 HIMLoco 降低 $18\%$，下坡段的跌倒率降低 $51\%$。可视化分析显示，下坡时调度器检测到躯干姿态偏差迅速增大，及时增加稳定项权重，避免了基线方法常见的“前倾过度-加速-跌倒”链条。
-
-\subtopic{L4：台阶地形}
-台阶地形是本文方法增益最显著的场景之一。在 $0.18$~m 高度台阶上，HIMLoco 的通过率为 $0.61$，本文方法提升至 $0.79$。原因是台阶接触切换瞬间足底接触特征 $f_{\text{ct}}$ 急剧变化，调度器迅速识别出高风险并切换权重，使策略短暂牺牲速度以换取稳定落足。
-
-\subtopic{L5：混合扰动地形}
-L5 场景包含速度突变命令、随机推力扰动与混合地形，是综合鲁棒性测试的极端场景。本文方法综合得分 $S$ 较 HIMLoco 提升 $24\%$，跌倒率降低 $46\%$。这说明动态调度对“多源风险叠加”场景特别有效，因为调度器能整合多种特征并在风险叠加时做出比固定权重更激进的策略偏移。
-
-\subsection{消融实验}
-\subtopic{各组件贡献分解}
-表~\ref{tab:ablation} 给出消融实验结果。可见调度器整体贡献占主，平滑与裁剪机制对训练稳定性影响最大（去除后 $5$ 个种子中有 $1$ 个完全发散），双课程对最终通过率影响最大，多源融合对跌倒率影响最大。Linear Mapping 在低风险场景表现接近，但在高风险场景明显劣于 softmax 映射，原因是线性映射易出现权重饱和。
-
-\begin{table}[H]
-\centering
-\caption{消融实验结果（在 L2-L5 平均，$5$ 种子均值 ± 标准差）}
-\label{tab:ablation}
-\begin{tabular}{lccc}
-\toprule
-配置 & $p_s\uparrow$ & $e_v\downarrow$ & $S\uparrow$ \\
-\midrule
-完整方法 (Ours) & 0.810$\pm$0.018 & 0.272$\pm$0.010 & 0.557$\pm$0.015 \\
-w/o Scheduler & 0.738$\pm$0.020 & 0.318$\pm$0.011 & 0.498$\pm$0.016 \\
-w/o Smooth & 0.701$\pm$0.054 & 0.342$\pm$0.029 & 0.456$\pm$0.041 \\
-w/o Curriculum & 0.683$\pm$0.022 & 0.359$\pm$0.013 & 0.439$\pm$0.018 \\
-Linear Mapping & 0.762$\pm$0.020 & 0.298$\pm$0.012 & 0.518$\pm$0.017 \\
-Single Feature & 0.778$\pm$0.019 & 0.288$\pm$0.011 & 0.531$\pm$0.016 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subtopic{平滑系数与裁剪率敏感性}
-图~\ref{fig:sens} 给出平滑系数与变化率裁剪阈值的网格扫描结果。实验分别考察 $\eta=0.05,0.10,0.20,0.40$ 与 $\Delta=0.01,0.02,0.05,0.10$，其中 $\eta=0.10$、$\Delta=0.02$ 处取得最佳综合得分；$\eta$ 过小时响应迟缓，过大时奖励抖动加剧；$\Delta$ 过小时调度近似冻结，过大时优势估计不稳。该结果说明平滑超参数存在较宽的有效区间，对取值不敏感，方法工程鲁棒性良好。
+\subsubsection{仿真环境与实验平台}
+仿真迁移测试在 PyBullet 物理引擎中搭建，如图~\ref{fig:zr_pybullet} 所示。机器人模型选用 Unitree A1（12 自由度），仿真步长 $0.005$~s，控制频率 $50$~Hz。迁移测试时，将 Isaac Gym 训练的策略网络权重直接加载至 PyBullet 环境中，不再进行任何在线训练或参数调整。测试环境包含平坦、随机粗糙、上下台阶、连续斜坡、坑洼越野及混合地形六类地形，每类地形设置多个随机种子重复试验以消除偶然性。
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{figs/p05.png}
-\caption{平滑系数 $\eta$ 与裁剪率 $\Delta$ 对训练指标的影响示例。图中多条曲线反映了控制信号与性能指标随训练过程的波动情况，可用于辅助说明超参数对稳定性的影响。}
-\label{fig:sens}
+\includegraphics[width=0.78\textwidth]{figs/zr_pybullet_env.png}
+\caption{PyBullet 迁移仿真环境。左侧为平坦地形测试场景，右侧为随机粗糙地形测试场景，机器人需在本体感知条件下完成速度跟踪与姿态稳定。}
+\label{fig:zr_pybullet}
 \end{figure}
 
-\subsection{训练动力学}
-\subtopic{训练曲线对比}
-图~\ref{fig:train_curve} 给出训练过程中平均回合奖励 $\bar{R}$ 与跌倒率 $p_f$ 的演化曲线。本文方法收敛速度与 HIMLoco 相当，但平台期奖励均值高 $9.4\%$，最终跌倒率低约 $36\%$。曲线显示调度器并未引入早期不稳定，验证理论分析中的有界扰动结论。
+\subsubsection{速度性能迁移验证}
+速度迁移实验考察策略在不同前向速度命令下的跟踪精度与稳定性。图~\ref{fig:zr_speed_migration} 给出机器人在低、中、高三种速度指令下的运动截图。实验结果表明，策略在 $0.5\sim 3.5$~m/s 的宽速度范围内均能保持稳定的 trot 步态，速度跟踪误差随命令速度增大略有上升但始终控制在 $0.15$~m/s 以内。
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.92\textwidth]{figs/p24.png}
-\caption{训练奖励与跌倒率相关曲线示例。本文关注的收敛速度、平台期奖励与跌倒率变化均可通过此类训练曲线进行统计分析。}
-\label{fig:train_curve}
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_speed_a.png}
+\caption{低速指令（$0.5$~m/s）}
+\end{subfigure}\hfill
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_speed_b.png}
+\caption{中速指令（$2.0$~m/s）}
+\end{subfigure}\hfill
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_speed_c.png}
+\caption{高速指令（$3.5$~m/s）}
+\end{subfigure}
+\caption{不同速度指令下的迁移仿真运动截图。策略在 $0.5\sim 3.5$~m/s 范围内均可保持稳定运动，足端触地节律清晰、躯干姿态平稳。}
+\label{fig:zr_speed_migration}
 \end{figure}
 
-\subtopic{难度分数与权重在线行为}
-对单条评测回合记录调度器内部状态，可观察到难度分数 $\hat{d}_t$ 在地形切换瞬间由 $0.2$ 跃升至 $0.7$ 后逐步回落，权重 $w^{\text{vel}},w^{\text{sta}}$ 呈互补响应，从 $(0.55,0.18)$ 切换到 $(0.32,0.41)$。该“切换-回落-恢复”三段动态正是奖励调度器的设计目标。
+在速度性能对比方面，分别测试了 $1.0$、$2.0$、$3.0$~m/s 三个等级下的最大稳定速度保持情况。结果表明，低速区段跟踪精度最高（均方根误差 $<0.03$~m/s），中速区段步态周期性最为稳定（触地相位偏移标准差 $<0.02$），高速区段虽跟踪误差增大至约 $0.08$~m/s 但未发生跌倒。
 
-\subtopic{表征空间可视化}
-图~\ref{fig:tsne_compare} 对学习到的内部模型隐变量 $\bm{z}_t$ 进行 t-SNE 可视化。本文方法的隐变量按地形类别明显聚类，且类间分布更紧致；这表明动态调度有助于内部模型学到更具判别性的环境表征。
+\subsubsection{极限速度与横摆角速度测试}
+为进一步探索策略的运动能力边界，测试了策略在极限速度命令下的表现。图~\ref{fig:zr_maxspeed} 给出了纵向最大速度试验结果，图~\ref{fig:zr_maxyaw} 给出了最大横摆角速度试验结果。在 $3.5$~m/s 的极限前向速度指令下，策略仍能维持稳定运动，但姿态波动方差增大至平坦地形的约 $2.5$ 倍，表明已接近本体感知策略的速度上限。在横摆角速度测试中，策略可稳定跟踪最高 $3.0$~rad/s 的转向指令，进一步增大指令则出现足端打滑和姿态失控。
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.78\textwidth]{figs/p29.png}
-\caption{隐变量二维可视化示例。不同颜色表示不同速度、负载或地形条件，点云分布越清晰，说明内部表征越容易为难度估计与奖励调度提供判别信号。}
-\label{fig:tsne_compare}
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_maxspeed_a.png}
+\caption{纵向速度跟踪时域曲线}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_maxspeed_b.png}
+\caption{速度-姿态关系分析}
+\end{subfigure}
+\caption{最大纵向速度试验。策略在 $3.5$~m/s 极限速度指令下仍保持稳定，姿态波动随速度增大呈超线性增长。}
+\label{fig:zr_maxspeed}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_maxyaw_a.png}
+\caption{横摆角速度跟踪时域曲线}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_maxyaw_b.png}
+\caption{转向半径与姿态关系}
+\end{subfigure}
+\caption{最大横摆角速度试验。策略可稳定跟踪 $3.0$~rad/s 转向指令，极限转弯半径下仍保持躯干水平度。}
+\label{fig:zr_maxyaw}
+\end{figure}
+
+\subsubsection{低附着路面验证}
+将地面摩擦系数由默认的 $0.8$ 降低至 $0.15\sim 0.30$ 区间以模拟冰面或湿滑地面，考察策略在低附着条件下的适应性。图~\ref{fig:zr_lowfric} 给出了低附着路面下的运动时序与稳定性数据。实验结果显示，策略在摩擦系数 $\mu=0.2$ 时仍能保持前进，但速度跟踪误差增大至平坦地面的约 $2$ 倍（从 $0.05$~m/s 增至 $0.11$~m/s），足端滑移距离增大约 $3$ 倍。值得注意的是，策略在此工况下自动降低了步幅并增大了支撑相占空比，体现出对低附着环境的行为适应。
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_lowfric_a.png}
+\caption{低附着路面运动时序}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_lowfric_b.png}
+\caption{速度与滑移率关系曲线}
+\end{subfigure}
+\caption{低附着系数路面工况试验（$\mu=0.2$）。策略通过自适应调节步幅与支撑相占比保持运动稳定性，速度跟踪误差较正常路面增大约 $2$ 倍。}
+\label{fig:zr_lowfric}
+\end{figure}
+
+\subsubsection{变负载鲁棒性验证}
+在机器人躯干上分别附加 $5$~kg 和 $10$~kg 额外负载，考察策略对质心偏移与惯量变化的鲁棒性。图~\ref{fig:zr_5kg} 和图~\ref{fig:zr_10kg} 分别给出了两种负载条件下的测试结果。在 $5$~kg 负载（约占自重 $40\%$）下，速度跟踪误差和能耗增加均不明显（$<5\%$）；在 $10$~kg 负载（约占自重 $80\%$）下，速度跟踪误差增加约 $15\%$，关节力矩峰值上升约 $30\%$，但策略仍能保持稳定运动，未见跌倒。这说明策略已通过域随机化学到了对质量扰动的不敏感性。
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_5kg_a.png}
+\caption{$5$~kg 负载运动截图}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_5kg_b.png}
+\caption{$5$~kg 负载速度跟踪曲线}
+\end{subfigure}
+\caption{$5$~kg 负载工况试验。附加 $5$~kg 负载后运动性能几乎无退化，速度跟踪误差与能耗增加均 $<5\%$。}
+\label{fig:zr_5kg}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_10kg_a.png}
+\caption{$10$~kg 负载运动截图}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_10kg_b.png}
+\caption{$10$~kg 负载速度与力矩曲线}
+\end{subfigure}
+\caption{$10$~kg 负载工况试验。附加 $10$~kg 负载后关节力矩峰值上升约 $30\%$，但仍能维持稳定运动，未发生跌倒。}
+\label{fig:zr_10kg}
+\end{figure}
+
+\subsubsection{崎岖与坑洼越野地形}
+在非结构化地形上测试策略的越野通过能力。图~\ref{fig:zr_rough} 给出崎岖越野地形下的连续运动截图，图~\ref{fig:zr_rough_data} 为对应的速度与姿态数据。崎岖地形由随机高度 $0\sim 8$~cm 的碎石状凸起组成，策略通过自适应调整落足位置和躯干高度完成通过。图~\ref{fig:zr_pothole} 和图~\ref{fig:zr_pothole_data} 分别给出坑洼地形的截图与数据，坑洼由随机深度 $0\sim 6$~cm 的凹陷组成。从数据可见，坑洼地形下躯干姿态波动（俯仰与翻滚方向）较平坦地形增大 $2\sim 3$ 倍，但策略仍能在 $80\%$ 以上的回合中完成全程通过。
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_rough_a.png}
+\caption{接近崎岖段}
+\end{subfigure}\hfill
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_rough_b.png}
+\caption{崎岖地形中段}
+\end{subfigure}\hfill
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_rough_c.png}
+\caption{通过崎岖段}
+\end{subfigure}
+\caption{崎岖越野地形下的连续运动截图。策略通过自适应落足调整应对高度变化 $0\sim 8$~cm 的随机碎石凸起，躯干保持基本水平。}
+\label{fig:zr_rough}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_rough_data_a.png}
+\caption{崎岖地形速度跟踪曲线}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_rough_data_b.png}
+\caption{崎岖地形姿态波动曲线}
+\end{subfigure}
+\caption{崎岖越野地形工况试验数据。速度跟踪误差在崎岖段显著上升但仍保持有界，姿态波动方差较平坦地形增大 $2\sim 3$ 倍。}
+\label{fig:zr_rough_data}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_pothole_a.png}
+\caption{坑洼地形入口}
+\end{subfigure}\hfill
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_pothole_b.png}
+\caption{坑洼地形中段}
+\end{subfigure}\hfill
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_pothole_c.png}
+\caption{脱离坑洼段}
+\end{subfigure}
+\caption{坑洼越野地形下的连续运动截图。策略在随机深度 $0\sim 6$~cm 凹陷中自动探索可行落足区域。}
+\label{fig:zr_pothole}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_pothole_data_a.png}
+\caption{坑洼地形速度与能耗曲线}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_pothole_data_b.png}
+\caption{坑洼地形触地状态变化}
+\end{subfigure}
+\caption{坑洼越野地形工况试验数据。触地信号在坑洼区呈不规则切换模式，能量消耗较平坦地形增加约 $40\%$。}
+\label{fig:zr_pothole_data}
+\end{figure}
+
+\subsubsection{复合地形：楼梯与坡道组合}
+复合地形是最具挑战性的测试场景，要求机器人在同一回合内依次通过楼梯段和坡道段，对策略的步态切换能力和姿态恢复能力提出极高要求。图~\ref{fig:zr_stair_up} 给出上楼梯-下坡复合地形的关键帧序列，图~\ref{fig:zr_stair_up_data} 为对应数据；图~\ref{fig:zr_stair_down} 给出上坡-下楼梯地形的关键帧，图~\ref{fig:zr_stair_down_data} 为对应数据。
+
+在上楼梯-下坡场景中，台阶高度 $0.10\sim 0.18$~m，下坡坡度约 $20^\circ$。策略在上楼梯段自动增大抬腿高度并降低前进速度，转入下坡段后主动降低躯干俯仰角以防止前倾。上坡-下楼梯场景中，上坡坡度约 $18^\circ$，下楼梯台阶高度 $0.10\sim 0.15$~m。策略在上坡段通过增加前倾角维持推进力，下楼梯段则通过缩短步幅和降低下落速度保证稳定落地。
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_stair_up_a.png}
+\caption{上楼梯段运动帧}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_stair_up_b.png}
+\caption{下坡段运动帧}
+\end{subfigure}
+\caption{上楼梯-下坡复合地形关键运动帧。台阶高度 $0.10\sim 0.18$~m，下坡坡度约 $20^\circ$。策略在台阶段与坡道段之间自动完成步态参数切换。}
+\label{fig:zr_stair_up}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_stair_up_data_a.png}
+\caption{上楼梯-下坡速度与高度曲线}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_stair_up_data_b.png}
+\caption{上楼梯-下坡姿态与力矩曲线}
+\end{subfigure}
+\caption{上楼梯-下坡复合地形试验数据。台阶段抬腿高度显著增大，坡道段躯干俯仰角主动调整以防止倾覆。}
+\label{fig:zr_stair_up_data}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{figs/zr_s2r_stair_down.png}
+\caption{上坡-下楼梯复合地形关键运动帧。上坡坡度约 $18^\circ$，下楼梯台阶高度 $0.10\sim 0.15$~m。}
+\label{fig:zr_stair_down}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_stair_down_data_a.png}
+\caption{上坡-下楼梯速度曲线}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_stair_down_data_b.png}
+\caption{上坡-下楼梯姿态曲线}
+\end{subfigure}
+\caption{上坡-下楼梯复合地形试验数据。下楼梯段关节力矩波动明显增大，策略通过缩短步幅和降低下落速度保证稳定。}
+\label{fig:zr_stair_down_data}
+\end{figure}
+
+\subsection{实机部署验证}
+为进一步验证策略在真实物理环境中的可迁移性，将仿真训练所得策略部署至 Unitree Go1 实物机器人上进行系列测试。本节依次展示硬件平台组成、高速运动、低附着路面、负载、复合地形与室外自然地形等工况下的实机运行结果。
+
+\subsubsection{硬件平台与实验系统}
+实机验证平台如图~\ref{fig:zr_hw} 所示。硬件系统由 Unitree Go1 四足机器人（12 自由度）、板载 NVIDIA Jetson 计算单元、IMU、关节编码器及电机驱动器组成。策略推理在 Jetson 上以 $50$~Hz 频率运行，输出十二维关节目标角偏移叠加至默认姿态，经底层 PD 控制器以 $200$~Hz 频率跟踪。所有观测信号（关节角、角速度、IMU 角速度与重力方向）来自机器人体载传感器，不依赖外部运动捕捉、视觉或激光雷达。
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_hw_ctrl.png}
+\caption{本体感受控制实验设备总览}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_hw_sys.png}
+\caption{Go1 机器人硬件系统连接图}
+\end{subfigure}
+\caption{本体感受四足机器人实验平台。硬件系统包含 Unitree Go1 机器人、NVIDIA Jetson 计算单元与机载 IMU/编码器传感链路，策略仅依赖本体感受信息运行。}
+\label{fig:zr_hw}
+\end{figure}
+
+\subsubsection{高速运动性能}
+在平坦硬质地面上测试策略的高速奔跑能力，命令速度从 $1.0$~m/s 逐步提升至 $3.5$~m/s。图~\ref{fig:zr_fast_run} 给出了 $3.5$~m/s 高速运动 $1$~s 内的关键帧。从帧序列可见，策略在该速度下仍能维持清晰的 trot 对角步态，足端触地与离地时刻分明。图~\ref{fig:zr_maxspeed_data} 给出最大速度下的运动稳定性数据，前向速度实测值在 $3.3\sim 3.5$~m/s 范围内波动，姿态偏差始终控制在安全范围以内。图~\ref{fig:zr_maxyaw_data} 给出最高横摆角速度下的极限相位切换关键帧。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{figs/zr_s2r_fast_ka.png}\\
+\includegraphics[width=0.92\textwidth]{figs/zr_s2r_fast_kb.png}
+\caption{$3.5$~m/s 高速奔跑 $1$~s 内的连续关键帧。策略保持清晰的 trot 对角步态，足端触地与离地时刻分明，躯干姿态平稳。}
+\label{fig:zr_fast_run}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/zr_s2r_maxspeed_data.png}
+\caption{最大速度下的运动稳定性数据。前向速度实测值在 $3.3\sim 3.5$~m/s 范围内波动，姿态偏差始终控制在安全阈值以内。}
+\label{fig:zr_maxspeed_data}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/zr_s2r_maxyaw_frames.png}
+\caption{最高横摆角速度下的极限相位切换关键帧。策略在 $3.0$~rad/s 转向指令下仍保持交替对角支撑，相位切换干净利落。}
+\label{fig:zr_maxyaw_data}
+\end{figure}
+
+图~\ref{fig:zr_maxacc_data} 给出最大加速度下的运动稳定性数据。在加速度均值 $1.5$~m/s$^2$ 条件下，速度跟踪曲线平稳上升，无明显超调或迟滞。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/zr_s2r_maxacc_data.png}
+\caption{最大加速度下的运动稳定性。速度跟踪曲线平稳上升，加速度均值约 $1.5$~m/s$^2$，无明显超调或迟滞。}
+\label{fig:zr_maxacc_data}
+\end{figure}
+
+\subsubsection{低附着路面验证}
+在光滑瓷砖地面（摩擦系数估计约 $0.25\sim 0.35$）上测试策略的低附着力适应性。图~\ref{fig:zr_lowfric_real} 给出了低附路面上的运动场景照片，图~\ref{fig:zr_lowfric_real_data} 给出对应的稳定性数据。与仿真结果一致，策略在此工况下自动降低了步幅、增加了支撑相占比，速度跟踪稳定性略有下降但未发生失控打滑。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{figs/zr_s2r_lowfric_photo.png}
+\caption{低附着路面（光滑瓷砖，$\mu\approx 0.25\sim 0.35$）实机运动场景。策略通过增大支撑占空比与降低步幅自适应地调整运动模式。}
+\label{fig:zr_lowfric_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/zr_s2r_lowfric_data.png}
+\caption{低附着路面下的运动稳定性。速度跟踪稳定性略有下降但未发生失控打滑，姿态维持良好。}
+\label{fig:zr_lowfric_real_data}
+\end{figure}
+
+\subsubsection{负载鲁棒性验证}
+在机器人背部固定 $3.5$~kg 负载（约占自重 $28\%$）进行负载适应性测试。图~\ref{fig:zr_load_frames} 给出负载条件下的运动帧图，图~\ref{fig:zr_load_data} 为对应的速度与力矩稳定性曲线。结果显示，附加 $3.5$~kg 负载后，机器人仍能保持稳定运动，关节力矩峰值增加约 $15\%$，速度跟踪误差与空载相比无明显退化（$<3\%$）。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/zr_s2r_load_frames.png}
+\caption{$3.5$~kg 负载下的敏捷运动帧图。负载条件下策略仍保持稳定步态，无明显姿态倾斜或速度退化。}
+\label{fig:zr_load_frames}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/zr_s2r_load_data.png}
+\caption{$3.5$~kg 负载下的运动稳定性。速度跟踪误差与空载相比无明显退化（$<3\%$），关节力矩峰值增加约 $15\%$。}
+\label{fig:zr_load_data}
+\end{figure}
+
+\subsubsection{复合地形通过}
+分别在”上楼梯-下坡”和”上坡-下楼梯”两种复合地形上进行实机测试，验证策略在连续地形变化中的适应能力。图~\ref{fig:zr_stair_real} 给出了两种复合地形的实机运行照片。图~\ref{fig:zr_stair_real_data} 给出了复合地形的稳定性测试数据，上楼梯段的通过成功率为 $87\%$，下楼梯段为 $82\%$，全程综合通过率为 $78\%$。失败主要发生在台阶边缘足端滑脱，提示真实接触模型与仿真仍存在系统性差异。
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_stair1_photo.png}
+\caption{上楼梯-下坡地形快速通过}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_stair2_photo.png}
+\caption{上坡-下楼梯地形快速通过}
+\end{subfigure}
+\caption{复合地形实机验证。（左）上楼梯（$0.10\sim 0.15$~m）-下坡（约 $18^\circ$）；（右）上坡（约 $18^\circ$）-下楼梯（$0.10\sim 0.15$~m）。}
+\label{fig:zr_stair_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/zr_s2r_stair_data.png}
+\caption{复合地形实机运行稳定性数据。上楼梯段通过率 $87\%$，下楼梯段通过率 $82\%$，全程综合通过率 $78\%$。}
+\label{fig:zr_stair_real_data}
+\end{figure}
+
+\subsubsection{室外自然地形测试}
+为评估策略在非受控自然环境中的适应能力，在四种典型室外地形上进行了实机行走测试。图~\ref{fig:zr_outdoor} 依次给出灌木丛脱离、草地平地小跑、草地爬坡和铺装石板路行走四个场景的运动截图。
+
+（a）灌木丛脱离（图~\ref{fig:zr_outdoor_bush}）：机器人在高度约 $30\sim 50$~cm 的低矮灌木丛中运动，枝叶持续施加不规则外力扰动，策略通过本体的姿态感知信号在线调整步态，完成穿越。该场景重点检验了策略对外力的抗扰恢复能力。
+
+（b）草地平地小跑（图~\ref{fig:zr_outdoor_grass}）：在软质不平整草地上以 $1.5$~m/s 速度小跑，草地表面柔软且伴随微小起伏，足端接触与硬质地面存在明显差异。策略在软地面仍能维持 trot 节律，但触地持续时间略有延长。
+
+（c）草地爬坡（图~\ref{fig:zr_outdoor_slope}）：在坡度约 $15^\circ$ 的草坡上运动，兼具软地面与坡度双重挑战。策略在坡上保持前倾姿态以提供推进力，并在坡顶过渡段平稳转入平坦运动。
+
+（d）铺装石板路行走（图~\ref{fig:zr_outdoor_stone}）：在具有不规则接缝和轻微台阶（$1\sim 3$~cm）的石板铺设路面上行走，检验策略在日常半结构化地面上的可靠性。在超过 $100$~m 的连续行走中无跌倒发生。
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_outdoor_bush.png}
+\caption{灌木丛脱离}
+\label{fig:zr_outdoor_bush}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_outdoor_grass.png}
+\caption{草地平地小跑}
+\label{fig:zr_outdoor_grass}
+\end{subfigure}
+\medskip
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_outdoor_slope.png}
+\caption{草地爬坡}
+\label{fig:zr_outdoor_slope}
+\end{subfigure}\hfill
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\textwidth]{figs/zr_s2r_outdoor_stone.png}
+\caption{铺装石板路行走}
+\label{fig:zr_outdoor_stone}
+\end{subfigure}
+\caption{室外自然地形实机测试。四种典型室外场景分别验证策略在外力扰动、柔软地面、坡度组合与半结构化路面上的适应能力。}
+\label{fig:zr_outdoor}
+\end{figure}
+
+\subsubsection{多工况综合成功率}
+图~\ref{fig:zr_success} 汇总了所有测试工况下的通过成功率对比。结果表明，本体感知强化学习策略在绝大多数工况下均达到 $80\%$ 以上的通过成功率。其中平坦地形（高速、低附、负载）通过率均超过 $90\%$；越野地形（崎岖、坑洼）通过率在 $80\%\sim 88\%$ 之间；复合地形（楼梯+坡道组合）通过率约 $78\%\sim 82\%$；室外场景中草地与石板路通过率接近 $100\%$，灌木丛脱离因外力扰动较大，通过率约 $85\%$。综合平均成功率约 $89.5\%$。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{figs/zr_s2r_success.png}
+\caption{多工况下的通过成功率汇总。本体感知策略在绝大多数工况下均达到 $80\%$ 以上通过率，综合平均成功率约 $89.5\%$。}
+\label{fig:zr_success}
 \end{figure}
 
 \subsection{失败案例与可解释性}
@@ -1350,20 +1674,20 @@ Single Feature & 0.778$\pm$0.019 & 0.288$\pm$0.011 & 0.531$\pm$0.016 \\
 对未通过回合进行抽样分析后可以发现，失败主要集中在三种模式。其一是台阶踩空，即足底接触特征瞬间下降，但难度估计未能及时响应，导致稳定项权重抬升滞后，这类情况约占失败回合的 $42\%$；其二是斜坡侧滑，即下坡侧风险特征 $f_g$ 与 $f_v$ 同时升高，引起调度器输出震荡，这类情况约占 $31\%$；其三是推力扰动后的过冲，即扰动消失后调度器仍维持较高稳定权重，导致策略过度保守并使跟踪误差增大，这类情况约占 $19\%$。其余 $8\%$ 的失败则主要来自仿真数值不稳定造成的非典型情形。
 
 \subtopic{改进方向}
-失败模式 1 提示需要引入“前瞻”机制——例如基于历史接触序列的短时序预测；失败模式 2 提示在权重输出端加入正则化项以抑制震荡；失败模式 3 提示难度分数下降阶段的恢复速度可独立调节。这些改进方向构成本文工作的自然延伸，将在第~\ref{sec:future}~节展开讨论。
+失败模式 1 提示需要引入”前瞻”机制——例如基于历史接触序列的短时序预测；失败模式 2 提示在权重输出端加入正则化项以抑制震荡；失败模式 3 提示难度分数下降阶段的恢复速度可独立调节。这些改进方向构成本文工作的自然延伸，将在第~\ref{sec:future}~节展开讨论。
 
 \subsection{综合讨论}
 \subtopic{方法优势}
-综合上述结果可知，本文方法在跨地形场景下的稳定性、跟踪精度与综合得分上均优于固定权重基线，且能耗增加可忽略。优势来源主要有三：(i)~多源难度估计能精细识别风险，(ii)~softmax 映射使权重切换平滑且有界，(iii)~双课程训练保证学习信号在速度与地形两个维度上均充分覆盖。
+综合上述结果可知，本文方法在跨地形场景下的稳定性、跟踪精度与综合得分上均优于固定权重基线，且能耗增加可忽略。结合仿真迁移与实机测试结果可见，本体感知强化学习策略具备良好的 sim-to-real 可迁移性：在仅依赖 IMU 与关节编码器的条件下，成功实现了从仿真训练到真实部署的直接迁移。优势来源主要有四：(i)~多源难度估计能精细识别风险，(ii)~softmax 映射使权重切换平滑且有界，(iii)~双课程训练保证学习信号在速度与地形两个维度上均充分覆盖，(iv)~域随机化使策略对质量、摩擦、延时等物理参数分散具有鲁棒性。
 
 \subtopic{方法局限}
-方法局限同样明显：(i)~难度估计基于本体观测，对外界环境变化的预判能力有限；(ii)~调度参数 $\bm{\alpha},\bm{\beta}$ 仍需人工先验；(iii)~极端突变场景下平滑机制可能造成响应滞后。这些局限提示未来可结合外部感知（视觉、激光雷达）与元学习进一步增强调度器自适应性。
+方法局限同样明显：(i)~难度估计基于本体观测，对外界环境变化的预判能力有限，在台阶踩空等需前瞻的场景中响应滞后；(ii)~调度参数 $\bm{\alpha},\bm{\beta}$ 仍需人工先验，不同机器人平台可能需重新标定；(iii)~极端突变场景下平滑机制可能造成响应滞后。此外，实机测试暴露出的台阶边缘足端滑脱问题提示仿真接触模型与真实物理仍存在系统性差距。这些局限提示未来可结合外部感知（视觉、激光雷达）与元学习进一步增强调度器自适应性。
 
 \subtopic{工程意义}
-工程上，本文方法不增加传感器、不修改主网络、不显著增加计算开销，可作为现有 HIMLoco 风格控制器的“即插即用”模块。$\sim 80$ 行代码的额外实现成本与 $\sim 11.8\%$ 的综合得分提升构成了良好的性价比。
+工程上，本文方法不增加传感器、不修改主网络、不显著增加计算开销，可作为现有 HIMLoco 风格控制器的”即插即用”模块。实机验证进一步表明，本体感知策略可在低端板载计算单元上以 $50$~Hz 实时运行，配合底层 $200$~Hz PD 控制器，满足实际部署的实时性要求。$\sim 80$ 行代码的额外实现成本与 $\sim 11.8\%$ 的综合得分提升构成了良好的工程性价比。
 
 \subsection{本章小结}
-本章从总体对比、分场景剖析、消融实验、训练动力学、失败案例与综合讨论六个角度对所提自适应奖励调度方法进行系统评测，结果表明本文方法在不牺牲基础能力的前提下显著提升跨地形稳定性，验证了第三章方法设计的有效性。
+本章从总体对比、仿真迁移实验、实机部署验证、失败案例与综合讨论五个角度对所提自适应奖励调度方法进行系统评测。仿真实验表明本文方法在不牺牲基础能力的前提下显著提升跨地形稳定性，迁移实验与实机测试进一步验证了策略的 sim-to-real 可迁移性和工程可行性，共同佐证了第三章方法设计的有效性与实用性。
 
 
 \section{结论与展望}\label{sec:future}
@@ -1372,7 +1696,7 @@ Single Feature & 0.778$\pm$0.019 & 0.288$\pm$0.011 & 0.531$\pm$0.016 \\
 
 围绕上述方法，本文进一步设计了速度-地形双课程训练机制。速度课程负责逐步扩大命令速度范围，使策略先掌握平坦地形下的基础运动控制能力；地形课程负责从平地、坡地、粗糙地形到台阶和离散障碍逐级增加接触复杂度，使策略在训练分布中连续接触不同风险等级。奖励调度器则在每个训练样本上根据姿态扰动、速度偏差、接触一致性、力矩波动和动作变化等本体信号调整速度项、能耗项、稳定项和恢复项权重，使训练目标随状态风险发生连续变化。与直接增加网络规模或引入外感知不同，本文方法的核心思想是调整“评价标准”而非改变“策略结构”，这使其能够作为轻量模块嵌入已有四足机器人强化学习训练流程。
 
-实验部分在并行物理仿真环境中构建了覆盖五类地形、五个随机种子和多组对照基线的评测协议。结果表明，本文方法在综合得分、通过率、跌倒率和恢复成功率等指标上均优于固定权重 HIMLoco 基线，尤其在台阶、离散障碍和混合扰动等高风险场景中优势更加明显。消融实验进一步说明，难度估计、权重平滑、变化率裁剪以及速度-地形双课程均对最终性能有贡献；其中去除平滑约束会导致权重震荡并影响 PPO 训练稳定性，去除双课程会削弱复杂地形下的泛化能力。整体来看，本文完成了从理论分析、方法设计到仿真实验验证的完整闭环。
+实验部分在并行物理仿真环境中构建了覆盖五类地形、五个随机种子和多组对照基线的评测协议。结果表明，本文方法在综合得分、通过率、跌倒率和恢复成功率等指标上均优于固定权重 HIMLoco 基线，尤其在台阶、离散障碍和混合扰动等高风险场景中优势更加明显。综合实验表明，难度估计、权重平滑、变化率裁剪以及速度-地形双课程均对最终性能有贡献。整体来看，本文完成了从理论分析、方法设计到仿真与实机实验验证的完整闭环。
 
 \subsection{主要结论}
 综合全文推导与实验结果，可以得到以下结论。
