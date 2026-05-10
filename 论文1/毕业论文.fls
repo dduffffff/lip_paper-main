@@ -1218,9 +1218,9 @@ INPUT figs/p11.png
 INPUT ./figs/p27.png
 INPUT ./figs/p27.png
 INPUT figs/p27.png
-INPUT ./figs/p24.png
-INPUT ./figs/p24.png
-INPUT figs/p24.png
+INPUT ./figs/p24_trimmed.png
+INPUT ./figs/p24_trimmed.png
+INPUT figs/p24_trimmed.png
 INPUT ./figs/p15.png
 INPUT ./figs/p15.png
 INPUT figs/p15.png
