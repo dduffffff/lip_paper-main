@@ -33,7 +33,7 @@ cd demo1 && latexmk -xelatex 开题报告_英文版.tex
 
 ### 目录说明
 
-- **论文1/** — 主毕业论文，单文件 LaTeX，使用 `ctexart` 文档类。核心文件 `毕业论文.tex`（约 550 行）和 `references.bib`。使用 `xelatex` 编译，英文字体 Times New Roman（备选 Nimbus Roman），中文字体 SimSun（备选 Noto Serif CJK SC），页眉字体 LiSu（备选 AR PL UKai CN）。
+- **论文1/** — 主毕业论文，单文件 LaTeX，使用 `ctexart` 文档类。核心文件 `毕业论文.tex`（约 2000 行）和 `references.bib`。包含 `figs/` 图片目录及 `外文翻译装订清单.md`。使用 `xelatex` 编译，英文字体 Times New Roman（备选 Nimbus Roman），中文字体 SimSun（备选 Noto Serif CJK SC），页眉字体 LiSu（备选 AR PL UKai CN）。
 
 - **himloco/** — 参考文献复现："Hybrid Internal Model: Learning Agile Legged Locomotion with Simulated Robot Response"（ICLR 2024）。论文的核心基线方法。章节拆分在 `sections/` 子目录下：`0_abstract.tex`、`1_introduction.tex`、`2_related_work.tex`、`3_method.tex`、`4_experiments.tex`、`5_conclusion.tex`、`appendix.tex`。使用 `iclr2024_conference.sty`。
 
@@ -41,7 +41,13 @@ cd demo1 && latexmk -xelatex 开题报告_英文版.tex
 
 - **demo1/** — 开题报告（中英文版）。
 
-- **参考文件/** — 学校论文格式要求、模板和规范文件。
+- **参考文件/** 、**参考文件2/** — 学校论文格式要求、模板和规范文件。
+
+- **前三章基础知识/** — 为第四、五章写作准备的文献前三章基础内容提取，包含两位作者（苏珂、程虎）笔记，每篇含图片子目录、图片索引及可编辑的表格/公式源码。
+
+- **第四章参考图片/** — 第四章写作中参考/使用的图片与表格截图（图 4-1 至 4-14，表 4-1 至 4-3），以及 `第四章正文_去除LLM.txt`（去除 AI 痕迹的正文草稿）和 `第四章总结_去除LLM.md`。
+
+- **第五章参考图片/** — 第五章参考图片（img-000.png 至 img-050.png），从 PDF 高分辨率裁切导出。
 
 ## 论文格式规则
 

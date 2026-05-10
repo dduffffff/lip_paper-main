@@ -5,67 +5,67 @@
 \contentsline {subsection}{\numberline {1.4}研究问题定义与技术路线}{4}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}本文组织结构}{4}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}本章小结}{5}{subsection.1.6}%
-\contentsline {section}{\numberline {2}相关理论与技术基础}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}四足机器人坐标系与运动学}{5}{subsection.2.1}%
+\contentsline {section}{\numberline {2}相关理论与技术基础}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}四足机器人坐标系与运动学}{6}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}典型步态与节律}{9}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}马尔可夫决策过程}{9}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}策略梯度与 PPO 推导}{10}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Actor-Critic 网络架构}{13}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}HIMLoco 框架与内部模型}{15}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}四足机器人无模型强化学习环境}{16}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}策略模型与本体感知输入}{18}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Sim2Real 迁移技术}{19}{subsection.2.9}%
-\contentsline {subsection}{\numberline {2.10}多目标奖励与固定权重的局限}{20}{subsection.2.10}%
-\contentsline {subsection}{\numberline {2.11}本章小结}{21}{subsection.2.11}%
-\contentsline {section}{\numberline {3}基于本体感知的自适应奖励调度方法}{22}{section.3}%
-\contentsline {subsection}{\numberline {3.1}方法总体框架}{22}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}地形难度估计}{23}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}奖励权重动态映射}{24}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}训练与推理过程}{25}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}速度-地形双课程融合方法}{26}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}平坦地形下的运动控制任务}{28}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}复杂度与稳定性分析}{30}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}参数设置与工程实现细节}{31}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}本章小结}{31}{subsection.3.9}%
-\contentsline {section}{\numberline {4}基于课程学习的训练优化方法}{31}{section.4}%
-\contentsline {subsection}{\numberline {4.1}课程学习理论基础}{32}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}速度指令课程设计与验证}{33}{subsection.4.2}%
-\contentsline {subsubsection}{速度指令分布与课程动机}{33}{subsubsection*.26}%
-\contentsline {subsubsection}{独立分布与联合分布更新}{33}{subsubsection*.27}%
-\contentsline {subsubsection}{速度课程实验验证}{35}{subsubsection*.30}%
-\contentsline {subsection}{\numberline {4.3}地形课程设计与验证}{37}{subsection.4.3}%
-\contentsline {subsubsection}{训练地形构建与难度分级}{37}{subsubsection*.36}%
-\contentsline {subsubsection}{本体感受下的地形感知方法}{38}{subsubsection*.39}%
-\contentsline {subsubsection}{地形课程策略与验证}{39}{subsubsection*.42}%
-\contentsline {subsection}{\numberline {4.4}速度-地形双课程融合方法}{41}{subsection.4.4}%
-\contentsline {subsubsection}{双课程冲突分析}{41}{subsubsection*.45}%
-\contentsline {subsubsection}{基于地形类型的速度采样截断}{41}{subsubsection*.47}%
-\contentsline {subsection}{\numberline {4.5}本章小结}{43}{subsection.4.5}%
-\contentsline {section}{\numberline {5}结果与分析}{43}{section.5}%
-\contentsline {subsection}{\numberline {5.1}总体性能对比}{43}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}仿真迁移实验}{44}{subsection.5.2}%
-\contentsline {subsubsection}{仿真环境与实验平台}{44}{subsubsection*.51}%
-\contentsline {subsubsection}{速度性能迁移验证}{45}{subsubsection*.53}%
-\contentsline {subsubsection}{极限速度与横摆角速度测试}{46}{subsubsection*.55}%
-\contentsline {subsubsection}{低附着路面验证}{46}{subsubsection*.58}%
-\contentsline {subsubsection}{变负载鲁棒性验证}{47}{subsubsection*.60}%
-\contentsline {subsubsection}{崎岖与坑洼越野地形}{47}{subsubsection*.63}%
-\contentsline {subsubsection}{复合地形：楼梯与坡道组合}{48}{subsubsection*.68}%
-\contentsline {subsection}{\numberline {5.3}实机部署验证}{50}{subsection.5.3}%
-\contentsline {subsubsection}{硬件平台与实验系统}{50}{subsubsection*.73}%
-\contentsline {subsubsection}{高速运动性能}{50}{subsubsection*.75}%
-\contentsline {subsubsection}{低附着路面验证}{52}{subsubsection*.80}%
-\contentsline {subsubsection}{负载鲁棒性验证}{53}{subsubsection*.83}%
-\contentsline {subsubsection}{复合地形通过}{54}{subsubsection*.86}%
-\contentsline {subsubsection}{室外自然地形测试}{55}{subsubsection*.89}%
-\contentsline {subsubsection}{多工况综合成功率}{55}{subsubsection*.91}%
-\contentsline {subsection}{\numberline {5.4}失败案例与可解释性}{56}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}综合讨论}{56}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}本章小结}{57}{subsection.5.6}%
-\contentsline {section}{\numberline {6}结论与展望}{57}{section.6}%
-\contentsline {subsection}{\numberline {6.1}研究工作总结}{57}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}主要结论}{58}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}方法局限与适用边界}{59}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}工程部署与 Sim2Real 展望}{60}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}后续研究方向}{60}{subsection.6.5}%
-\contentsline {section}{致谢}{63}{section*.95}%
+\contentsline {subsection}{\numberline {2.3}马尔可夫决策过程}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}策略梯度与 PPO 推导}{11}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Actor-Critic 网络架构}{14}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}HIMLoco 框架与内部模型}{16}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}四足机器人无模型强化学习环境}{17}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}策略模型与本体感知输入}{19}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Sim2Real 迁移技术}{20}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}多目标奖励与固定权重的局限}{21}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}本章小结}{22}{subsection.2.11}%
+\contentsline {section}{\numberline {3}基于本体感知的自适应奖励调度方法}{23}{section.3}%
+\contentsline {subsection}{\numberline {3.1}方法总体框架}{23}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}地形难度估计}{24}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}奖励权重动态映射}{25}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}训练与推理过程}{26}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}速度-地形双课程融合方法}{27}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}平坦地形下的运动控制任务}{29}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}复杂度与稳定性分析}{31}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}参数设置与工程实现细节}{32}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}本章小结}{32}{subsection.3.9}%
+\contentsline {section}{\numberline {4}基于课程学习的训练优化方法}{33}{section.4}%
+\contentsline {subsection}{\numberline {4.1}课程学习理论基础}{33}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}速度指令课程设计与验证}{34}{subsection.4.2}%
+\contentsline {subsubsection}{速度指令分布与课程动机}{34}{subsubsection*.26}%
+\contentsline {subsubsection}{独立分布与联合分布更新}{34}{subsubsection*.27}%
+\contentsline {subsubsection}{速度课程实验验证}{36}{subsubsection*.30}%
+\contentsline {subsection}{\numberline {4.3}地形课程设计与验证}{38}{subsection.4.3}%
+\contentsline {subsubsection}{训练地形构建与难度分级}{38}{subsubsection*.36}%
+\contentsline {subsubsection}{本体感受下的地形感知方法}{39}{subsubsection*.39}%
+\contentsline {subsubsection}{地形课程策略与验证}{40}{subsubsection*.42}%
+\contentsline {subsection}{\numberline {4.4}速度-地形双课程融合方法}{42}{subsection.4.4}%
+\contentsline {subsubsection}{双课程冲突分析}{42}{subsubsection*.45}%
+\contentsline {subsubsection}{基于地形类型的速度采样截断}{42}{subsubsection*.47}%
+\contentsline {subsection}{\numberline {4.5}本章小结}{44}{subsection.4.5}%
+\contentsline {section}{\numberline {5}结果与分析}{45}{section.5}%
+\contentsline {subsection}{\numberline {5.1}总体性能对比}{45}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}仿真迁移实验}{45}{subsection.5.2}%
+\contentsline {subsubsection}{仿真环境与实验平台}{46}{subsubsection*.51}%
+\contentsline {subsubsection}{速度性能迁移验证}{46}{subsubsection*.53}%
+\contentsline {subsubsection}{极限速度与横摆角速度测试}{47}{subsubsection*.55}%
+\contentsline {subsubsection}{低附着路面验证}{47}{subsubsection*.58}%
+\contentsline {subsubsection}{变负载鲁棒性验证}{48}{subsubsection*.60}%
+\contentsline {subsubsection}{崎岖与坑洼越野地形}{48}{subsubsection*.63}%
+\contentsline {subsubsection}{复合地形：楼梯与坡道组合}{50}{subsubsection*.68}%
+\contentsline {subsection}{\numberline {5.3}实机部署验证}{51}{subsection.5.3}%
+\contentsline {subsubsection}{硬件平台与实验系统}{51}{subsubsection*.73}%
+\contentsline {subsubsection}{高速运动性能}{51}{subsubsection*.75}%
+\contentsline {subsubsection}{低附着路面验证}{53}{subsubsection*.80}%
+\contentsline {subsubsection}{负载鲁棒性验证}{54}{subsubsection*.83}%
+\contentsline {subsubsection}{复合地形通过}{55}{subsubsection*.86}%
+\contentsline {subsubsection}{室外自然地形测试}{56}{subsubsection*.89}%
+\contentsline {subsubsection}{多工况综合成功率}{57}{subsubsection*.91}%
+\contentsline {subsection}{\numberline {5.4}失败案例与可解释性}{57}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}综合讨论}{58}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}本章小结}{58}{subsection.5.6}%
+\contentsline {section}{\numberline {6}结论与展望}{59}{section.6}%
+\contentsline {subsection}{\numberline {6.1}研究工作总结}{59}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}主要结论}{59}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}方法局限与适用边界}{60}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}工程部署与 Sim2Real 展望}{61}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}后续研究方向}{62}{subsection.6.5}%
+\contentsline {section}{致谢}{64}{section*.95}%

@@ -1,0 +1,33 @@
+苏珂论文前三章图片索引
+
+图 1.1 | PDF page 9 | Walking Truck 机器人[6] | 图片/图1.1_WalkingTruck机器人[6].png
+图 1.2 | PDF page 9 | Phony Pony 机器人[7] | 图片/图1.2_PhonyPony机器人[7].png
+图 1.3 | PDF page 10 | Big Dog 机器人[8] | 图片/图1.3_BigDog机器人[8].png
+图 1.4 | PDF page 10 | LS3 机器人[10] | 图片/图1.4_LS3机器人[10].png
+图 1.5 | PDF page 10 | Wild cat 机器人[11] | 图片/图1.5_Wildcat机器人[11].png
+图 1.6 | PDF page 10 | Spot Mini 机器人[12] | 图片/图1.6_SpotMini机器人[12].png
+图 1.7 | PDF page 11 | MIT Cheetah Ⅲ机器人[13] | 图片/图1.7_MITCheetahⅢ机器人[13].png
+图 1.8 | PDF page 11 | MIT Cheetah Mini 机器人[14] | 图片/图1.8_MITCheetahMini机器人[14].png
+图 1.9 | PDF page 11 | Anymal 机器人[16] | 图片/图1.9_Anymal机器人[16].png
+图 1.10 | PDF page 12 | “绝影”机器人[22] | 图片/图1.10_“绝影”机器人[22].png
+图 1.11 | PDF page 12 | Laikago 机器人 | 图片/图1.11_Laikago机器人.png
+图 1.12 | PDF page 12 | A1 机器人 | 图片/图1.12_A1机器人.png
+图 1.13 | PDF page 14 | Minitaurs 的步态仿真及实验效果 | 图片/图1.13_Minitaurs的步态仿真及实验效果.png
+图 1.14 | PDF page 15 | 针对不同机器人的技能模仿 | 图片/图1.14_针对不同机器人的技能模仿.png
+图 1.15 | PDF page 17 | 渐进式神经网络架构 | 图片/图1.15_渐进式神经网络架构.png
+图 2.1 | PDF page 19 | 强化学习网络框架 | 图片/图2.1_强化学习网络框架.png
+图 2.2 | PDF page 21 | 深度强化学习网络框架 | 图片/图2.2_深度强化学习网络框架.png
+图 2.3 | PDF page 23 | 仿生四足机器人 Dogotix | 图片/图2.3_仿生四足机器人Dogotix.png
+图 2.4 | PDF page 23 | 整体结构示意图 | 图片/图2.4_整体结构示意图.png
+图 2.5 | PDF page 27 | PPO 算法的流程示意图 | 图片/图2.5_PPO算法的流程示意图.png
+图 2.6 | PDF page 29 | 低程度复杂地形 | 图片/图2.6_低程度复杂地形.png
+图 2.7 | PDF page 29 | 高程度复杂地形 | 图片/图2.7_高程度复杂地形.png
+图 3.1 | PDF page 33 | 正视图运动简图 | 图片/图3.1_正视图运动简图.png
+图 3.2 | PDF page 33 | 左视图运动简图 | 图片/图3.2_左视图运动简图.png
+图 3.3 | PDF page 35 | 复合摆线轨迹示意图 | 图片/图3.3_复合摆线轨迹示意图.png
+图 3.4 | PDF page 37 | GAIL 算法的流程框架 | 图片/图3.4_GAIL算法的流程框架.png
+图 3.5 | PDF page 40 | 动态模仿学习框架流程示意图 | 图片/图3.5_动态模仿学习框架流程示意图.png
+图 3.6 | PDF page 41 | APOL 在不同迭代回合下的平均奖励 | 图片/图3.6_APOL在不同迭代回合下的平均奖励.png
+图 3.7 | PDF page 42 | 微调训练的流程示意图 | 图片/图3.7_微调训练的流程示意图.png
+图 3.8 | PDF page 43 | 简化 PNN 对先验步态模型进行迁移的架构示意图 | 图片/图3.8_简化PNN对先验步态模型进行迁移的架构示意图.png
+图 3.9 | PDF page 45 | 基于 APOL 的高维策略的知识蒸馏 | 图片/图3.9_基于APOL的高维策略的知识蒸馏.png
