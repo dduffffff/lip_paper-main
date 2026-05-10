@@ -12,32 +12,45 @@
 \contentsline {figure}{\numberline {3-3}{\ignorespaces 融合 PPO、内部模型与自适应奖励调度的训练流程图。奖励调度器插入环境交互与轨迹入池之间，不改变 Actor-Critic 主网络结构。\relax }}{26}{figure.caption.20}%
 \contentsline {figure}{\numberline {3-4}{\ignorespaces 速度-地形双课程推进示意图。实线表示满足阈值后的升级方向，虚线表示跌倒率过高时的安全回退方向。\relax }}{27}{figure.caption.21}%
 \contentsline {figure}{\numberline {3-5}{\ignorespaces 不同训练配置下的性能曲线示例。曲线随迭代上升并逐渐收敛，可用于辅助说明课程训练对策略性能提升过程的影响。\relax }}{28}{figure.caption.22}%
-\contentsline {figure}{\numberline {4-1}{\ignorespaces 测试场景示例：仿真连续运动、室外障碍通过与实验平台接触切换，用于展示跨地形评测中常见的姿态变化与接触状态。\relax }}{34}{figure.caption.27}%
-\contentsline {figure}{\numberline {5-1}{\ignorespaces PyBullet 迁移仿真环境。左侧为平坦地形测试场景，右侧为随机粗糙地形测试场景，机器人需在本体感知条件下完成速度跟踪与姿态稳定。\relax }}{36}{figure.caption.30}%
-\contentsline {figure}{\numberline {5-2}{\ignorespaces 不同速度指令下的迁移仿真运动截图。策略在 $0.5\sim 3.5$\nobreakspace {}m/s 范围内均可保持稳定运动，足端触地节律清晰、躯干姿态平稳。\relax }}{36}{figure.caption.32}%
-\contentsline {figure}{\numberline {5-3}{\ignorespaces 最大纵向速度试验。策略在 $3.5$\nobreakspace {}m/s 极限速度指令下仍保持稳定，姿态波动随速度增大呈超线性增长。\relax }}{37}{figure.caption.34}%
-\contentsline {figure}{\numberline {5-4}{\ignorespaces 最大横摆角速度试验。策略可稳定跟踪 $3.0$\nobreakspace {}rad/s 转向指令，极限转弯半径下仍保持躯干水平度。\relax }}{37}{figure.caption.35}%
-\contentsline {figure}{\numberline {5-5}{\ignorespaces 低附着系数路面工况试验（$\mu =0.2$）。策略通过自适应调节步幅与支撑相占比保持运动稳定性，速度跟踪误差较正常路面增大约 $2$ 倍。\relax }}{37}{figure.caption.37}%
-\contentsline {figure}{\numberline {5-6}{\ignorespaces $5$\nobreakspace {}kg 负载工况试验。附加 $5$\nobreakspace {}kg 负载后运动性能几乎无退化，速度跟踪误差与能耗增加均 $<5\%$。\relax }}{38}{figure.caption.39}%
-\contentsline {figure}{\numberline {5-7}{\ignorespaces $10$\nobreakspace {}kg 负载工况试验。附加 $10$\nobreakspace {}kg 负载后关节力矩峰值上升约 $30\%$，但仍能维持稳定运动，未发生跌倒。\relax }}{38}{figure.caption.40}%
-\contentsline {figure}{\numberline {5-8}{\ignorespaces 崎岖越野地形下的连续运动截图。策略通过自适应落足调整应对高度变化 $0\sim 8$\nobreakspace {}cm 的随机碎石凸起，躯干保持基本水平。\relax }}{38}{figure.caption.42}%
-\contentsline {figure}{\numberline {5-9}{\ignorespaces 崎岖越野地形工况试验数据。速度跟踪误差在崎岖段显著上升但仍保持有界，姿态波动方差较平坦地形增大 $2\sim 3$ 倍。\relax }}{39}{figure.caption.43}%
-\contentsline {figure}{\numberline {5-10}{\ignorespaces 坑洼越野地形下的连续运动截图。策略在随机深度 $0\sim 6$\nobreakspace {}cm 凹陷中自动探索可行落足区域。\relax }}{39}{figure.caption.44}%
-\contentsline {figure}{\numberline {5-11}{\ignorespaces 坑洼越野地形工况试验数据。触地信号在坑洼区呈不规则切换模式，能量消耗较平坦地形增加约 $40\%$。\relax }}{39}{figure.caption.45}%
-\contentsline {figure}{\numberline {5-12}{\ignorespaces 上楼梯-下坡复合地形关键运动帧。台阶高度 $0.10\sim 0.18$\nobreakspace {}m，下坡坡度约 $20^\circ $。策略在台阶段与坡道段之间自动完成步态参数切换。\relax }}{40}{figure.caption.47}%
-\contentsline {figure}{\numberline {5-13}{\ignorespaces 上楼梯-下坡复合地形试验数据。台阶段抬腿高度显著增大，坡道段躯干俯仰角主动调整以防止倾覆。\relax }}{40}{figure.caption.48}%
-\contentsline {figure}{\numberline {5-14}{\ignorespaces 上坡-下楼梯复合地形关键运动帧。上坡坡度约 $18^\circ $，下楼梯台阶高度 $0.10\sim 0.15$\nobreakspace {}m。\relax }}{40}{figure.caption.49}%
-\contentsline {figure}{\numberline {5-15}{\ignorespaces 上坡-下楼梯复合地形试验数据。下楼梯段关节力矩波动明显增大，策略通过缩短步幅和降低下落速度保证稳定。\relax }}{40}{figure.caption.50}%
-\contentsline {figure}{\numberline {5-16}{\ignorespaces 本体感受四足机器人实验平台。硬件系统包含 Unitree Go1 机器人、NVIDIA Jetson 计算单元与机载 IMU/编码器传感链路，策略仅依赖本体感受信息运行。\relax }}{41}{figure.caption.52}%
-\contentsline {figure}{\numberline {5-17}{\ignorespaces $3.5$\nobreakspace {}m/s 高速奔跑 $1$\nobreakspace {}s 内的连续关键帧。策略保持清晰的 trot 对角步态，足端触地与离地时刻分明，躯干姿态平稳。\relax }}{41}{figure.caption.54}%
-\contentsline {figure}{\numberline {5-18}{\ignorespaces 最大速度下的运动稳定性数据。前向速度实测值在 $3.3\sim 3.5$\nobreakspace {}m/s 范围内波动，姿态偏差始终控制在安全阈值以内。\relax }}{42}{figure.caption.55}%
-\contentsline {figure}{\numberline {5-19}{\ignorespaces 最高横摆角速度下的极限相位切换关键帧。策略在 $3.0$\nobreakspace {}rad/s 转向指令下仍保持交替对角支撑，相位切换干净利落。\relax }}{42}{figure.caption.56}%
-\contentsline {figure}{\numberline {5-20}{\ignorespaces 最大加速度下的运动稳定性。速度跟踪曲线平稳上升，加速度均值约 $1.5$\nobreakspace {}m/s$^2$，无明显超调或迟滞。\relax }}{43}{figure.caption.57}%
-\contentsline {figure}{\numberline {5-21}{\ignorespaces 低附着路面（光滑瓷砖，$\mu \approx 0.25\sim 0.35$）实机运动场景。策略通过增大支撑占空比与降低步幅自适应地调整运动模式。\relax }}{43}{figure.caption.59}%
-\contentsline {figure}{\numberline {5-22}{\ignorespaces 低附着路面下的运动稳定性。速度跟踪稳定性略有下降但未发生失控打滑，姿态维持良好。\relax }}{44}{figure.caption.60}%
-\contentsline {figure}{\numberline {5-23}{\ignorespaces $3.5$\nobreakspace {}kg 负载下的敏捷运动帧图。负载条件下策略仍保持稳定步态，无明显姿态倾斜或速度退化。\relax }}{44}{figure.caption.62}%
-\contentsline {figure}{\numberline {5-24}{\ignorespaces $3.5$\nobreakspace {}kg 负载下的运动稳定性。速度跟踪误差与空载相比无明显退化（$<3\%$），关节力矩峰值增加约 $15\%$。\relax }}{45}{figure.caption.63}%
-\contentsline {figure}{\numberline {5-25}{\ignorespaces 复合地形实机验证。（左）上楼梯（$0.10\sim 0.15$\nobreakspace {}m）-下坡（约 $18^\circ $）；（右）上坡（约 $18^\circ $）-下楼梯（$0.10\sim 0.15$\nobreakspace {}m）。\relax }}{45}{figure.caption.65}%
-\contentsline {figure}{\numberline {5-26}{\ignorespaces 复合地形实机运行稳定性数据。上楼梯段通过率 $87\%$，下楼梯段通过率 $82\%$，全程综合通过率 $78\%$。\relax }}{46}{figure.caption.66}%
-\contentsline {figure}{\numberline {5-27}{\ignorespaces 室外自然地形实机测试。四种典型室外场景分别验证策略在外力扰动、柔软地面、坡度组合与半结构化路面上的适应能力。\relax }}{46}{figure.caption.68}%
-\contentsline {figure}{\numberline {5-28}{\ignorespaces 多工况下的通过成功率汇总。本体感知策略在绝大多数工况下均达到 $80\%$ 以上通过率，综合平均成功率约 $89.5\%$。\relax }}{47}{figure.caption.70}%
+\contentsline {figure}{\numberline {4-1}{\ignorespaces 课程学习基本框架。难度测量器对任务进行分级评估，训练调度器根据当前难度决定样本的采样概率与分布范围。\relax }}{33}{figure.caption.25}%
+\contentsline {figure}{\numberline {4-2}{\ignorespaces 速度独立分布更新过程。线速度与角速度分别独立扩展，训练后期难以有效覆盖高速高转速耦合指令区域。\relax }}{34}{figure.caption.28}%
+\contentsline {figure}{\numberline {4-3}{\ignorespaces 速度联合分布更新过程。线速度与角速度以联合概率密度方式同步扩展，确保高速高转速耦合指令区域被充分覆盖。\relax }}{35}{figure.caption.29}%
+\contentsline {figure}{\numberline {4-4}{\ignorespaces 速度课程训练过程中的采样区域扩展（左）与奖励函数变化（右）。采样区域随训练逐步扩大，奖励在极限区域出现合理波动。\relax }}{35}{figure.caption.31}%
+\contentsline {figure}{\numberline {4-5}{\ignorespaces 最大纵向速度测试。经过速度课程训练后，机器人最大稳定跟踪线速度达到 $6.2$\nobreakspace {}m/s，展现出突出的高速运动潜力。\relax }}{36}{figure.caption.32}%
+\contentsline {figure}{\numberline {4-6}{\ignorespaces 最大横摆角速度测试。课程训练后机器人最高可跟踪 $9$\nobreakspace {}rad/s 转向指令，高转速下存在约 $25\%$ 的切换速度损失。\relax }}{36}{figure.caption.34}%
+\contentsline {figure}{\numberline {4-7}{\ignorespaces 线速度-角速度覆盖区域热力图。每个网格单元表示在该速度分辨率区间内角速度跟踪的成功程度，暖色区域表示高速高转向复合指令的稳定覆盖。\relax }}{37}{figure.caption.35}%
+\contentsline {figure}{\numberline {4-8}{\ignorespaces 训练地形分类。从左至右、从上至下依次为：光滑坡面、凹凸坡面、上楼梯、下楼梯、随机台阶与平地。\relax }}{37}{figure.caption.37}%
+\contentsline {figure}{\numberline {4-9}{\ignorespaces 通过特权观测空间感知地形。教师网络在仿真中获取地形高度真值，学生网络通过域适应从历史本体观测中学习隐式地形表征。\relax }}{38}{figure.caption.40}%
+\contentsline {figure}{\numberline {4-10}{\ignorespaces 特权空间感知足端临近点高度信息。每条腿足端周围以 $m\times n$ 点阵感知临近区域的高度变化，为策略提供落足安全性的隐式判断依据。\relax }}{39}{figure.caption.41}%
+\contentsline {figure}{\numberline {4-11}{\ignorespaces 地形难度等级训练收敛曲线。在 $4000$ 次迭代后各类地形难度收敛至 $5$ 级附近，模型达到稳定训练状态。\relax }}{40}{figure.caption.43}%
+\contentsline {figure}{\numberline {4-12}{\ignorespaces 四足机器人跨越地形能力验证。课程训练后机器人可爬上 $12$\nobreakspace {}cm 台阶、攀登 $45^\circ $ 坡道、跨越 $18$\nobreakspace {}cm 障碍物。\relax }}{41}{figure.caption.44}%
+\contentsline {figure}{\numberline {4-13}{\ignorespaces 速度-地形课程同时训练效果。速度课程过快更新抑制了地形学习进程，二者之间相互制约导致各自效果均不及单独训练。\relax }}{41}{figure.caption.46}%
+\contentsline {figure}{\numberline {4-14}{\ignorespaces 速度-地形双课程融合训练结果。左图为加入速度截断后的采样区域扩展（在 $11000$ 回合后覆盖指令范围的 $50\%$），右图为地形难度等级收敛（大部分地形收敛至 $6$ 级，高于单一课程的 $5$ 级）。\relax }}{42}{figure.caption.49}%
+\contentsline {figure}{\numberline {5-1}{\ignorespaces PyBullet 迁移仿真环境。左侧为平坦地形测试场景，右侧为随机粗糙地形测试场景，机器人需在本体感知条件下完成速度跟踪与姿态稳定。\relax }}{45}{figure.caption.52}%
+\contentsline {figure}{\numberline {5-2}{\ignorespaces 不同速度指令下的迁移仿真运动截图。策略在 $0.5\sim 3.5$\nobreakspace {}m/s 范围内均可保持稳定运动，足端触地节律清晰、躯干姿态平稳。\relax }}{45}{figure.caption.54}%
+\contentsline {figure}{\numberline {5-3}{\ignorespaces 最大纵向速度试验。策略在 $3.5$\nobreakspace {}m/s 极限速度指令下仍保持稳定，姿态波动随速度增大呈超线性增长。\relax }}{46}{figure.caption.56}%
+\contentsline {figure}{\numberline {5-4}{\ignorespaces 最大横摆角速度试验。策略可稳定跟踪 $3.0$\nobreakspace {}rad/s 转向指令，极限转弯半径下仍保持躯干水平度。\relax }}{46}{figure.caption.57}%
+\contentsline {figure}{\numberline {5-5}{\ignorespaces 低附着系数路面工况试验（$\mu =0.2$）。策略通过自适应调节步幅与支撑相占比保持运动稳定性，速度跟踪误差较正常路面增大约 $2$ 倍。\relax }}{46}{figure.caption.59}%
+\contentsline {figure}{\numberline {5-6}{\ignorespaces $5$\nobreakspace {}kg 负载工况试验。附加 $5$\nobreakspace {}kg 负载后运动性能几乎无退化，速度跟踪误差与能耗增加均 $<5\%$。\relax }}{47}{figure.caption.61}%
+\contentsline {figure}{\numberline {5-7}{\ignorespaces $10$\nobreakspace {}kg 负载工况试验。附加 $10$\nobreakspace {}kg 负载后关节力矩峰值上升约 $30\%$，但仍能维持稳定运动，未发生跌倒。\relax }}{47}{figure.caption.62}%
+\contentsline {figure}{\numberline {5-8}{\ignorespaces 崎岖越野地形下的连续运动截图。策略通过自适应落足调整应对高度变化 $0\sim 8$\nobreakspace {}cm 的随机碎石凸起，躯干保持基本水平。\relax }}{47}{figure.caption.64}%
+\contentsline {figure}{\numberline {5-9}{\ignorespaces 崎岖越野地形工况试验数据。速度跟踪误差在崎岖段显著上升但仍保持有界，姿态波动方差较平坦地形增大 $2\sim 3$ 倍。\relax }}{48}{figure.caption.65}%
+\contentsline {figure}{\numberline {5-10}{\ignorespaces 坑洼越野地形下的连续运动截图。策略在随机深度 $0\sim 6$\nobreakspace {}cm 凹陷中自动探索可行落足区域。\relax }}{48}{figure.caption.66}%
+\contentsline {figure}{\numberline {5-11}{\ignorespaces 坑洼越野地形工况试验数据。触地信号在坑洼区呈不规则切换模式，能量消耗较平坦地形增加约 $40\%$。\relax }}{48}{figure.caption.67}%
+\contentsline {figure}{\numberline {5-12}{\ignorespaces 上楼梯-下坡复合地形关键运动帧。台阶高度 $0.10\sim 0.18$\nobreakspace {}m，下坡坡度约 $20^\circ $。策略在台阶段与坡道段之间自动完成步态参数切换。\relax }}{49}{figure.caption.69}%
+\contentsline {figure}{\numberline {5-13}{\ignorespaces 上楼梯-下坡复合地形试验数据。台阶段抬腿高度显著增大，坡道段躯干俯仰角主动调整以防止倾覆。\relax }}{49}{figure.caption.70}%
+\contentsline {figure}{\numberline {5-14}{\ignorespaces 上坡-下楼梯复合地形关键运动帧。上坡坡度约 $18^\circ $，下楼梯台阶高度 $0.10\sim 0.15$\nobreakspace {}m。\relax }}{49}{figure.caption.71}%
+\contentsline {figure}{\numberline {5-15}{\ignorespaces 上坡-下楼梯复合地形试验数据。下楼梯段关节力矩波动明显增大，策略通过缩短步幅和降低下落速度保证稳定。\relax }}{49}{figure.caption.72}%
+\contentsline {figure}{\numberline {5-16}{\ignorespaces 本体感受四足机器人实验平台。硬件系统包含 Unitree Go1 机器人、NVIDIA Jetson 计算单元与机载 IMU/编码器传感链路，策略仅依赖本体感受信息运行。\relax }}{50}{figure.caption.74}%
+\contentsline {figure}{\numberline {5-17}{\ignorespaces $3.5$\nobreakspace {}m/s 高速奔跑 $1$\nobreakspace {}s 内的连续关键帧。策略保持清晰的 trot 对角步态，足端触地与离地时刻分明，躯干姿态平稳。\relax }}{50}{figure.caption.76}%
+\contentsline {figure}{\numberline {5-18}{\ignorespaces 最大速度下的运动稳定性数据。前向速度实测值在 $3.3\sim 3.5$\nobreakspace {}m/s 范围内波动，姿态偏差始终控制在安全阈值以内。\relax }}{51}{figure.caption.77}%
+\contentsline {figure}{\numberline {5-19}{\ignorespaces 最高横摆角速度下的极限相位切换关键帧。策略在 $3.0$\nobreakspace {}rad/s 转向指令下仍保持交替对角支撑，相位切换干净利落。\relax }}{51}{figure.caption.78}%
+\contentsline {figure}{\numberline {5-20}{\ignorespaces 最大加速度下的运动稳定性。速度跟踪曲线平稳上升，加速度均值约 $1.5$\nobreakspace {}m/s$^2$，无明显超调或迟滞。\relax }}{52}{figure.caption.79}%
+\contentsline {figure}{\numberline {5-21}{\ignorespaces 低附着路面（光滑瓷砖，$\mu \approx 0.25\sim 0.35$）实机运动场景。策略通过增大支撑占空比与降低步幅自适应地调整运动模式。\relax }}{52}{figure.caption.81}%
+\contentsline {figure}{\numberline {5-22}{\ignorespaces 低附着路面下的运动稳定性。速度跟踪稳定性略有下降但未发生失控打滑，姿态维持良好。\relax }}{53}{figure.caption.82}%
+\contentsline {figure}{\numberline {5-23}{\ignorespaces $3.5$\nobreakspace {}kg 负载下的敏捷运动帧图。负载条件下策略仍保持稳定步态，无明显姿态倾斜或速度退化。\relax }}{53}{figure.caption.84}%
+\contentsline {figure}{\numberline {5-24}{\ignorespaces $3.5$\nobreakspace {}kg 负载下的运动稳定性。速度跟踪误差与空载相比无明显退化（$<3\%$），关节力矩峰值增加约 $15\%$。\relax }}{54}{figure.caption.85}%
+\contentsline {figure}{\numberline {5-25}{\ignorespaces 复合地形实机验证。（左）上楼梯（$0.10\sim 0.15$\nobreakspace {}m）-下坡（约 $18^\circ $）；（右）上坡（约 $18^\circ $）-下楼梯（$0.10\sim 0.15$\nobreakspace {}m）。\relax }}{54}{figure.caption.87}%
+\contentsline {figure}{\numberline {5-26}{\ignorespaces 复合地形实机运行稳定性数据。上楼梯段通过率 $87\%$，下楼梯段通过率 $82\%$，全程综合通过率 $78\%$。\relax }}{55}{figure.caption.88}%
+\contentsline {figure}{\numberline {5-27}{\ignorespaces 室外自然地形实机测试。四种典型室外场景分别验证策略在外力扰动、柔软地面、坡度组合与半结构化路面上的适应能力。\relax }}{55}{figure.caption.90}%
+\contentsline {figure}{\numberline {5-28}{\ignorespaces 多工况下的通过成功率汇总。本体感知策略在绝大多数工况下均达到 $80\%$ 以上通过率，综合平均成功率约 $89.5\%$。\relax }}{56}{figure.caption.92}%

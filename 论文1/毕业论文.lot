@@ -5,7 +5,8 @@
 \contentsline {table}{\numberline {3-2}{\ignorespaces 自适应奖励调度训练流程伪代码\relax }}{26}{table.caption.19}%
 \contentsline {table}{\numberline {3-3}{\ignorespaces 平坦地形运动控制任务的阶段化训练设置\relax }}{29}{table.caption.23}%
 \contentsline {table}{\numberline {3-4}{\ignorespaces 自适应奖励调度方法的关键超参数与推荐范围\relax }}{31}{table.caption.24}%
-\contentsline {table}{\numberline {4-1}{\ignorespaces 评价指标定义\relax }}{33}{table.caption.25}%
-\contentsline {table}{\numberline {4-2}{\ignorespaces 测试场景分级\relax }}{33}{table.caption.26}%
-\contentsline {table}{\numberline {5-1}{\ignorespaces 全部测试场景平均指标（均值 $\pm $ 标准差，$5$ 种子）\relax }}{35}{table.caption.28}%
-\contentsline {table}{\numberline {6-1}{\ignorespaces 本文工作的主要结论归纳\relax }}{50}{table.caption.71}%
+\contentsline {table}{\numberline {4-1}{\ignorespaces 四足机器人弗劳德数对比\relax }}{36}{table.caption.33}%
+\contentsline {table}{\numberline {4-2}{\ignorespaces 地形难度等级设置\relax }}{38}{table.caption.38}%
+\contentsline {table}{\numberline {4-3}{\ignorespaces 不同地形的速度采样范围\relax }}{42}{table.caption.48}%
+\contentsline {table}{\numberline {5-1}{\ignorespaces 全部测试场景平均指标（均值 $\pm $ 标准差，$5$ 种子）\relax }}{44}{table.caption.50}%
+\contentsline {table}{\numberline {6-1}{\ignorespaces 本文工作的主要结论归纳\relax }}{59}{table.caption.93}%
