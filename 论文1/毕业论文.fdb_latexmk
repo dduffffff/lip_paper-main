@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex 毕业论文"] 1778417286 "毕业论文.aux" "毕业论文.bbl" "毕业论文" 1778417492
+["bibtex 毕业论文"] 1778424373 "毕业论文.aux" "毕业论文.bbl" "毕业论文" 1778424407
   "/usr/share/texlive/texmf-dist/bibtex/bst/gbt7714/gbt7714-numerical.bst" 1639348130 45378 22335b71d1bc55f128a653fe1f5b0cf1 ""
   "references.bib" 1778404766 4972 10d82c0f4435f9308c6868a84d194215 ""
-  "毕业论文.aux" 1778417472 47012 a3f0d1db5a9d8af48906e08cedbf2625 "xelatex"
+  "毕业论文.aux" 1778424375 51862 aaa475f01807c2fbb62a6a419e3aff25 "xelatex"
   (generated)
   "毕业论文.bbl"
   "毕业论文.blg"
-["xdvipdfmx"] 1778417472 "毕业论文.xdv" "毕业论文.pdf" "毕业论文" 1778417492
-  "毕业论文.xdv" 1778417472 1034404 10aba15f13d2bb11a22280abcc4c7f6b "xelatex"
+["xdvipdfmx"] 1778424375 "毕业论文.xdv" "毕业论文.pdf" "毕业论文" 1778424407
+  "毕业论文.xdv" 1778424375 1090268 9ed58bf64bd8e120e262d7b0e9652e71 "xelatex"
   (generated)
   "毕业论文.pdf"
-["xelatex"] 1778417469 "毕业论文.tex" "毕业论文.xdv" "毕业论文" 1778417492
+["xelatex"] 1778424373 "毕业论文.tex" "毕业论文.xdv" "毕业论文" 1778424407
   "/etc/texmf/web2c/texmf.cnf" 1776748724 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -215,6 +215,19 @@
   "/usr/share/texmf/tex/latex/CJK/CJKfntef.sty" 1485503905 12851 a92a26031294f6fa88114f524b3b794a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1776748736 3721477 f025793a68eb8228edd97e5e1ca8b123 ""
+  "figs/ch1_boston_dynamics.png" 1778421713 479840 64844c75ef1ad6c1c9ad09a7c16f7a42 ""
+  "figs/ch1_eth.png" 1778424216 1077312 dcc2a648fc037f1bfd2a8634c1c4a58e ""
+  "figs/ch1_jueying.png" 1778424216 1114785 e67f655e52a82e377197d7049072af80 ""
+  "figs/ch1_mit_cheetah.png" 1778424216 3244905 91184490ecc61aed922f8c6f2358bb6b ""
+  "figs/ch1_unitree.png" 1778421713 369518 bd33fffef74235d90da8485e2215a492 ""
+  "figs/ch1_walking_truck.png" 1778424216 301565 aae4f526d4d491ad09e48881750d0e64 ""
+  "figs/ch2_leg_schematic.png" 1778421713 804657 85026950e2d72dbeb557e55286c4df8d ""
+  "figs/ch2_pitch_knee.png" 1778421713 554145 f66aaa3cb2b36bdb88ec9749a55b3d3a ""
+  "figs/ch2_rl_framework.png" 1778421713 179704 11d1d4267bbec306c308dc5e806c2467 ""
+  "figs/ch2_roll_hip.png" 1778421713 798855 08c39772818cc46cd9fd7aec704e0450 ""
+  "figs/ch2_trot_gait.png" 1778421713 502894 462b3bf3cb1ee761229210a64bcb2562 ""
+  "figs/ch2_walk_gait.png" 1778421713 154040 b2df4570cfc526f2f83837aa32ae65d3 ""
+  "figs/ch2_workspace.png" 1778421713 1395985 ff8150164c2a0e6d9e73e5ecaaf0f094 ""
   "figs/ch4_curriculum_framework.png" 1778416385 1296075 f20c53a9c447de7e514dea0b2126f841 ""
   "figs/ch4_dual_curriculum_conflict.png" 1778416392 288219 4325896f717559ebf3a6df8ac8c608ee ""
   "figs/ch4_dual_curriculum_result.png" 1778416392 1287369 adf199d75f4262e3ca1fb8474157a4de ""
@@ -288,13 +301,13 @@
   "figs/zr_s2r_stair_up_data_a.png" 1778412124 102302 0a15a30c795115a0c242ea4a55d01c83 ""
   "figs/zr_s2r_stair_up_data_b.png" 1778412124 88251 867a31a58469b867eb8c224d36819491 ""
   "figs/zr_s2r_success.png" 1778409140 33100 fb17cd5a06ae688a397a7cd6556220c2 ""
-  "毕业论文.aux" 1778417472 47012 a3f0d1db5a9d8af48906e08cedbf2625 "xelatex"
-  "毕业论文.bbl" 1778417286 3228 291372b0331623f34699fbd5052d76c5 "bibtex 毕业论文"
-  "毕业论文.lof" 1778417472 14312 337d62ba7c8e01c4a00da981a2658e8c "xelatex"
-  "毕业论文.lot" 1778417472 1568 f9815d0764a372aad6e978759c20dc16 "xelatex"
-  "毕业论文.out" 1778417472 5963 d696eff10e176094e328d595deb2c130 "xelatex"
-  "毕业论文.tex" 1778417450 154036 18ef1a7f4aa809887b17b8d65e676a36 ""
-  "毕业论文.toc" 1778417472 6180 621e925049a6bbd7952aec41a65f211e "xelatex"
+  "毕业论文.aux" 1778424375 51862 aaa475f01807c2fbb62a6a419e3aff25 "xelatex"
+  "毕业论文.bbl" 1778424373 3228 291372b0331623f34699fbd5052d76c5 "bibtex 毕业论文"
+  "毕业论文.lof" 1778424375 16209 4be86f0d9cfb5b9be64e2c505b5e1c56 "xelatex"
+  "毕业论文.lot" 1778424375 1923 357756565186d7d2b29729662164a53c "xelatex"
+  "毕业论文.out" 1778424375 5964 07e52034fbe8deda22f33b441a4b9028 "xelatex"
+  "毕业论文.tex" 1778424353 161279 d11437d75e1d787e38f1f796e22527e1 ""
+  "毕业论文.toc" 1778424375 6185 42f5134f307cd0d140ac4132be7cfe00 "xelatex"
   (generated)
   "毕业论文.aux"
   "毕业论文.lof"

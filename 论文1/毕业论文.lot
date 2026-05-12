@@ -1,12 +1,15 @@
-\contentsline {table}{\numberline {2-1}{\ignorespaces 常见四足步态的相位偏移与占空比配置\relax }}{10}{table.caption.7}%
-\contentsline {table}{\numberline {2-2}{\ignorespaces PPO 算法伪代码（简化版）\relax }}{14}{table.caption.9}%
-\contentsline {table}{\numberline {2-3}{\ignorespaces 典型四足机器人强化学习奖励项\relax }}{22}{table.caption.15}%
-\contentsline {table}{\numberline {3-1}{\ignorespaces 地形难度特征的构造方式与物理含义\relax }}{24}{table.caption.17}%
-\contentsline {table}{\numberline {3-2}{\ignorespaces 自适应奖励调度训练流程伪代码\relax }}{27}{table.caption.19}%
-\contentsline {table}{\numberline {3-3}{\ignorespaces 平坦地形运动控制任务的阶段化训练设置\relax }}{30}{table.caption.23}%
-\contentsline {table}{\numberline {3-4}{\ignorespaces 自适应奖励调度方法的关键超参数与推荐范围\relax }}{32}{table.caption.24}%
-\contentsline {table}{\numberline {4-1}{\ignorespaces 四足机器人弗劳德数对比\relax }}{37}{table.caption.33}%
-\contentsline {table}{\numberline {4-2}{\ignorespaces 地形难度等级设置\relax }}{39}{table.caption.38}%
-\contentsline {table}{\numberline {4-3}{\ignorespaces 不同地形的速度采样范围\relax }}{43}{table.caption.48}%
-\contentsline {table}{\numberline {5-1}{\ignorespaces 全部测试场景平均指标（均值 $\pm $ 标准差，$5$ 种子）\relax }}{45}{table.caption.50}%
-\contentsline {table}{\numberline {6-1}{\ignorespaces 本文工作的主要结论归纳\relax }}{60}{table.caption.93}%
+\contentsline {table}{\numberline {2-1}{\ignorespaces 四足机器人结构参数\relax }}{8}{table.caption.12}%
+\contentsline {table}{\numberline {2-2}{\ignorespaces 四足机器人动力学参数\relax }}{8}{table.caption.13}%
+\contentsline {table}{\numberline {2-3}{\ignorespaces 常见四足步态的相位偏移与占空比配置\relax }}{14}{table.caption.19}%
+\contentsline {table}{\numberline {2-4}{\ignorespaces 深度强化学习算法特性对比\relax }}{17}{table.caption.23}%
+\contentsline {table}{\numberline {2-5}{\ignorespaces PPO 算法伪代码（简化版）\relax }}{20}{table.caption.25}%
+\contentsline {table}{\numberline {2-6}{\ignorespaces 典型四足机器人强化学习奖励项\relax }}{28}{table.caption.31}%
+\contentsline {table}{\numberline {3-1}{\ignorespaces 地形难度特征的构造方式与物理含义\relax }}{30}{table.caption.33}%
+\contentsline {table}{\numberline {3-2}{\ignorespaces 自适应奖励调度训练流程伪代码\relax }}{33}{table.caption.35}%
+\contentsline {table}{\numberline {3-3}{\ignorespaces 平坦地形运动控制任务的阶段化训练设置\relax }}{36}{table.caption.39}%
+\contentsline {table}{\numberline {3-4}{\ignorespaces 自适应奖励调度方法的关键超参数与推荐范围\relax }}{38}{table.caption.40}%
+\contentsline {table}{\numberline {4-1}{\ignorespaces 四足机器人弗劳德数对比\relax }}{43}{table.caption.49}%
+\contentsline {table}{\numberline {4-2}{\ignorespaces 地形难度等级设置\relax }}{45}{table.caption.54}%
+\contentsline {table}{\numberline {4-3}{\ignorespaces 不同地形的速度采样范围\relax }}{49}{table.caption.64}%
+\contentsline {table}{\numberline {5-1}{\ignorespaces 全部测试场景平均指标（均值 $\pm $ 标准差，$5$ 种子）\relax }}{51}{table.caption.66}%
+\contentsline {table}{\numberline {6-1}{\ignorespaces 本文工作的主要结论归纳\relax }}{66}{table.caption.109}%
