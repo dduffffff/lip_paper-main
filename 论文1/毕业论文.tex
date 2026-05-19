@@ -58,30 +58,30 @@
 
 \ctexset{
   section={
-    format=\centering\bfseries\headingfont\zihao{-2},
-    beforeskip=1.25\baselineskip,
+    format=\bfseries\headingfont\zihao{-2},
+    beforeskip=1.0\baselineskip,
     afterskip=0.85\baselineskip,
-    aftername=\hspace{1em},
+    aftername=\hspace{2em},
     number=\arabic{section}
   },
   subsection={
     format=\bfseries\headingfont\zihao{-3},
     beforeskip=0.9\baselineskip,
     afterskip=0.45\baselineskip,
-    aftername=\hspace{1em},
+    aftername=\hspace{2em},
     number=\thesection.\arabic{subsection}
   },
   subsubsection={
     format=\headingfont\zihao{4},
     beforeskip=0.5\baselineskip,
     afterskip=0.25\baselineskip,
-    aftername=\hspace{1em},
+    aftername=\hspace{2em},
     number=\thesubsection.\arabic{subsubsection}
   }
 }
 
 \captionsetup{font=small,textfont=normalfont,labelfont=bf,labelsep=space}
-\captionsetup[figure]{format=hang,justification=justified,singlelinecheck=false,width=0.9\textwidth,skip=6pt}
+\captionsetup[figure]{format=hang,justification=centering,singlelinecheck=false,width=0.9\textwidth,skip=6pt}
 \captionsetup[table]{format=hang,justification=justified,singlelinecheck=false,width=0.88\textwidth,skip=4pt,position=top}
 
 \tikzset{
@@ -97,7 +97,7 @@
 \setlength{\headheight}{16pt}
 \fancypagestyle{mainstyle}{
   \fancyhf{}
-  \fancyhead[C]{\wustlishu\zihao{-4}武汉科技大学本科毕业论文}
+  \fancyhead[C]{\wustlishu\zihao{3}武汉科技大学本科毕业论文}
   \fancyfoot[C]{\zihao{-5}\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
 }
@@ -121,56 +121,58 @@
 \begin{center}
 \vspace*{1.6cm}
 {\zihao{2}\textbf{武汉科技大学本科毕业论文}}\\[2.2cm]
-{\coverkaiti\zihao{0}本体感知自适应奖励四足跨地形控制}\\[0.8cm]
+{\coverkaiti\zihao{1}本体感知自适应奖励四足跨地形控制}\\[0.8cm]
 {\zihao{-3}Proprioception-Driven Adaptive Reward Scheduling for Cross-Terrain\\[0.2cm]Quadruped Locomotion}\\[2.4cm]
 {\renewcommand{\arraystretch}{1.45}
+{\zihao{4}
 \begin{tabular}{rl}
 学院： & 人工智能与自动化学院 \\
 专业： & 机器人工程 \\
 学生姓名： & 杜云帆 \\
 学号： & 202204416388 \\
 指导教师： & 陈志环 \\
-\end{tabular}}\\[2.2cm]
+\end{tabular}}}\\[2.2cm]
 {\zihao{4}2026年4月}
 \end{center}
 
 \newpage
 \pagestyle{frontstyle}
 \pagenumbering{Roman}
+\vspace*{1em}
 \begin{center}
 {\headingfont\bfseries\zihao{-2}摘\hspace{1em}要}
 \end{center}
-\begin{spacing}{1.35}
+\vspace{1em}
+\begin{spacing}{1.5}
 四足机器人正越来越多地出现在灾害救援、野外巡检等非结构化场景中，但想在复杂地形下兼顾效率与稳定性仍是一个难点。基于强化学习的运动控制器里，混合内模方法只用本体感知信号就能达到不错的鲁棒性。不过这类方法的奖励函数大多采用固定权重，地形风险变了，策略偏好却没法跟着调——结果平地上速度和能效上不去，崎岖路段又容易摔倒。
 
 本文以 HIMLoco（Hybrid Internal Model for Locomotion）为基础框架，设计了一套本体感知驱动的自适应奖励调度方案。该方案用姿态波动、关节力矩变化、足端接触稳定性和动作平滑度四个维度的信号构造地形难度指标，再经过带约束的权重映射函数，把速度跟踪、能耗抑制、姿态稳定和抗扰恢复这几项子奖励的权重做动态分配。调度过程中还加入了指数平滑和变化率限制，防止在线调整引发奖励信号高频震荡。
 
 我们在 Isaac Gym 上搭建了跨地形训练与评测管线，把固定权重基线和自适应调度方法做了系统对比。结果显示，在中低风险地形上自适应调度能提高速度和单位能效，在高风险地形上能降低姿态波动和跌倒率，整体表现优于固定权重方案。结合 HIMLoco 已公布的实验结果来看，这套方法不需要额外加装外感知传感器，也不用改核心策略网络，有较好的即插即用性和跨平台迁移潜力。
 
-\noindent\textbf{关键词：}四足机器人；强化学习；本体感知；自适应奖励调度；跨地形运动控制
+\vspace{1em}
+\noindent{\headingfont\zihao{4}\textbf{关键词：}}\quad {\zihao{-4}四足机器人；强化学习；本体感知；自适应奖励调度；跨地形运动控制}
 \end{spacing}
 
 \newpage
+\vspace*{1em}
 \begin{center}
 {\bfseries\zihao{-2}Abstract}
 \end{center}
-\begin{spacing}{1.35}
+\vspace{1em}
+\begin{spacing}{1.5}
 Quadruped robots are promising for disaster response, field inspection, and unstructured operations. However, agile locomotion over diverse terrains remains challenging due to the trade-off between efficiency and stability. Existing learning-based controllers, including Hybrid Internal Model approaches, achieve strong robustness with proprioceptive sensing only. Yet, most of them rely on fixed-weight reward functions, which cannot adapt policy priorities online as terrain risks change.
 
 This thesis proposes a proprioception-driven adaptive reward scheduling method built upon the HIMLoco framework. We first construct a terrain difficulty indicator using body attitude fluctuation, joint torque variation, foot contact stability, and action smoothness. Then a constrained mapping dynamically reallocates reward weights among velocity tracking, energy regularization, posture stability, and disturbance recovery terms. To ensure training stability, exponential smoothing and rate-limit constraints are introduced to suppress high-frequency oscillation in online scheduling.
 
 A cross-terrain training and evaluation pipeline is established on Isaac Gym with massively parallel simulation. Comparative experiments between the fixed-weight baseline and the proposed scheduler, together with ablation studies, show that adaptive scheduling improves velocity and unit-distance energy efficiency on low-to-medium risk terrains while reducing posture fluctuation and fall rate on high-risk terrains. In combination with public HIMLoco evidence, the method demonstrates strong practicality as a plug-in module without extra exteroceptive sensors or major architecture changes.
 
-\noindent\textbf{Keywords:} quadruped robot; reinforcement learning; proprioception; adaptive reward scheduling; cross-terrain locomotion
+\vspace{1em}
+\noindent{\zihao{4}\textbf{Key words:}}\quad {\zihao{-4}quadruped robot; reinforcement learning; proprioception; adaptive reward scheduling; cross-terrain locomotion}
 \end{spacing}
 
 \newpage
 \tableofcontents
-
-\newpage
-\listoffigures
-\newpage
-\listoftables
 
 \newpage
 \pagestyle{mainstyle}
@@ -182,7 +184,7 @@ A cross-terrain training and evaluation pipeline is established on Isaac Gym wit
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.72\textwidth]{figs/ch1_walking_truck.png}
+\includegraphics[width=0.55\textwidth]{figs/ch1_walking_truck.png}
 \caption{早期四足机器人探索：Walking Truck 与 SILO4}
 \label{fig:walking_truck}
 \end{figure}

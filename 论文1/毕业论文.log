@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.4.21)  16 MAY 2026 18:29
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.4.21)  19 MAY 2026 05:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -956,11 +956,11 @@ Package fontspec Info: Font family 'ARPLUKaiCN(0)' created for font 'AR PL
 (fontspec)             CN/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 127.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 128.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 127.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 128.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -996,142 +996,539 @@ Package fontspec Info: Font family 'NotoSansCJKSC(0)' created for font 'Noto
 \tf@toc=\write5
 \openout5 = `毕业论文.toc'.
 
- [4] (./毕业论文.lof [5] [6] [7])
-\tf@lof=\write6
-\openout6 = `毕业论文.lof'.
-
- [8] (./毕业论文.lot)
-\tf@lot=\write7
-\openout7 = `毕业论文.lot'.
-
- [9]
+ [4]
 File: figs/ch1_walking_truck.png Graphic file (type bmp)
 <figs/ch1_walking_truck.png>
 File: figs/ch1_boston_dynamics.png Graphic file (type bmp)
 <figs/ch1_boston_dynamics.png>
- [1]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[1]
 File: figs/p30.png Graphic file (type bmp)
 <figs/p30.png>
- [2]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[2]
 File: figs/ch1_eth.png Graphic file (type bmp)
 <figs/ch1_eth.png>
- [3]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[3]
 File: figs/ch1_mit_cheetah.png Graphic file (type bmp)
 <figs/ch1_mit_cheetah.png>
 File: figs/p03.png Graphic file (type bmp)
 <figs/p03.png>
- [4]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[4]
 File: figs/ch1_unitree.png Graphic file (type bmp)
 <figs/ch1_unitree.png>
 File: figs/ch1_jueying.png Graphic file (type bmp)
 <figs/ch1_jueying.png>
- [5] [6] [7]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[6]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[7]
 File: figs/ch2_leg_schematic.png Graphic file (type bmp)
 <figs/ch2_leg_schematic.png>
- [8
 
-] [9] [10] [11]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[8
+
+]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[11]
 File: figs/ch2_roll_hip.png Graphic file (type bmp)
 <figs/ch2_roll_hip.png>
 File: figs/ch2_pitch_knee.png Graphic file (type bmp)
 <figs/ch2_pitch_knee.png>
 File: figs/p20.png Graphic file (type bmp)
 <figs/p20.png>
- [12]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[12]
 File: figs/ch2_workspace.png Graphic file (type bmp)
 <figs/ch2_workspace.png>
- [13]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[13]
 File: figs/ch2_walk_gait.png Graphic file (type bmp)
 <figs/ch2_walk_gait.png>
 File: figs/ch2_trot_gait.png Graphic file (type bmp)
 <figs/ch2_trot_gait.png>
- [14]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[14]
 File: figs/ch2_rl_framework.png Graphic file (type bmp)
 <figs/ch2_rl_framework.png>
- [15] [16] [17] [18] [19]
 
-Package pgf Warning: Returning node center instead of a point on node border. Did you specify a point identical to the center of node ``critic''? on input line 792.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[18]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[19]
+
+Package pgf Warning: Returning node center instead of a point on node border. Did you specify a point identical to the center of node ``critic''? on input line 794.
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
 
 [20]
 File: figs/p06.png Graphic file (type bmp)
 <figs/p06.png>
- [21] [22]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[22]
 File: figs/p29.png Graphic file (type bmp)
 <figs/p29.png>
- [23]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[23]
 File: figs/p10.png Graphic file (type bmp)
 <figs/p10.png>
- [24] [25]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[24]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[25]
 File: figs/p11.png Graphic file (type bmp)
 <figs/p11.png>
- [26]
-Underfull \hbox (badness 10000) in paragraph at lines 912--913
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
 []|\TU/NotoSerifCJKSC(0)/m/n/12 默 认 权
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 916--917
+Underfull \hbox (badness 10000) in paragraph at lines 918--919
 []|$\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 2  \OMS/cmsy/m/n/12 ^^B
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 917--918
+Underfull \hbox (badness 10000) in paragraph at lines 919--920
 []|$\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5  \OMS/cmsy/m/n/12 ^^B
  []
 
-[27] [28]
 
-Package pgf Warning: Returning node center instead of a point on node border. Did you specify a point identical to the center of node ``ppo''? on input line 985.
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[27]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[28]
+
+Package pgf Warning: Returning node center instead of a point on node border. Did you specify a point identical to the center of node ``ppo''? on input line 987.
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
 
 [29
 
-] [30]
+]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[30]
 File: figs/p27.png Graphic file (type bmp)
 <figs/p27.png>
- [31] [32] [33]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[31]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[32]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[33]
 File: figs/p24_trimmed.png Graphic file (type bmp)
 <figs/p24_trimmed.png>
- [34] [35] [36] [37] [38]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[34]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[35]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[36]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[37]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[38]
 File: figs/ch4_curriculum_framework.png Graphic file (type bmp)
 <figs/ch4_curriculum_framework.png>
- [39
 
-] [40]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[39
+
+]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[40]
 File: figs/ch4_independent_update.png Graphic file (type bmp)
 <figs/ch4_independent_update.png>
 File: figs/ch4_joint_update.png Graphic file (type bmp)
 <figs/ch4_joint_update.png>
- [41]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[41]
 File: figs/ch4_sampling_reward.png Graphic file (type bmp)
 <figs/ch4_sampling_reward.png>
 File: figs/ch4_max_speed.png Graphic file (type bmp)
 <figs/ch4_max_speed.png>
- [42]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[42]
 File: figs/ch4_max_yaw.png Graphic file (type bmp)
 <figs/ch4_max_yaw.png>
- [43]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[43]
 File: figs/ch4_speed_yaw_coverage.png Graphic file (type bmp)
 <figs/ch4_speed_yaw_coverage.png>
 File: figs/ch4_terrain_types.png Graphic file (type bmp)
 <figs/ch4_terrain_types.png>
- [44]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[44]
 File: figs/ch4_privileged_terrain.png Graphic file (type bmp)
 <figs/ch4_privileged_terrain.png>
- [45]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[45]
 File: figs/ch4_foot_proximity.png Graphic file (type bmp)
 <figs/ch4_foot_proximity.png>
- [46]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[46]
 File: figs/ch4_terrain_difficulty.png Graphic file (type bmp)
 <figs/ch4_terrain_difficulty.png>
 File: figs/ch4_terrain_capability.png Graphic file (type bmp)
 <figs/ch4_terrain_capability.png>
- [47]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[47]
 File: figs/ch4_dual_curriculum_conflict.png Graphic file (type bmp)
 <figs/ch4_dual_curriculum_conflict.png>
- [48]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[48]
 File: figs/ch4_dual_curriculum_result.png Graphic file (type bmp)
 <figs/ch4_dual_curriculum_result.png>
- [49] [50] [51
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[49]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[50]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[51
 
 ]
 File: figs/zr_pybullet_env.png Graphic file (type bmp)
@@ -1142,7 +1539,15 @@ File: figs/zr_s2r_speed_b.png Graphic file (type bmp)
 <figs/zr_s2r_speed_b.png>
 File: figs/zr_s2r_speed_c.png Graphic file (type bmp)
 <figs/zr_s2r_speed_c.png>
- [52]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[52]
 File: figs/zr_s2r_maxspeed_a.png Graphic file (type bmp)
 <figs/zr_s2r_maxspeed_a.png>
 File: figs/zr_s2r_maxspeed_b.png Graphic file (type bmp)
@@ -1155,7 +1560,15 @@ File: figs/zr_s2r_lowfric_a.png Graphic file (type bmp)
 <figs/zr_s2r_lowfric_a.png>
 File: figs/zr_s2r_lowfric_b.png Graphic file (type bmp)
 <figs/zr_s2r_lowfric_b.png>
- [53]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[53]
 File: figs/zr_s2r_5kg_a.png Graphic file (type bmp)
 <figs/zr_s2r_5kg_a.png>
 File: figs/zr_s2r_5kg_b.png Graphic file (type bmp)
@@ -1170,7 +1583,15 @@ File: figs/zr_s2r_rough_b.png Graphic file (type bmp)
 <figs/zr_s2r_rough_b.png>
 File: figs/zr_s2r_rough_c.png Graphic file (type bmp)
 <figs/zr_s2r_rough_c.png>
- [54]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[54]
 File: figs/zr_s2r_rough_data_a.png Graphic file (type bmp)
 <figs/zr_s2r_rough_data_a.png>
 File: figs/zr_s2r_rough_data_b.png Graphic file (type bmp)
@@ -1185,7 +1606,15 @@ File: figs/zr_s2r_pothole_data_a.png Graphic file (type bmp)
 <figs/zr_s2r_pothole_data_a.png>
 File: figs/zr_s2r_pothole_data_b.png Graphic file (type bmp)
 <figs/zr_s2r_pothole_data_b.png>
- [55]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[55]
 File: figs/zr_s2r_stair_up_a.png Graphic file (type bmp)
 <figs/zr_s2r_stair_up_a.png>
 File: figs/zr_s2r_stair_up_b.png Graphic file (type bmp)
@@ -1200,7 +1629,15 @@ File: figs/zr_s2r_stair_down_data_a.png Graphic file (type bmp)
 <figs/zr_s2r_stair_down_data_a.png>
 File: figs/zr_s2r_stair_down_data_b.png Graphic file (type bmp)
 <figs/zr_s2r_stair_down_data_b.png>
- [56]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[56]
 File: figs/zr_s2r_hw_ctrl.png Graphic file (type bmp)
 <figs/zr_s2r_hw_ctrl.png>
 File: figs/zr_s2r_hw_sys.png Graphic file (type bmp)
@@ -1209,32 +1646,80 @@ File: figs/zr_s2r_fast_ka.png Graphic file (type bmp)
 <figs/zr_s2r_fast_ka.png>
 File: figs/zr_s2r_fast_kb.png Graphic file (type bmp)
 <figs/zr_s2r_fast_kb.png>
- [57]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[57]
 File: figs/zr_s2r_maxspeed_data.png Graphic file (type bmp)
 <figs/zr_s2r_maxspeed_data.png>
 File: figs/zr_s2r_maxyaw_frames.png Graphic file (type bmp)
 <figs/zr_s2r_maxyaw_frames.png>
- [58]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[58]
 File: figs/zr_s2r_maxacc_data.png Graphic file (type bmp)
 <figs/zr_s2r_maxacc_data.png>
 File: figs/zr_s2r_lowfric_photo.png Graphic file (type bmp)
 <figs/zr_s2r_lowfric_photo.png>
- [59]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[59]
 File: figs/zr_s2r_lowfric_data.png Graphic file (type bmp)
 <figs/zr_s2r_lowfric_data.png>
 File: figs/zr_s2r_load_frames.png Graphic file (type bmp)
 <figs/zr_s2r_load_frames.png>
- [60]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[60]
 File: figs/zr_s2r_load_data.png Graphic file (type bmp)
 <figs/zr_s2r_load_data.png>
 File: figs/zr_s2r_stair1_photo.png Graphic file (type bmp)
 <figs/zr_s2r_stair1_photo.png>
 File: figs/zr_s2r_stair2_photo.png Graphic file (type bmp)
 <figs/zr_s2r_stair2_photo.png>
- [61]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[61]
 File: figs/zr_s2r_stair_data.png Graphic file (type bmp)
 <figs/zr_s2r_stair_data.png>
- [62]
+
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[62]
 File: figs/zr_s2r_outdoor_bush.png Graphic file (type bmp)
 <figs/zr_s2r_outdoor_bush.png>
 File: figs/zr_s2r_outdoor_grass.png Graphic file (type bmp)
@@ -1245,23 +1730,87 @@ File: figs/zr_s2r_outdoor_stone.png Graphic file (type bmp)
 <figs/zr_s2r_outdoor_stone.png>
 File: figs/zr_s2r_success.png Graphic file (type bmp)
 <figs/zr_s2r_success.png>
- [63] [64] [65
 
-] [66] [67] [68] (./毕业论文.bbl) [69
 
-] [70
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[63]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[64]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[65
+
+]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[66]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[67]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[68] (./毕业论文.bbl)
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[69
+
+]
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 19.53616pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.53616pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-3.53616pt}.
+
+[70
 
 ] (./毕业论文.aux)
 Package rerunfilecheck Info: File `毕业论文.out' has not changed.
-(rerunfilecheck)             Checksum: 07E52034FBE8DEDA22F33B441A4B9028;5964.
+(rerunfilecheck)             Checksum: 1B7B773781C6B29383E14DC93CA37783;5964.
  ) 
 Here is how much of TeX's memory you used:
- 31933 strings out of 477756
- 709983 string characters out of 5843518
- 984036 words of memory out of 5000000
- 51878 multiletter control sequences out of 15000+600000
- 486195 words of font info for 159 fonts, out of 8000000 for 9000
+ 31964 strings out of 477756
+ 711326 string characters out of 5843518
+ 984027 words of memory out of 5000000
+ 51910 multiletter control sequences out of 15000+600000
+ 493647 words of font info for 191 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 89i,15n,97p,1216b,895s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,15n,97p,1216b,897s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 毕业论文.pdf (80 pages).
+Output written on 毕业论文.pdf (75 pages).

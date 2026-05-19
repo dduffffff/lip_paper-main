@@ -30,35 +30,35 @@
 \contentsline {section}{\numberline {4}基于课程学习的训练优化方法}{39}{section.4}%
 \contentsline {subsection}{\numberline {4.1}课程学习理论基础}{39}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}速度指令课程设计与验证}{40}{subsection.4.2}%
-\contentsline {subsubsection}{速度指令分布与课程动机}{40}{subsubsection*.42}%
-\contentsline {subsubsection}{独立分布与联合分布更新}{40}{subsubsection*.43}%
-\contentsline {subsubsection}{速度课程实验验证}{42}{subsubsection*.46}%
+\contentsline {subsubsection}{速度指令分布与课程动机}{40}{subsubsection*.40}%
+\contentsline {subsubsection}{独立分布与联合分布更新}{40}{subsubsection*.41}%
+\contentsline {subsubsection}{速度课程实验验证}{42}{subsubsection*.44}%
 \contentsline {subsection}{\numberline {4.3}地形课程设计与验证}{44}{subsection.4.3}%
-\contentsline {subsubsection}{训练地形构建与难度分级}{44}{subsubsection*.52}%
-\contentsline {subsubsection}{本体感受下的地形感知方法}{45}{subsubsection*.55}%
-\contentsline {subsubsection}{地形课程策略与验证}{46}{subsubsection*.58}%
+\contentsline {subsubsection}{训练地形构建与难度分级}{44}{subsubsection*.50}%
+\contentsline {subsubsection}{本体感受下的地形感知方法}{45}{subsubsection*.53}%
+\contentsline {subsubsection}{地形课程策略与验证}{46}{subsubsection*.56}%
 \contentsline {subsection}{\numberline {4.4}速度-地形双课程融合方法}{48}{subsection.4.4}%
-\contentsline {subsubsection}{双课程冲突分析}{48}{subsubsection*.61}%
-\contentsline {subsubsection}{基于地形类型的速度采样截断}{48}{subsubsection*.63}%
+\contentsline {subsubsection}{双课程冲突分析}{48}{subsubsection*.59}%
+\contentsline {subsubsection}{基于地形类型的速度采样截断}{48}{subsubsection*.61}%
 \contentsline {subsection}{\numberline {4.5}本章小结}{50}{subsection.4.5}%
 \contentsline {section}{\numberline {5}结果与分析}{51}{section.5}%
 \contentsline {subsection}{\numberline {5.1}总体性能对比}{51}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}仿真迁移实验}{51}{subsection.5.2}%
-\contentsline {subsubsection}{仿真环境与实验平台}{52}{subsubsection*.67}%
-\contentsline {subsubsection}{速度性能迁移验证}{52}{subsubsection*.69}%
-\contentsline {subsubsection}{极限速度与横摆角速度测试}{53}{subsubsection*.71}%
-\contentsline {subsubsection}{低附着路面验证}{53}{subsubsection*.74}%
-\contentsline {subsubsection}{变负载鲁棒性验证}{54}{subsubsection*.76}%
-\contentsline {subsubsection}{崎岖与坑洼越野地形}{54}{subsubsection*.79}%
-\contentsline {subsubsection}{复合地形：楼梯与坡道组合}{56}{subsubsection*.84}%
+\contentsline {subsubsection}{仿真环境与实验平台}{52}{subsubsection*.65}%
+\contentsline {subsubsection}{速度性能迁移验证}{52}{subsubsection*.67}%
+\contentsline {subsubsection}{极限速度与横摆角速度测试}{53}{subsubsection*.69}%
+\contentsline {subsubsection}{低附着路面验证}{53}{subsubsection*.72}%
+\contentsline {subsubsection}{变负载鲁棒性验证}{54}{subsubsection*.74}%
+\contentsline {subsubsection}{崎岖与坑洼越野地形}{54}{subsubsection*.77}%
+\contentsline {subsubsection}{复合地形：楼梯与坡道组合}{56}{subsubsection*.82}%
 \contentsline {subsection}{\numberline {5.3}实机部署验证}{57}{subsection.5.3}%
-\contentsline {subsubsection}{硬件平台与实验系统}{57}{subsubsection*.89}%
-\contentsline {subsubsection}{高速运动性能}{57}{subsubsection*.91}%
-\contentsline {subsubsection}{低附着路面验证}{59}{subsubsection*.96}%
-\contentsline {subsubsection}{负载鲁棒性验证}{60}{subsubsection*.99}%
-\contentsline {subsubsection}{复合地形通过}{61}{subsubsection*.102}%
-\contentsline {subsubsection}{室外自然地形测试}{62}{subsubsection*.105}%
-\contentsline {subsubsection}{多工况综合成功率}{63}{subsubsection*.107}%
+\contentsline {subsubsection}{硬件平台与实验系统}{57}{subsubsection*.87}%
+\contentsline {subsubsection}{高速运动性能}{57}{subsubsection*.89}%
+\contentsline {subsubsection}{低附着路面验证}{59}{subsubsection*.94}%
+\contentsline {subsubsection}{负载鲁棒性验证}{60}{subsubsection*.97}%
+\contentsline {subsubsection}{复合地形通过}{61}{subsubsection*.100}%
+\contentsline {subsubsection}{室外自然地形测试}{62}{subsubsection*.103}%
+\contentsline {subsubsection}{多工况综合成功率}{63}{subsubsection*.105}%
 \contentsline {subsection}{\numberline {5.4}失败案例与可解释性}{63}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}综合讨论}{64}{subsection.5.5}%
 \contentsline {subsection}{\numberline {5.6}本章小结}{64}{subsection.5.6}%
@@ -68,4 +68,4 @@
 \contentsline {subsection}{\numberline {6.3}方法局限与适用边界}{66}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}工程部署与 Sim2Real 展望}{67}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}后续研究方向}{68}{subsection.6.5}%
-\contentsline {section}{致谢}{70}{section*.111}%
+\contentsline {section}{致谢}{70}{section*.109}%
