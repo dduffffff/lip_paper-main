@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.4.21)  19 MAY 2026 05:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.4.21)  23 MAY 2026 19:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1807,7 +1807,7 @@ Package rerunfilecheck Info: File `毕业论文.out' has not changed.
 Here is how much of TeX's memory you used:
  31964 strings out of 477756
  711326 string characters out of 5843518
- 984027 words of memory out of 5000000
+ 984028 words of memory out of 5000000
  51910 multiletter control sequences out of 15000+600000
  493647 words of font info for 191 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
